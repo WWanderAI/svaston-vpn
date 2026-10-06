@@ -1,17 +1,18 @@
 {
-  "generated_at": "2026-10-06T12:59:49.572271+00:00",
+  "generated_at": "2026-10-06T13:14:48.527636+00:00",
   "source": "tg/s/halyava_vpnz",
-  "total": 410,
+  "total": 409,
   "protocols": {
     "hysteria2": 6,
     "trojan": 3,
-    "vless": 400,
-    "vmess": 1
+    "vless": 400
   },
   "scan": {
     "oldest_id": 1034
   },
   "warnings": [
+    "sub: no nodes at https://p.kfwl.lol/https://t--8g.atlanta-subs.ru/uMGSMkV7KuPQN91c",
+    "sub: no nodes at https://p.kfwl.lol/https://vpnsubs.site/api/sub/BueWZnG07sahpSNX",
     "sub: no nodes at https://p.kfwl.lol/https://p.kfwl.lol/https://auth.connect-opengate.ru/sub/jKXuLXSAFp0S4CZW",
     "sub: no nodes at https://p.kfwl.lol/ua=happ/os=android/https://sub.fireflycloud.shop:2096/sub-vpn/Vless_8656291098_6595",
     "sub: no nodes at https://p.kfwl.lol/ua=happ/os=android/https://147.45.219.167.sslip.io/info/HAPP/d1ff8392-0569-4553-b0a9-76eb30929851",
@@ -21,7 +22,18 @@
     "sub: no nodes at https://v2hub.link/sub/G5JWJICV3Ubz71u9s8YYzmA-wD34dN51QRwioM5roS8",
     "sub: no nodes at https://p.kfwl.lol/https://sub.tlsov.pro/MfiMngSsqs8kmsrs",
     "sub: no nodes at https://p.kfwl.lol/ua=happ/os=android/https://ru-sub.whit3.net/sub/mEMRj91DTNLu9VJF",
-    "singbox: skip vmess__66caca57: no host/port/uuid",
-    "clash: skip vmess__66caca57: no server/port"
-  ]
+    "автопроверка: отброшено негодных нод (нет host/port): 1"
+  ],
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "counts": {
+      "nodes": 409,
+      "sub_uris": 409,
+      "node_files": 409,
+      "singbox_outbounds": 409,
+      "clash_proxies": 409
+    }
+  }
 }
