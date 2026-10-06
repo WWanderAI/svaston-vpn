@@ -190,7 +190,34 @@ def main():
     f3, _, _, confirmed3 = liveness.filter_nodes(n7, {"dead": dead2})
     assert len(f3) == 2 and any(x["host"] == "dead.com" for x in f3), "ожившая нода не вернулась"
     assert len(confirmed3) == 2, "ожившие ноды должны пройти в verified feed"
-    print("liveness grace/resurrect OK; dead2=%r" % dead2)
+
+    # Относительный порог адаптируется к региону runner: best + 200ms, но hard cap 800ms.
+    old_ping_max, old_ping_margin = liveness.MAX_PING_MS, liveness.PING_MARGIN_MS
+    liveness.MAX_PING_MS, liveness.PING_MARGIN_MS = 800, 200
+    pair = [
+        {"protocol": "vless", "host": "fast.com", "port": 443, "name": "f", "uuid": "4", "raw": "vless://4@fast.com:443#f"},
+        {"protocol": "vless", "host": "slow.com", "port": 443, "name": "s", "uuid": "5", "raw": "vless://5@slow.com:443#s"},
+    ]
+    liveness.is_alive = lambda n, timeout=4: {"ok": True, "latency_ms": 360 if n["host"] == "fast.com" else 620}
+    _, _, pair_stats, pair_ok = liveness.filter_nodes(pair, {})
+    assert pair_stats["effective_latency_limit_ms"] == 560 and pair_stats["high_latency"] == 1
+    assert [n["host"] for n in pair_ok] == ["fast.com"], "медленный узел должен быть отфильтрован по относительному порогу"
+
+    # RTT выше hard-порога не публикуется и попадает в трек, быстрый повтор «воскрешает» узел.
+    liveness.MAX_PING_MS = 300
+    slow = [{"protocol": "vless", "host": "slow.com", "port": 443,
+             "name": "slow", "uuid": "3", "raw": "vless://3@slow.com:443#slow"}]
+    slow_key = repr(nodeparser.node_key(slow[0]))
+    liveness.is_alive = lambda n, timeout=4: {"ok": True, "latency_ms": 475}
+    _, slow_dead1, slow_stats1, slow_ok1 = liveness.filter_nodes(slow, {})
+    assert not slow_ok1 and slow_stats1["high_latency"] == 1 and slow_dead1.get(slow_key) == 1
+    _, slow_dead2, slow_stats2, slow_ok2 = liveness.filter_nodes(slow, {"dead": slow_dead1})
+    assert not slow_ok2 and slow_stats2["dropped"] == 1, "высокая задержка должна исключить ноду после 2 тестов"
+    liveness.is_alive = lambda n, timeout=4: {"ok": True, "latency_ms": 135}
+    _, slow_dead3, slow_stats3, slow_ok3 = liveness.filter_nodes(slow, {"dead": slow_dead2})
+    assert len(slow_ok3) == 1 and slow_key not in slow_dead3 and slow_stats3["verified"] == 1
+    liveness.MAX_PING_MS, liveness.PING_MARGIN_MS = old_ping_max, old_ping_margin
+    print("liveness grace/resurrect/latency-cut OK")
 
     print("\n=== SELFTEST PASSED ===")
     print("Результат записан в %s" % outdir)

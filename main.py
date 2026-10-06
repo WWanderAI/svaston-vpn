@@ -139,9 +139,13 @@ def main():
     live_stats["candidates"] = candidate_total
     if live_stats.get("dropped"):
         warnings.append("liveness: подтверждённо мёртвых исключено: %d" % live_stats["dropped"])
-    print("Liveness: кандидатов=%d, проверено=%d, туннель OK=%d, unknown=%d, dead исключено=%d"
-          % (candidate_total, live_stats["checked"], live_stats["verified"],
-             live_stats.get("unknown", 0), live_stats["dropped"]))
+    if live_stats.get("high_latency"):
+        warnings.append("liveness: исключено по задержке выше эффективного лимита %d мс: %d"
+                        % (live_stats["effective_latency_limit_ms"], live_stats["high_latency"]))
+    print("Liveness: кандидатов=%d, проверено=%d, туннель OK=%d, <=%dмс=%d, >лимита=%d, без ответа=%d, unknown=%d"
+          % (candidate_total, live_stats["checked"], live_stats["alive"],
+             live_stats["effective_latency_limit_ms"], live_stats["verified"],
+             live_stats["high_latency"], live_stats["no_response"], live_stats["unknown"]))
     if not confirmed:
         print("❌ Ни одна нода не прошла настоящий тест через туннель — пуш отменён; прежняя подписка сохранена.")
         return 2

@@ -76,6 +76,8 @@ jobs:
           LIVENESS_TIMEOUT: "8"
           HY2_CHECK_TIMEOUT: "10"
           LIVENESS_WORKERS: "20"
+          PING_MAX_MS: "800"
+          PING_MARGIN_MS: "200"
           GH_REPO: ${{ secrets.GH_REPO || github.repository }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}

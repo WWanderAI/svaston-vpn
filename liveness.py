@@ -11,7 +11,7 @@ SOCKS-туннель. Hysteria2 проверяется официальным к
 Список для подписки main.py собирает только из нод, прошедших реальный тест.
 
 Переменные: LIVENESS_TIMEOUT, LIVENESS_WORKERS, LIVENESS_MAX, LIVENESS_DEAD,
-LIVENESS_ROTATE, HYSTERIA_BIN, XRAY_BIN.
+LIVENESS_ROTATE, PING_MAX_MS, HYSTERIA_BIN, XRAY_BIN.
 """
 import hashlib
 import json
@@ -22,6 +22,7 @@ import socket
 import subprocess
 import tempfile
 import time
+from statistics import median
 
 TIMEOUT = float(os.environ.get("LIVENESS_TIMEOUT", "8"))
 WORKERS = int(os.environ.get("LIVENESS_WORKERS", "20"))
@@ -29,6 +30,8 @@ MAX_CHECKS = int(os.environ.get("LIVENESS_MAX", "60"))
 DEAD_THRESHOLD = int(os.environ.get("LIVENESS_DEAD", "2"))
 ROTATE_PERIOD = int(os.environ.get("LIVENESS_ROTATE", "300"))
 HY2_TIMEOUT = float(os.environ.get("HY2_CHECK_TIMEOUT", "10"))
+MAX_PING_MS = int(os.environ.get("PING_MAX_MS", "800"))
+PING_MARGIN_MS = int(os.environ.get("PING_MARGIN_MS", "200"))
 HYSTERIA_BIN = os.environ.get("HYSTERIA_BIN") or shutil.which("hysteria") or ""
 XRAY_BIN = os.environ.get("XRAY_BIN") or shutil.which("xray") or ""
 
@@ -70,22 +73,34 @@ def _wait_local_socks(proc, port, timeout=2.0):
 
 
 def _https_via_socks(port, timeout=4.0):
-    """Проверяет именно трафик через прокси, а не только локальный handshake."""
+    """Проверяет HTTPS через прокси и возвращает реальный RTT до ответа."""
     total = max(3, int(timeout))
+    best_ms = None
     for url in _TEST_URLS:
         try:
             r = subprocess.run(
-                ["curl", "-sS", "-o", os.devnull, "-w", "%{http_code}",
+                ["curl", "-sS", "-o", os.devnull, "-w", "%{http_code} %{time_total}",
                  "--connect-timeout", str(min(3, total)), "--max-time", str(total),
                  "--socks5-hostname", "127.0.0.1:%d" % int(port), url],
                 stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
                 stderr=subprocess.DEVNULL, text=True, timeout=total + 1,
             )
-            if r.returncode == 0 and r.stdout.strip() in ("200", "204"):
-                return True
+            parts = r.stdout.strip().split()
+            if r.returncode != 0 or len(parts) < 2 or parts[0] not in ("200", "204"):
+                continue
+            try:
+                rtt_ms = max(1, int(round(float(parts[1]) * 1000)))
+            except (TypeError, ValueError):
+                continue
+            best_ms = rtt_ms if best_ms is None else min(best_ms, rtt_ms)
+            # Если уже достаточно быстро, не создаём лишний запрос к другой цели.
+            if best_ms <= int(MAX_PING_MS * 0.5):
+                break
         except (OSError, subprocess.TimeoutExpired):
             continue
-    return False
+    if best_ms is None:
+        return {"ok": False, "latency_ms": None}
+    return {"ok": True, "latency_ms": best_ms}
 
 
 def _write_private_config(text, suffix):
@@ -309,15 +324,40 @@ def check_many(nodes, workers=WORKERS, timeout=TIMEOUT):
         for f, k in futs.items():
             try:
                 value = f.result()
-                res[k] = None if value is None else bool(value)
+                if value is None:
+                    res[k] = None
+                elif isinstance(value, dict) and "ok" in value:
+                    res[k] = {"ok": bool(value.get("ok")),
+                              "latency_ms": value.get("latency_ms")}
+                else:
+                    # Offline tests may stub is_alive with a bool.
+                    res[k] = {"ok": bool(value), "latency_ms": 0 if value else None}
             except Exception:
                 res[k] = None
     return res
 
 
 # ------------------------------------------------------------------ filtering
+def _is_success(result):
+    return isinstance(result, dict) and bool(result.get("ok"))
+
+
+def _latency_ms(result):
+    if not isinstance(result, dict):
+        return None
+    try:
+        return int(result["latency_ms"])
+    except (KeyError, TypeError, ValueError):
+        return None
+
+
+def _under_ping_limit(result, effective_limit_ms):
+    latency = _latency_ms(result)
+    return _is_success(result) and latency is not None and latency <= effective_limit_ms
+
+
 def filter_nodes(nodes, prev_scan):
-    """Returns (non_dead_nodes, dead_map, stats, confirmed_live_nodes)."""
+    """Returns (non_dead_nodes, dead_map, stats, low_latency_nodes)."""
     prev_scan = prev_scan or {}
     prev_dead = prev_scan.get("dead") or {}
     th = DEAD_THRESHOLD
@@ -330,18 +370,25 @@ def filter_nodes(nodes, prev_scan):
 
     to_check = (in_dead + others)[:MAX_CHECKS]
     results = check_many(to_check)
+    sampled = [results.get(_key(n)) for n in to_check]
+    ok_results = [r for r in sampled if _is_success(r)]
+    latencies = [ms for ms in (_latency_ms(r) for r in ok_results) if ms is not None]
+    best_latency = min(latencies) if latencies else None
+    # Hard ceiling plus a relative ceiling: adapt to the runner's route/region,
+    # and keep nodes close to the fastest sampled server.
+    effective_limit = min(MAX_PING_MS, best_latency + PING_MARGIN_MS) if best_latency is not None else MAX_PING_MS
 
-    # Keep the all-zero UDP safety net for genuine probe/network outages.
+    # Don't mark a whole UDP protocol dead when the probe environment is suspect.
     proto_state = {}
     for n in to_check:
         p = _proto(n)
         result = results.get(_key(n))
         if p in _UDP_PROTOS and result is not None:
-            s = proto_state.setdefault(p, [0, 0])
-            s[1] += 1
-            if result:
-                s[0] += 1
-    suspect = {p for p, (alive, tot) in proto_state.items() if tot > 0 and alive == 0}
+            state = proto_state.setdefault(p, [0, 0])
+            state[1] += 1
+            if _is_success(result):
+                state[0] += 1
+    suspect = {p for p, (ok, total) in proto_state.items() if total > 0 and ok == 0}
 
     new_dead = dict(prev_dead)
     newly_dead = 0
@@ -349,14 +396,14 @@ def filter_nodes(nodes, prev_scan):
         k = _key(n)
         result = results.get(k)
         if result is None:
-            # Missing/failed test engine is not a server failure; don't carry a
-            # stale quarantine into a run where that protocol cannot be tested.
+            # Missing/failed test engine is not a server failure.
             new_dead.pop(k, None)
             continue
-        alive = result
+        passes = _under_ping_limit(result, effective_limit)
         if _proto(n) in suspect:
-            alive = True
-        if alive:
+            # Don't punish a protocol-wide probe outage; it still won't be published.
+            passes = True
+        if passes:
             new_dead.pop(k, None)
         else:
             new_dead[k] = prev_dead.get(k, 0) + 1
@@ -368,13 +415,23 @@ def filter_nodes(nodes, prev_scan):
     hard = {k for k, v in new_dead.items() if v >= th}
     filtered = [n for n in nodes if _key(n) not in hard]
     confirmed = [n for n in to_check
-                 if results.get(_key(n)) is True and _proto(n) not in suspect and _key(n) not in hard]
+                 if _under_ping_limit(results.get(_key(n)), effective_limit)
+                 and _proto(n) not in suspect and _key(n) not in hard]
 
+    high_latency = sum(1 for r in ok_results
+                       if (_latency_ms(r) is not None and _latency_ms(r) > effective_limit))
     stats = {
         "checked": len(to_check),
-        "alive": len(confirmed),
-        "unknown": sum(1 for n in to_check if results.get(_key(n)) is None),
+        "alive": len(ok_results),
         "verified": len(confirmed),
+        "high_latency": high_latency,
+        "no_response": sum(1 for r in sampled if r is not None and not _is_success(r)),
+        "unknown": sum(1 for r in sampled if r is None),
+        "max_latency_ms": MAX_PING_MS,
+        "relative_margin_ms": PING_MARGIN_MS,
+        "best_latency_ms": best_latency,
+        "effective_latency_limit_ms": effective_limit,
+        "median_latency_ms": int(median(latencies)) if latencies else None,
         "dropped": len(nodes) - len(filtered),
         "newly_dead": newly_dead,
         "suspect_protos": sorted(suspect),
