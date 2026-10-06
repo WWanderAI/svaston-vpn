@@ -136,8 +136,9 @@ def main():
     merged, dead_map, live_stats = liveness.filter_nodes(merged, prev_scan)
     if live_stats.get("dropped"):
         warnings.append("liveness: исключено мёртвых нод: %d" % live_stats["dropped"])
-    print("Liveness: проверено=%d, живых=%d, исключено=%d (в треке мёртвых=%d)"
-          % (live_stats["checked"], live_stats["alive"], live_stats["dropped"], live_stats["dead_tracked"]))
+    print("Liveness: проверено=%d, живых=%d, не проверено=%d, исключено=%d (в треке мёртвых=%d)"
+          % (live_stats["checked"], live_stats["alive"], live_stats.get("unknown", 0),
+             live_stats["dropped"], live_stats["dead_tracked"]))
     if not merged:
         print("❌ После проверки живости годных нод не осталось — пуш отменён (остаётся последняя рабочая версия).")
         return 2

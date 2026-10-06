@@ -20,6 +20,13 @@ import nodeparser
 
 MARKER = "out/sub/b64.txt"
 _SUPPORTED_SINGBOX = {"ss", "trojan", "vless", "vmess", "hysteria2", "tuic", "wireguard"}
+# Сначала типы, у которых клиенты обычно показывают TCP-пинг; Hysteria2/UDP
+# ставим после них, чтобы список не начинался экраном из одних n/a.
+_PROTOCOL_ORDER = {
+    "vless": 0, "trojan": 1, "ss": 2, "vmess": 3,
+    "hysteria2": 4, "hy2": 4, "hy": 4,
+    "tuic": 5, "wireguard": 6, "ssr": 7,
+}
 
 # Переименование: под каким именем узлы выходят в подписку/конфиги.
 # {brand} — бренд; {id} — короткий стабильный номер; {proto} — протокол; {country} — страна.
@@ -57,7 +64,11 @@ def build(nodes, source="", warnings=None, oldest_id=0, scan_extra=None):
     warnings = list(warnings or [])
     nodes = sorted(
         nodes,
-        key=lambda n: (n.get("protocol", ""), str(n.get("host", "")), str(n.get("port", "")), n.get("name", "")),
+        key=lambda n: (
+            _PROTOCOL_ORDER.get((n.get("protocol") or "").lower(), 99),
+            (n.get("protocol") or "").lower(),
+            str(n.get("host", "")), str(n.get("port", "")), n.get("name", ""),
+        ),
     )
     # переименовываем все узлы под бренд (в raw-URI + в полях) до генерации артефактов
     nodes = [_retitle_node(n) for n in nodes]

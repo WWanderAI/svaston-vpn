@@ -35,6 +35,16 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
+      - name: Install Hysteria2 liveness client
+        env:
+          HY2_RELEASE: "app/v2.13.0"
+          HY2_SHA256: "907ba8c9693edb104b20582681fb7dc15639d5b64a9cbb616a7b539190a86691"
+        run: |
+          curl --retry 3 -fsSL "https://github.com/HyNetworks/hysteria/releases/download/${HY2_RELEASE}/hysteria-linux-amd64" -o "$RUNNER_TEMP/hysteria"
+          echo "$HY2_SHA256  $RUNNER_TEMP/hysteria" | sha256sum -c -
+          chmod +x "$RUNNER_TEMP/hysteria"
+          echo "HYSTERIA_BIN=$RUNNER_TEMP/hysteria" >> "$GITHUB_ENV"
+
       - name: Resolve channel
         env:
           CHANNEL: ${{ secrets.TG_CHANNEL || 'halyava_vpnz' }}

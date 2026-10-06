@@ -154,10 +154,27 @@ def main():
           "raw": "vless://u@h.com:443?security=tls#Old"}], source="t")
     comb = files2["out/sub/combined.txt"].strip()
     assert "Svaston" in comb, "build: бренд не попал в combined: %s" % comb
-    print("retitle OK; combined:", comb[:70])
+    ordered, _ = aggregator.build([
+        {"protocol": "hysteria2", "host": "hy.example", "port": 443, "name": "UDP",
+         "raw": "hysteria2://pw@hy.example:443?sni=hy.example#UDP"},
+        {"protocol": "vless", "host": "h.com", "port": 443, "name": "TCP", "uuid": "u",
+         "raw": "vless://u@h.com:443?security=tls#TCP"},
+    ], source="t")
+    assert json.loads(ordered["out/nodes.json"])[0]["protocol"] == "vless", "TCP-ноды должны идти раньше Hy2"
+    print("retitle/order OK; combined:", comb[:70])
 
-    print("\n=== 7) liveness (офлайн: grace + resurrect) ===")
+    print("\n=== 7) liveness (офлайн: grace + resurrect + unknown) ===")
     import liveness
+    # Без нативного клиента Hysteria2 остаётся непроверенным, а не мёртвым.
+    old_hy2_bin = liveness.HYSTERIA_BIN
+    liveness.HYSTERIA_BIN = ""
+    hy2 = {"protocol": "hysteria2", "host": "hy2.example", "port": 443,
+           "name": "h", "raw": "hysteria2://pass@hy2.example:443?sni=hy2.example#h"}
+    k_hy2 = repr(nodeparser.node_key(hy2))
+    assert liveness.is_alive(hy2) is None, "без native-клиента Hy2 должен быть unknown"
+    fu, du, su = liveness.filter_nodes([hy2], {"dead": {k_hy2: 2}})
+    assert len(fu) == 1 and k_hy2 not in du and su["unknown"] == 1, "unknown Hy2 не должен блокироваться"
+    liveness.HYSTERIA_BIN = old_hy2_bin
     n7 = [
         {"protocol": "vless", "host": "alive.com", "port": 443, "name": "a", "uuid": "1", "raw": "vless://1@alive.com:443#a"},
         {"protocol": "vless", "host": "dead.com", "port": 443, "name": "d", "uuid": "2", "raw": "vless://2@dead.com:443#d"},
