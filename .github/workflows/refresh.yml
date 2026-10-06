@@ -31,16 +31,16 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
-      - name: Check channel secret
+      - name: Resolve channel
         env:
-          HAS_CHANNEL: ${{ secrets.TG_CHANNEL != '' }}
+          CHANNEL: ${{ secrets.TG_CHANNEL || 'halyava_vpnz' }}
         run: |
-          [ "$HAS_CHANNEL" = "true" ] || { echo "Нет секрета TG_CHANNEL (укажи @username публичного канала)"; exit 1; }
-          echo "TG_CHANNEL на месте."
+          [ -n "$CHANNEL" ] || { echo "Канал не задан (секрет TG_CHANNEL или дефолт в workflow)"; exit 1; }
+          echo "TG_CHANNEL=$CHANNEL"
 
       - name: Scrape channel + build + push to repo
         env:
-          TG_CHANNEL: ${{ secrets.TG_CHANNEL }}
+          TG_CHANNEL: ${{ secrets.TG_CHANNEL || 'halyava_vpnz' }}
           SUB_FETCH_MAX: "20"
           GH_REPO: ${{ secrets.GH_REPO || github.repository }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
