@@ -126,6 +126,20 @@ def main():
     else:
         print("clash: пропущен (PyYAML не установлен) — это нормально для selftest")
 
+    print("\n=== 5) автопроверка конфигов (validate) ===")
+    import validate
+    ok, rep = validate.validate_outputs(files, meta)
+    print(validate.format_report(rep))
+    assert ok, "валидация собранных артефактов не пройдена: %s" % rep["errors"]
+    assert rep["counts"]["nodes"] == meta["total"], "счётчик нод не сошёлся"
+    assert rep["counts"]["sub_uris"] == meta["total"], "счётчик URI в подписке не сошёлся"
+    # негативный кейс: сломанный singbox (0 серверов) должен блокировать пуш
+    bad_files = dict(files)
+    bad_files["out/singbox/config.json"] = '{"outbounds": []}'
+    ok2, rep2 = validate.validate_outputs(bad_files, meta)
+    assert not ok2 and any("singbox" in e for e in rep2["errors"]), "сломанный singbox не обнаружен"
+    print("Негативный кейс (сломанный singbox) корректно заблокирован.")
+
     print("\n=== SELFTEST PASSED ===")
     print("Результат записан в %s" % outdir)
     return 0

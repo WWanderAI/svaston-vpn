@@ -119,7 +119,31 @@ def main():
         print("Сообщений прочитано: %d, новых нод: %d" % (len(texts), len(fresh)))
 
     merged = merge(master, fresh)
+
+    # Автопроверка (1/2): отсекаем негодные ноды (нет host/port) ДО сборки,
+    # чтобы они не попали ни в подписку, ни в конфиги.
+    import validate
+    good, bad = validate.split_nodes(merged)
+    if bad:
+        warnings.append("автопроверка: отброшено негодных нод (нет host/port): %d" % len(bad))
+    if not good:
+        print("❌ Годных нод нет — в репозиторий ничего НЕ загружаем.")
+        for b in bad[:5]:
+            print("   - %s" % str(b.get("raw"))[:120])
+        return 2
+    merged = good
+
     files, meta = aggregator.build(merged, source=source, warnings=warnings, oldest_id=oldest_id)
+
+    # Автопроверка (2/2): финальная структурная проверка готовых артефактов.
+    ok, report = validate.validate_outputs(files, meta)
+    meta["validation"] = {"ok": ok, "errors": report["errors"],
+                          "warnings": report["warnings"], "counts": report["counts"]}
+    files["out/meta.json"] = json.dumps(meta, ensure_ascii=False, indent=2)
+    print(validate.format_report(report))
+    if not ok:
+        print("❌ Конфиги не прошли проверку — пуш отменён (остаётся последняя рабочая версия).")
+        return 2
 
     if args.push:
         if gp.needs_push(files, aggregator.MARKER):
