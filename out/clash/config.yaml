@@ -9,31 +9,258 @@ dns:
   - 8.8.8.8
   - 1.1.1.1
 proxies:
-- name: Svaston_vpn_53ced0__53ced080
-  server: 34.220.15.24
+- name: Svaston_vpn_c930bb__c930bb5e
+  server: 150.40.126.18
+  port: 443
+  type: vless
+  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
+  udp: true
+  flow: ''
+  network: grpc
+  tls: true
+  server-name: rs1.univesalsrv.com
+  skip-cert-verify: false
+  reality-opts:
+    public-key: upIzyaSbVz2ZK6KfGtXmPl_-sCwn8XLDyFDH5CsL9iY
+  grpc-opts:
+    grpc-service-name: node.v2.ObjectService
+- name: Svaston_vpn_8ba8ad__8ba8ada1
+  server: 169.40.42.235
+  port: 443
+  type: vless
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  server-name: yahoo.com
+  skip-cert-verify: false
+  reality-opts:
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+- name: Svaston_vpn_524c98__524c9871
+  server: 172.64.150.28
+  port: 2082
+  type: vless
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  udp: true
+  flow: ''
+  network: ws
+  ws-opts:
+    path: /fp
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+- name: Svaston_vpn_1a7fdf__1a7fdf6f
+  server: 195.123.235.177
+  port: 443
+  type: vless
+  uuid: 729dd5f2-f5ff-4070-8c10-863eceded0b1
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  server-name: gateway.icloud.com
+  skip-cert-verify: false
+  reality-opts:
+    public-key: 5B83otQ5ZQwtBFhR7xzsGJRXflkFKRJpQguYbE5JWGI
+- name: Svaston_vpn_675dad__675dad23
+  server: 198.100.154.175
+  port: 2087
+  type: vless
+  uuid: 97ea73b6-2043-4238-903c-a1e3d4a43c96
+  udp: true
+  flow: ''
+  network: ws
+  tls: true
+  server-name: amphetamine.adaspoloandco.com
+  skip-cert-verify: false
+  ws-opts:
+    path: /download.php
+    headers:
+      Host: 198.100.154.175
+- name: Svaston_vpn_ec9ccc__ec9ccca5
+  server: 31.59.204.104
+  port: 443
+  type: vless
+  uuid: 87fd990d-ca93-440a-bbd4-e8281c4a0910
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  server-name: pl3.cloud-static.org
+  skip-cert-verify: false
+  reality-opts:
+    public-key: cIgH-cz8JCjHnPQXA4qZNpYWwgYdVKCX3jDhuDbVK24
+- name: Svaston_vpn_14da0f__14da0f23
+  server: 31.59.204.227
+  port: 443
+  type: vless
+  uuid: 87fd990d-ca93-440a-bbd4-e8281c4a0910
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  server-name: pl3.cloud-static.org
+  skip-cert-verify: false
+  reality-opts:
+    public-key: cIgH-cz8JCjHnPQXA4qZNpYWwgYdVKCX3jDhuDbVK24
+- name: Svaston_vpn_ccdf32__ccdf3214
+  server: 31.59.205.36
+  port: 443
+  type: vless
+  uuid: 87fd990d-ca93-440a-bbd4-e8281c4a0910
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  server-name: pl3.cloud-static.org
+  skip-cert-verify: false
+  reality-opts:
+    public-key: cIgH-cz8JCjHnPQXA4qZNpYWwgYdVKCX3jDhuDbVK24
+- name: Svaston_vpn_19370a__19370af8
+  server: 45.9.156.42
+  port: 443
+  type: vless
+  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
+  udp: true
+  flow: ''
+  network: grpc
+  tls: true
+  server-name: bg5.univesalsrv.com
+  skip-cert-verify: false
+  reality-opts:
+    public-key: RDWvDEygSk1eyAQhIK95H9EteFbrS2d9JEjBrco54Bw
+  grpc-opts:
+    grpc-service-name: gw.v2.RelayService
+- name: Svaston_vpn_9c5f40__9c5f409c
+  server: 89.125.13.202
+  port: 443
+  type: vless
+  uuid: 87fd990d-ca93-440a-bbd4-e8281c4a0910
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  server-name: d3-ee1.cloud-cdn.xyz
+  skip-cert-verify: false
+  reality-opts:
+    public-key: g36Z7YIqJMJP-uv3DBr72X5jvfjyW1qIAxa8TkWmpmQ
+- name: Svaston_vpn_3dead6__3dead6a0
+  server: 91.107.165.46
+  port: 8080
+  type: vless
+  uuid: 59ab9bbf-3f08-4992-bbf3-4faddceb8e49
+  udp: true
+  flow: ''
+  tls: true
+  server-name: www.actionvfx.com
+  skip-cert-verify: false
+  reality-opts:
+    public-key: _OmNcv89o5SDt4H3ButRX9UynGIVwNZR250w4Zie-yk
+- name: Svaston_vpn_d3905b__d3905b45
+  server: 165.215.250.14
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+  ws-opts:
+    path: //assignment
+    headers:
+      Host: www.calmlunch.com
+- name: Svaston_vpn_b8043d__b8043df1
+  server: 3.39.225.215
   port: 443
   type: trojan
   password: UX82473651
   udp: true
-- name: Svaston_vpn_184a46__184a46c6
-  server: 44.255.123.205
+- name: Svaston_vpn_1e2a3f__1e2a3fe3
+  server: 43.201.252.164
   port: 443
   type: trojan
   password: UX82473651
   udp: true
+- name: Svaston_vpn_38caae__38caae64
+  server: 43.207.89.91
+  port: 443
+  type: trojan
+  password: UX82473651
+  udp: true
+- name: Svaston_vpn_0a1f20__0a1f20c4
+  server: evolving-platypus.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  udp: true
+- name: Svaston_vpn_d9c29d__d9c29d71
+  server: obliging-louse.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  udp: true
+- name: Svaston_vpn_d68bd7__d68bd745
+  server: 185.177.229.129
+  port: 22324
+  type: vmess
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
+  udp: true
+- name: Svaston_vpn_f80a47__f80a47dd
+  server: de-tg.fastlanehosting.ru
+  port: 443
+  type: hysteria2
+  password: ''
+  server-name: de-tg.fastlanehosting.ru
+  skip-cert-verify: true
+- name: Svaston_vpn_fb9d7e__fb9d7e47
+  server: fre.guren1.me
+  port: 8443
+  type: hysteria2
+  password: ''
+  server-name: python.org
+  skip-cert-verify: true
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - Svaston_vpn_53ced0__53ced080
-  - Svaston_vpn_184a46__184a46c6
+  - Svaston_vpn_c930bb__c930bb5e
+  - Svaston_vpn_8ba8ad__8ba8ada1
+  - Svaston_vpn_524c98__524c9871
+  - Svaston_vpn_1a7fdf__1a7fdf6f
+  - Svaston_vpn_675dad__675dad23
+  - Svaston_vpn_ec9ccc__ec9ccca5
+  - Svaston_vpn_14da0f__14da0f23
+  - Svaston_vpn_ccdf32__ccdf3214
+  - Svaston_vpn_19370a__19370af8
+  - Svaston_vpn_9c5f40__9c5f409c
+  - Svaston_vpn_3dead6__3dead6a0
+  - Svaston_vpn_d3905b__d3905b45
+  - Svaston_vpn_b8043d__b8043df1
+  - Svaston_vpn_1e2a3f__1e2a3fe3
+  - Svaston_vpn_38caae__38caae64
+  - Svaston_vpn_0a1f20__0a1f20c4
+  - Svaston_vpn_d9c29d__d9c29d71
+  - Svaston_vpn_d68bd7__d68bd745
+  - Svaston_vpn_f80a47__f80a47dd
+  - Svaston_vpn_fb9d7e__fb9d7e47
   - DIRECT
 - name: AUTO
   type: url-test
   proxies:
-  - Svaston_vpn_53ced0__53ced080
-  - Svaston_vpn_184a46__184a46c6
+  - Svaston_vpn_c930bb__c930bb5e
+  - Svaston_vpn_8ba8ad__8ba8ada1
+  - Svaston_vpn_524c98__524c9871
+  - Svaston_vpn_1a7fdf__1a7fdf6f
+  - Svaston_vpn_675dad__675dad23
+  - Svaston_vpn_ec9ccc__ec9ccca5
+  - Svaston_vpn_14da0f__14da0f23
+  - Svaston_vpn_ccdf32__ccdf3214
+  - Svaston_vpn_19370a__19370af8
+  - Svaston_vpn_9c5f40__9c5f409c
+  - Svaston_vpn_3dead6__3dead6a0
+  - Svaston_vpn_d3905b__d3905b45
+  - Svaston_vpn_b8043d__b8043df1
+  - Svaston_vpn_1e2a3f__1e2a3fe3
+  - Svaston_vpn_38caae__38caae64
+  - Svaston_vpn_0a1f20__0a1f20c4
+  - Svaston_vpn_d9c29d__d9c29d71
+  - Svaston_vpn_d68bd7__d68bd745
+  - Svaston_vpn_f80a47__f80a47dd
+  - Svaston_vpn_fb9d7e__fb9d7e47
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50

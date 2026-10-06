@@ -25,18 +25,234 @@
   ],
   "outbounds": [
     {
+      "type": "grpc",
+      "tag": "Svaston_vpn_c930bb__c930bb5e",
+      "server": "150.40.126.18",
+      "server_port": 443,
+      "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be",
+      "encryption": "none",
+      "service_name": "node.v2.ObjectService",
+      "reality": {
+        "server_name": "rs1.univesalsrv.com",
+        "public_key": "upIzyaSbVz2ZK6KfGtXmPl_-sCwn8XLDyFDH5CsL9iY",
+        "fingerprint": "firefox"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Svaston_vpn_8ba8ad__8ba8ada1",
+      "server": "169.40.42.235",
+      "server_port": 443,
+      "uuid": "d65cc14c-f53f-4fe2-b262-97856601319c",
+      "flow": "xtls-rprx-vision",
+      "encryption": "none",
+      "reality": {
+        "server_name": "yahoo.com",
+        "public_key": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+        "fingerprint": "chrome"
+      }
+    },
+    {
+      "type": "ws",
+      "tag": "Svaston_vpn_524c98__524c9871",
+      "server": "172.64.150.28",
+      "server_port": 2082,
+      "uuid": "e5cc16a6-ea42-46b2-82ae-ad2157e1641b",
+      "encryption": "none",
+      "path": "/fp",
+      "headers": {
+        "Host": "hhlfy.twiladaphne.ndjp.net"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Svaston_vpn_1a7fdf__1a7fdf6f",
+      "server": "195.123.235.177",
+      "server_port": 443,
+      "uuid": "729dd5f2-f5ff-4070-8c10-863eceded0b1",
+      "flow": "xtls-rprx-vision",
+      "encryption": "none",
+      "reality": {
+        "server_name": "gateway.icloud.com",
+        "public_key": "5B83otQ5ZQwtBFhR7xzsGJRXflkFKRJpQguYbE5JWGI",
+        "fingerprint": "chrome"
+      }
+    },
+    {
+      "type": "ws",
+      "tag": "Svaston_vpn_675dad__675dad23",
+      "server": "198.100.154.175",
+      "server_port": 2087,
+      "uuid": "97ea73b6-2043-4238-903c-a1e3d4a43c96",
+      "encryption": "none",
+      "path": "/download.php",
+      "headers": {
+        "Host": "amphetamine.adaspoloandco.com"
+      },
+      "tls": {
+        "server_name": "amphetamine.adaspoloandco.com",
+        "insecure": false
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Svaston_vpn_ec9ccc__ec9ccca5",
+      "server": "31.59.204.104",
+      "server_port": 443,
+      "uuid": "87fd990d-ca93-440a-bbd4-e8281c4a0910",
+      "flow": "xtls-rprx-vision",
+      "encryption": "none",
+      "reality": {
+        "server_name": "pl3.cloud-static.org",
+        "public_key": "cIgH-cz8JCjHnPQXA4qZNpYWwgYdVKCX3jDhuDbVK24",
+        "fingerprint": "firefox"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Svaston_vpn_14da0f__14da0f23",
+      "server": "31.59.204.227",
+      "server_port": 443,
+      "uuid": "87fd990d-ca93-440a-bbd4-e8281c4a0910",
+      "flow": "xtls-rprx-vision",
+      "encryption": "none",
+      "reality": {
+        "server_name": "pl3.cloud-static.org",
+        "public_key": "cIgH-cz8JCjHnPQXA4qZNpYWwgYdVKCX3jDhuDbVK24",
+        "fingerprint": "edge"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Svaston_vpn_ccdf32__ccdf3214",
+      "server": "31.59.205.36",
+      "server_port": 443,
+      "uuid": "87fd990d-ca93-440a-bbd4-e8281c4a0910",
+      "flow": "xtls-rprx-vision",
+      "encryption": "none",
+      "reality": {
+        "server_name": "pl3.cloud-static.org",
+        "public_key": "cIgH-cz8JCjHnPQXA4qZNpYWwgYdVKCX3jDhuDbVK24",
+        "fingerprint": "firefox"
+      }
+    },
+    {
+      "type": "grpc",
+      "tag": "Svaston_vpn_19370a__19370af8",
+      "server": "45.9.156.42",
+      "server_port": 443,
+      "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be",
+      "encryption": "none",
+      "service_name": "gw.v2.RelayService",
+      "reality": {
+        "server_name": "bg5.univesalsrv.com",
+        "public_key": "RDWvDEygSk1eyAQhIK95H9EteFbrS2d9JEjBrco54Bw",
+        "fingerprint": "chrome"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Svaston_vpn_9c5f40__9c5f409c",
+      "server": "89.125.13.202",
+      "server_port": 443,
+      "uuid": "87fd990d-ca93-440a-bbd4-e8281c4a0910",
+      "flow": "xtls-rprx-vision",
+      "encryption": "none",
+      "reality": {
+        "server_name": "d3-ee1.cloud-cdn.xyz",
+        "public_key": "g36Z7YIqJMJP-uv3DBr72X5jvfjyW1qIAxa8TkWmpmQ",
+        "fingerprint": "chrome"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Svaston_vpn_3dead6__3dead6a0",
+      "server": "91.107.165.46",
+      "server_port": 8080,
+      "uuid": "59ab9bbf-3f08-4992-bbf3-4faddceb8e49",
+      "encryption": "none",
+      "reality": {
+        "server_name": "www.actionvfx.com",
+        "public_key": "_OmNcv89o5SDt4H3ButRX9UynGIVwNZR250w4Zie-yk",
+        "fingerprint": "firefox"
+      }
+    },
+    {
+      "type": "ws",
+      "tag": "Svaston_vpn_d3905b__d3905b45",
+      "server": "165.215.250.14",
+      "server_port": 443,
+      "password": "humanity",
+      "path": "//assignment",
+      "headers": {
+        "Host": "www.calmlunch.com"
+      }
+    },
+    {
       "type": "trojan",
-      "tag": "Svaston_vpn_53ced0__53ced080",
-      "server": "34.220.15.24",
+      "tag": "Svaston_vpn_b8043d__b8043df1",
+      "server": "3.39.225.215",
       "server_port": 443,
       "password": "UX82473651"
     },
     {
       "type": "trojan",
-      "tag": "Svaston_vpn_184a46__184a46c6",
-      "server": "44.255.123.205",
+      "tag": "Svaston_vpn_1e2a3f__1e2a3fe3",
+      "server": "43.201.252.164",
       "server_port": 443,
       "password": "UX82473651"
+    },
+    {
+      "type": "trojan",
+      "tag": "Svaston_vpn_38caae__38caae64",
+      "server": "43.207.89.91",
+      "server_port": 443,
+      "password": "UX82473651"
+    },
+    {
+      "type": "trojan",
+      "tag": "Svaston_vpn_0a1f20__0a1f20c4",
+      "server": "evolving-platypus.rooster465.autos",
+      "server_port": 443,
+      "password": "UX82473651"
+    },
+    {
+      "type": "trojan",
+      "tag": "Svaston_vpn_d9c29d__d9c29d71",
+      "server": "obliging-louse.rooster465.autos",
+      "server_port": 443,
+      "password": "UX82473651"
+    },
+    {
+      "type": "vmess",
+      "tag": "Svaston_vpn_d68bd7__d68bd745",
+      "server": "185.177.229.129",
+      "server_port": 22324,
+      "uuid": "04621bae-ab36-11ec-b909-0242ac120002",
+      "alter_id": 0,
+      "cipher": "auto"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "Svaston_vpn_f80a47__f80a47dd",
+      "server": "de-tg.fastlanehosting.ru",
+      "server_port": 443,
+      "password": "",
+      "tls": {
+        "server_name": "de-tg.fastlanehosting.ru",
+        "insecure": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "Svaston_vpn_fb9d7e__fb9d7e47",
+      "server": "fre.guren1.me",
+      "server_port": 8443,
+      "password": "",
+      "tls": {
+        "server_name": "python.org",
+        "insecure": true
+      }
     },
     {
       "type": "direct",
