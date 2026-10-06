@@ -140,6 +140,40 @@ def main():
     assert not ok2 and any("singbox" in e for e in rep2["errors"]), "сломанный singbox не обнаружен"
     print("Негативный кейс (сломанный singbox) корректно заблокирован.")
 
+    print("\n=== 6) переименование (retitle + бренд) ===")
+    u1 = nodeparser.retitle("vless://uuid@h.com:443?security=tls#Old%20Name", "Svaston vpn")
+    assert u1.endswith("#Svaston%20vpn"), "vless: имя не заменено: %s" % u1
+    u2 = nodeparser.retitle("ss://YWVzOnBhc3NAaC5jb206ODM4OA==#Old", "Svaston vpn")
+    assert u2.endswith("#Svaston%20vpn"), "ss: имя не заменено: %s" % u2
+    vm = base64.b64encode(json.dumps({"add": "h.com", "port": "443", "id": "x", "ps": "Old"}).encode()).decode()
+    u3 = nodeparser.retitle("vmess://" + vm, "Svaston vpn")
+    d3 = json.loads(base64.b64decode(u3[len("vmess://"):]).decode())
+    assert d3["ps"] == "Svaston vpn", "vmess: ps не заменён: %s" % d3.get("ps")
+    files2, _ = aggregator.build(
+        [{"protocol": "vless", "host": "h.com", "port": 443, "name": "Old", "uuid": "u",
+          "raw": "vless://u@h.com:443?security=tls#Old"}], source="t")
+    comb = files2["out/sub/combined.txt"].strip()
+    assert "Svaston" in comb, "build: бренд не попал в combined: %s" % comb
+    print("retitle OK; combined:", comb[:70])
+
+    print("\n=== 7) liveness (офлайн: grace + resurrect) ===")
+    import liveness
+    n7 = [
+        {"protocol": "vless", "host": "alive.com", "port": 443, "name": "a", "uuid": "1", "raw": "vless://1@alive.com:443#a"},
+        {"protocol": "vless", "host": "dead.com", "port": 443, "name": "d", "uuid": "2", "raw": "vless://2@dead.com:443#d"},
+    ]
+    liveness.is_alive = lambda n, timeout=4: n["host"] != "dead.com"
+    f1, dead1, _ = liveness.filter_nodes(n7, {})
+    assert len(f1) == 2, "один сбой не должен исключать ноду: %d" % len(f1)
+    k_dead = repr(nodeparser.node_key(n7[1]))
+    assert dead1.get(k_dead) == 1, "счётчик провалов не создан: %r" % dead1
+    f2, dead2, st2 = liveness.filter_nodes(n7, {"dead": dead1})
+    assert len(f2) == 1 and st2["dropped"] == 1, "после 2 провалов нода не исключена: %d" % len(f2)
+    liveness.is_alive = lambda n, timeout=4: True
+    f3, _, _ = liveness.filter_nodes(n7, {"dead": dead2})
+    assert len(f3) == 2 and any(x["host"] == "dead.com" for x in f3), "ожившая нода не вернулась"
+    print("liveness grace/resurrect OK; dead2=%r" % dead2)
+
     print("\n=== SELFTEST PASSED ===")
     print("Результат записан в %s" % outdir)
     return 0

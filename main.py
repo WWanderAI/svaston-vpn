@@ -84,6 +84,7 @@ def main():
     master = []
     stop_id = 0   # не читать глубже этого msg id (уже обработано)
     oldest_id = 0
+    prev_scan = {}
     if args.push:
         import github_push
         gp = github_push.make_pusher()
@@ -97,7 +98,9 @@ def main():
         existing_meta = gp.read_file("out/meta.json")
         if existing_meta:
             try:
-                stop_id = json.loads(existing_meta).get("scan", {}).get("oldest_id", 0) or 0
+                m = json.loads(existing_meta)
+                stop_id = m.get("scan", {}).get("oldest_id", 0) or 0
+                prev_scan = m.get("scan", {}) or {}
             except Exception:
                 stop_id = 0
 
@@ -133,7 +136,20 @@ def main():
         return 2
     merged = good
 
-    files, meta = aggregator.build(merged, source=source, warnings=warnings, oldest_id=oldest_id)
+    # Liveness (выборочно): отсечь «мёртвые» ноды, чтобы они не попадали в подписку
+    import liveness
+    merged, dead_map, live_stats = liveness.filter_nodes(merged, prev_scan)
+    if live_stats.get("dropped"):
+        warnings.append("liveness: исключено мёртвых нод: %d" % live_stats["dropped"])
+    print("Liveness: проверено=%d, живых=%d, исключено=%d (в треке мёртвых=%d)"
+          % (live_stats["checked"], live_stats["alive"], live_stats["dropped"], live_stats["dead_tracked"]))
+    if not merged:
+        print("❌ После проверки живости годных нод не осталось — пуш отменён (остаётся последняя рабочая версия).")
+        return 2
+
+    files, meta = aggregator.build(merged, source=source, warnings=warnings, oldest_id=oldest_id,
+                                   scan_extra={"dead": dead_map})
+    meta["liveness"] = live_stats
 
     # Автопроверка (2/2): финальная структурная проверка готовых артефактов.
     ok, report = validate.validate_outputs(files, meta)

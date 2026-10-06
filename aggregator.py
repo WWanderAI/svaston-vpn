@@ -12,6 +12,7 @@ import base64
 import datetime
 import hashlib
 import json
+import os
 import re
 from collections import Counter
 
@@ -19,6 +20,14 @@ import nodeparser
 
 MARKER = "out/sub/b64.txt"
 _SUPPORTED_SINGBOX = {"ss", "trojan", "vless", "vmess", "hysteria2", "tuic", "wireguard"}
+
+# Переименование: под каким именем узлы выходят в подписку/конфиги.
+# {brand} — бренд; {id} — короткий стабильный номер; {proto} — протокол; {country} — страна.
+# По умолчанию 'Svaston vpn #а1b2c3' (бренд + уникальный номер, иначе сотни
+# серверов с одинаковым именем в клиенте неразличимы). Чистое 'Svaston vpn' —
+# задай NODE_NAME_TEMPLATE='{brand}'.
+BRAND = os.environ.get("NODE_BRAND", "Svaston vpn")
+NAME_TEMPLATE = os.environ.get("NODE_NAME_TEMPLATE", "{brand} #{id}")
 
 
 def _hash8(n):
@@ -31,12 +40,27 @@ def safe_name(n):
     return "%s__%s" % (base, _hash8(n))
 
 
-def build(nodes, source="", warnings=None, oldest_id=0):
+def brand_name(n):
+    return NAME_TEMPLATE.format(brand=BRAND, id=_hash8(n)[:6],
+                                proto=n.get("protocol") or "?", country=n.get("country") or "")
+
+
+def _retitle_node(n):
+    nn = dict(n)
+    nm = brand_name(n)
+    nn["name"] = nm
+    nn["raw"] = nodeparser.retitle(n.get("raw", ""), nm)
+    return nn
+
+
+def build(nodes, source="", warnings=None, oldest_id=0, scan_extra=None):
     warnings = list(warnings or [])
     nodes = sorted(
         nodes,
         key=lambda n: (n.get("protocol", ""), str(n.get("host", "")), str(n.get("port", "")), n.get("name", "")),
     )
+    # переименовываем все узлы под бренд (в raw-URI + в полях) до генерации артефактов
+    nodes = [_retitle_node(n) for n in nodes]
     files = {}
 
     files["out/nodes.json"] = json.dumps(nodes, ensure_ascii=False, indent=2)
@@ -64,7 +88,7 @@ def build(nodes, source="", warnings=None, oldest_id=0):
         "source": source,
         "total": len(nodes),
         "protocols": dict(Counter(n.get("protocol", "?") for n in nodes)),
-        "scan": {"oldest_id": oldest_id},
+        "scan": {"oldest_id": oldest_id, **(scan_extra or {})},
         "warnings": warnings,
     }
     files["out/meta.json"] = json.dumps(meta, ensure_ascii=False, indent=2)

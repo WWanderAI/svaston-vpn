@@ -332,6 +332,28 @@ def parse_text(text):
     return [parse_uri(u) for u in extract_uris(text)]
 
 
+def retitle(uri, name):
+    """Меняет имя узла в raw-URI: фрагмент '#…' для большинства схем и поле
+    'ps' (в b64-JSON) для vmess. Если имя негде поменять — возвращает как есть."""
+    if not uri or name is None:
+        return uri
+    name = str(name)
+    if uri.lower().startswith("vmess://"):
+        body = uri[len("vmess://"):].strip()
+        raw = _b64decode(body)
+        if not raw:
+            return uri
+        try:
+            d = json.loads(raw.decode("utf-8", "replace"))
+        except Exception:
+            return uri
+        d["ps"] = name
+        return "vmess://" + base64.b64encode(json.dumps(d).encode()).decode()
+    enc = up.quote(name, safe="")
+    head = uri.rsplit("#", 1)[0] if "#" in uri else uri
+    return head + "#" + enc
+
+
 def node_key(n):
     p = n.get("protocol")
     if p == "ss":
