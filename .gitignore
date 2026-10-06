@@ -1,0 +1,15 @@
+# секреты и сессии — никогда не коммитить
+session.session
+*.session
+.env
+*.env
+
+# локальные артефакты (в репо данные уходят через GitHub API, не через git)
+out/
+tests/out/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
