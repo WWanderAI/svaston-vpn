@@ -45,6 +45,22 @@ jobs:
           chmod +x "$RUNNER_TEMP/hysteria"
           echo "HYSTERIA_BIN=$RUNNER_TEMP/hysteria" >> "$GITHUB_ENV"
 
+      - name: Install Xray protocol liveness client
+        env:
+          XRAY_RELEASE: "v26.3.27"
+          XRAY_SHA256: "23cd9af937744d97776ee35ecad4972cf4b2109d1e0fe6be9930467608f7c8ae"
+        run: |
+          curl --retry 3 -fsSL "https://github.com/XTLS/Xray-core/releases/download/${XRAY_RELEASE}/Xray-linux-64.zip" -o "$RUNNER_TEMP/xray.zip"
+          echo "$XRAY_SHA256  $RUNNER_TEMP/xray.zip" | sha256sum -c -
+          python3 - <<'PY'
+          import os, zipfile
+          z = zipfile.ZipFile(os.path.join(os.environ["RUNNER_TEMP"], "xray.zip"))
+          with z.open("xray") as source, open(os.path.join(os.environ["RUNNER_TEMP"], "xray"), "wb") as target:
+              target.write(source.read())
+          PY
+          chmod +x "$RUNNER_TEMP/xray"
+          echo "XRAY_BIN=$RUNNER_TEMP/xray" >> "$GITHUB_ENV"
+
       - name: Resolve channel
         env:
           CHANNEL: ${{ secrets.TG_CHANNEL || 'halyava_vpnz' }}
@@ -56,6 +72,10 @@ jobs:
         env:
           TG_CHANNEL: ${{ secrets.TG_CHANNEL || 'halyava_vpnz' }}
           SUB_FETCH_MAX: "20"
+          LIVENESS_MAX: "60"
+          LIVENESS_TIMEOUT: "8"
+          HY2_CHECK_TIMEOUT: "10"
+          LIVENESS_WORKERS: "20"
           GH_REPO: ${{ secrets.GH_REPO || github.repository }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}

@@ -124,6 +124,8 @@ def parse_vless(uri):
         path=params.get("path", ""), service_name=params.get("serviceName", ""),
         fingerprint=params.get("fp", ""), pbk=params.get("pbk", ""),
         sid=params.get("sid", ""), spx=params.get("spx", ""),
+        mode=params.get("mode", ""), alpn=params.get("alpn", ""),
+        xhttp_extra=params.get("extra", ""),
         allow_insecure=params.get("allowInsecure", "0") == "1",
         flow=params.get("flow", ""), encryption=params.get("encryption", "none"),
     )

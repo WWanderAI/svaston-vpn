@@ -131,20 +131,27 @@ def main():
         return 2
     merged = good
 
-    # Liveness (выборочно): отсечь «мёртвые» ноды, чтобы они не попадали в подписку
+    # Протокольная проверка выборки: публикуем только ноды, прошедшие HTTPS-запрос
+    # через реальный клиент. Открытый TCP-порт сам по себе не означает рабочий VPN.
     import liveness
-    merged, dead_map, live_stats = liveness.filter_nodes(merged, prev_scan)
+    candidate_total = len(merged)
+    _not_dead, dead_map, live_stats, confirmed = liveness.filter_nodes(merged, prev_scan)
+    live_stats["candidates"] = candidate_total
     if live_stats.get("dropped"):
-        warnings.append("liveness: исключено мёртвых нод: %d" % live_stats["dropped"])
-    print("Liveness: проверено=%d, живых=%d, не проверено=%d, исключено=%d (в треке мёртвых=%d)"
-          % (live_stats["checked"], live_stats["alive"], live_stats.get("unknown", 0),
-             live_stats["dropped"], live_stats["dead_tracked"]))
-    if not merged:
-        print("❌ После проверки живости годных нод не осталось — пуш отменён (остаётся последняя рабочая версия).")
+        warnings.append("liveness: подтверждённо мёртвых исключено: %d" % live_stats["dropped"])
+    print("Liveness: кандидатов=%d, проверено=%d, туннель OK=%d, unknown=%d, dead исключено=%d"
+          % (candidate_total, live_stats["checked"], live_stats["verified"],
+             live_stats.get("unknown", 0), live_stats["dropped"]))
+    if not confirmed:
+        print("❌ Ни одна нода не прошла настоящий тест через туннель — пуш отменён; прежняя подписка сохранена.")
         return 2
+    if len(confirmed) < candidate_total:
+        warnings.append("liveness: в подписку включены только реально проверенные узлы: %d из %d"
+                        % (len(confirmed), candidate_total))
 
-    files, meta = aggregator.build(merged, source=source, warnings=warnings, oldest_id=oldest_id,
+    files, meta = aggregator.build(confirmed, source=source, warnings=warnings, oldest_id=oldest_id,
                                    scan_extra={"dead": dead_map})
+    meta["candidate_total"] = candidate_total
     meta["liveness"] = live_stats
 
     # Автопроверка (2/2): финальная структурная проверка готовых артефактов.

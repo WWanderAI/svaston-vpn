@@ -172,23 +172,24 @@ def main():
            "name": "h", "raw": "hysteria2://pass@hy2.example:443?sni=hy2.example#h"}
     k_hy2 = repr(nodeparser.node_key(hy2))
     assert liveness.is_alive(hy2) is None, "без native-клиента Hy2 должен быть unknown"
-    fu, du, su = liveness.filter_nodes([hy2], {"dead": {k_hy2: 2}})
-    assert len(fu) == 1 and k_hy2 not in du and su["unknown"] == 1, "unknown Hy2 не должен блокироваться"
+    fu, du, su, vu = liveness.filter_nodes([hy2], {"dead": {k_hy2: 2}})
+    assert len(fu) == 1 and k_hy2 not in du and su["unknown"] == 1 and not vu, "unknown Hy2 не должен публиковаться"
     liveness.HYSTERIA_BIN = old_hy2_bin
     n7 = [
         {"protocol": "vless", "host": "alive.com", "port": 443, "name": "a", "uuid": "1", "raw": "vless://1@alive.com:443#a"},
         {"protocol": "vless", "host": "dead.com", "port": 443, "name": "d", "uuid": "2", "raw": "vless://2@dead.com:443#d"},
     ]
     liveness.is_alive = lambda n, timeout=4: n["host"] != "dead.com"
-    f1, dead1, _ = liveness.filter_nodes(n7, {})
-    assert len(f1) == 2, "один сбой не должен исключать ноду: %d" % len(f1)
+    f1, dead1, _, confirmed1 = liveness.filter_nodes(n7, {})
+    assert len(f1) == 2 and len(confirmed1) == 1, "один сбой не должен исключать, а confirmed содержит только OK"
     k_dead = repr(nodeparser.node_key(n7[1]))
     assert dead1.get(k_dead) == 1, "счётчик провалов не создан: %r" % dead1
-    f2, dead2, st2 = liveness.filter_nodes(n7, {"dead": dead1})
-    assert len(f2) == 1 and st2["dropped"] == 1, "после 2 провалов нода не исключена: %d" % len(f2)
+    f2, dead2, st2, confirmed2 = liveness.filter_nodes(n7, {"dead": dead1})
+    assert len(f2) == 1 and st2["dropped"] == 1 and len(confirmed2) == 1, "после 2 провалов нода не исключена"
     liveness.is_alive = lambda n, timeout=4: True
-    f3, _, _ = liveness.filter_nodes(n7, {"dead": dead2})
+    f3, _, _, confirmed3 = liveness.filter_nodes(n7, {"dead": dead2})
     assert len(f3) == 2 and any(x["host"] == "dead.com" for x in f3), "ожившая нода не вернулась"
+    assert len(confirmed3) == 2, "ожившие ноды должны пройти в verified feed"
     print("liveness grace/resurrect OK; dead2=%r" % dead2)
 
     print("\n=== SELFTEST PASSED ===")
