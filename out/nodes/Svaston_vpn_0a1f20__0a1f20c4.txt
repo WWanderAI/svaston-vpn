@@ -1,1 +1,0 @@
-trojan://UX82473651@evolving-platypus.rooster465.autos:443?security=tls&sni=evolving-platypus.rooster465.autos&type=tcp&path=%2F#Svaston%20vpn%20%230a1f20

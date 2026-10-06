@@ -1,0 +1,1 @@
+vless://e75ad2eb-6c1f-45ce-8023-f5f10875df66@8gm8kr.palka-cdn.win:443?flow=xtls-rprx-vision&type=tcp&security=reality&fp=firefox&sni=zses.eu-cdn294.com&pbk=ajzyADs9mOY6I3v7OWym5KgYh0afKmlCFaNw1pdQsWA&sid=6b4cf686eebb37b9#Svaston%20vpn%20%23efd707

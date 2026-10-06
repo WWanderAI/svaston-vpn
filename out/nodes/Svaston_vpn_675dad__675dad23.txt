@@ -1,1 +1,0 @@
-vless://97ea73b6-2043-4238-903c-a1e3d4a43c96@198.100.154.175:2087?security=tls&sni=amphetamine.adaspoloandco.com&fp=firefox&type=ws&path=%2Fdownload.php&encryption=none#Svaston%20vpn%20%23675dad
