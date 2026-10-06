@@ -81,6 +81,25 @@ def main():
     print("URI из подписки:", sub_uris)
     assert len(sub_uris) == 3, "ожидалось 3 URI из подписки, получено %d" % len(sub_uris)
 
+    print("\n=== 3a) публичные фиды: allowlist, лимит и параллельная загрузка ===")
+    from main import public_feed_urls, _spread_limit, gather_new
+    feed_url = "https://raw.githubusercontent.com/example/repo/main/feed.txt"
+    parsed_feeds, feed_warnings = public_feed_urls(feed_url + ", https://example.org/private.txt")
+    assert parsed_feeds == [feed_url] and len(feed_warnings) == 1, "разрешён только HTTPS raw.githubusercontent.com"
+    assert _spread_limit(list(range(10)), 3) == [0, 4, 9], "лимит должен выбирать элементы по всему фиду"
+    old_fetch_many = subfetch.fetch_many
+    fetched_urls = []
+    def fake_fetch_many(urls, timeout=8, max_workers=16):
+        fetched_urls.extend(urls)
+        return [(u, sub_b64_bytes) for u in urls]
+    subfetch.fetch_many = fake_fetch_many
+    try:
+        gathered_nodes, gather_warnings = gather_new([SAMPLE], 1, [feed_url], public_feed_limit=2)
+    finally:
+        subfetch.fetch_many = old_fetch_many
+    assert len(fetched_urls) == 2 and feed_url in fetched_urls, "GitHub-фид должен добавляться отдельно от лимита Telegram-подписок"
+    assert not gather_warnings and any(n.get("host") == "sub-vless.com" for n in gathered_nodes), "URI публичного фида не разобраны"
+
     print("\n=== 4) дедупликация (master из репо + свежий скан) ===")
     sub_nodes = [nodeparser.parse_uri(u) for u in sub_uris]
     from main import merge

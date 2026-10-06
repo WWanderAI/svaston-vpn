@@ -5,7 +5,7 @@ subfetch.py — скачивает URL-подписки и распаковыв�
 Такой линк отдаёт либо plain-text список URI, либо base64-блок. Мы пробуем
 несколько User-Agent (некоторые серверы требуют "subscription-useragent"),
 распаковываем gzip, проверяем на base64 и возвращаем только те результаты,
-которые реально содержат node-URI.
+которые реально содержат node-URI. HTTPS-сертификаты проверяются стандартно.
 """
 import base64
 import gzip
@@ -37,10 +37,9 @@ def fetch_url(url, timeout=8):
     Повтор с другим UA только при 401/403 (сервер, возможно, требует спец. UA) и при ошибке сети.
     """
     import requests  # lazy: чтобы selftest работал без установленного requests
-    requests.packages.urllib3.disable_warnings()
     for h in _HEADS:
         try:
-            r = requests.get(url, headers=h, timeout=timeout, verify=False, allow_redirects=True)
+            r = requests.get(url, headers=h, timeout=timeout, allow_redirects=True)
             if 200 <= r.status_code < 300:
                 data = r.content[:_MAX_BYTES]
                 if data[:2] == b"\x1f\x8b":

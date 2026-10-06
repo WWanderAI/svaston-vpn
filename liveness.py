@@ -417,6 +417,9 @@ def filter_nodes(nodes, prev_scan):
     confirmed = [n for n in to_check
                  if _under_ping_limit(results.get(_key(n)), effective_limit)
                  and _proto(n) not in suspect and _key(n) not in hard]
+    # Put the fastest actually probed servers first so a client can use the
+    # strongest subset when a feed is intentionally capped (for example, 20).
+    confirmed.sort(key=lambda n: (_latency_ms(results.get(_key(n))) or 10**9, _key(n)))
 
     high_latency = sum(1 for r in ok_results
                        if (_latency_ms(r) is not None and _latency_ms(r) > effective_limit))

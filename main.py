@@ -12,6 +12,7 @@ import argparse
 import json
 import os
 import sys
+from urllib.parse import urlsplit
 
 import aggregator
 import nodeparser
@@ -26,16 +27,55 @@ def load_env():
         pass
 
 
-def gather_new(texts, max_subs):
-    """Из списка сообщений извлекает ноды + распаковывает URL-подписки (параллельно)."""
+def public_feed_urls(value=None):
+    """Читает только публичные HTTPS raw-фиды GitHub из FREE_FEEDS."""
+    if value is None:
+        value = os.environ.get("FREE_FEEDS", "")
+    urls, warnings = [], []
+    for url in (value or "").replace(",", " ").replace(";", " ").split():
+        url = url.strip()
+        if not url:
+            continue
+        parsed = urlsplit(url)
+        if parsed.scheme != "https" or parsed.hostname != "raw.githubusercontent.com" or not parsed.path.startswith("/"):
+            warnings.append("FREE_FEEDS: пропущен небезопасный/неподдерживаемый URL: %s" % url[:120])
+            continue
+        if url not in urls:
+            urls.append(url)
+    return urls, warnings
+
+
+def _spread_limit(items, limit):
+    """Ограничивает большой фид равномерной выборкой по всему списку."""
+    limit = max(0, int(limit))
+    if limit == 0:
+        return []
+    if len(items) <= limit:
+        return items
+    if limit == 1:
+        return [items[len(items) // 2]]
+    last = len(items) - 1
+    indices = [(i * last) // (limit - 1) for i in range(limit)]
+    return [items[i] for i in indices]
+
+
+def gather_new(texts, max_subs, public_feeds=None, public_feed_limit=250):
+    """Собирает прямые ноды и распаковывает подписки/публичные GitHub-фиды."""
     warnings = []
-    urls, seen = [], set()
+    tg_urls, seen = [], set()
     for t in texts:
         for u in nodeparser.extract_urls(t):
             if u not in seen:
                 seen.add(u)
-                urls.append(u)
-    urls = urls[:max_subs]
+                tg_urls.append(u)
+    tg_urls = tg_urls[:max(0, int(max_subs))]
+
+    feeds = []
+    for u in public_feeds or []:
+        if u not in seen and u not in feeds:
+            feeds.append(u)
+    feed_set = set(feeds)
+    urls = tg_urls + feeds
 
     all_uris = []
     for t in texts:
@@ -44,10 +84,18 @@ def gather_new(texts, max_subs):
     if urls:
         for u, data in subfetch.fetch_many(urls, timeout=10, max_workers=16):
             uris = subfetch.parse_subscription(data)
+            if u in feed_set:
+                if uris:
+                    before = len(uris)
+                    uris = _spread_limit(uris, public_feed_limit)
+                    label = urlsplit(u).path.rsplit("/", 1)[-1] or "GitHub"
+                    print("Public feed %s: URI=%d, sample=%d" % (label, before, len(uris)))
+                else:
+                    warnings.append("public feed: no nodes at %s" % u)
+            elif not uris:
+                warnings.append("sub: no nodes at %s" % u)
             if uris:
                 all_uris.extend(uris)
-            else:
-                warnings.append("sub: no nodes at %s" % u)
 
     nodes = [nodeparser.parse_uri(u) for u in all_uris]
     return nodes, warnings
@@ -101,6 +149,7 @@ def main():
     source = ""
     fresh = []
     warnings = []
+    public_feeds = []
     if args.nodes_file:
         with open(args.nodes_file, encoding="utf-8") as f:
             master = json.load(f)
@@ -112,9 +161,19 @@ def main():
             raise SystemExit("Укажи канал: --channel @username или TG_CHANNEL в .env")
         msgs, oldest_id = tmscraper.collect(channel, lookback=args.lookback, max_age_hours=args.max_age)
         texts = [t for t, _ in msgs]
+        public_feeds, feed_warnings = public_feed_urls()
         source = "tg/s/%s (последние %g ч)" % (tmscraper._normalize(channel), args.max_age)
-        fresh, warnings = gather_new(texts, args.max_subs)
-        print("Сообщений в окне: %d, новых нод: %d" % (len(texts), len(fresh)))
+        if public_feeds:
+            source += " + %d публичных GitHub-фида" % len(public_feeds)
+        try:
+            public_feed_limit = max(0, int(os.environ.get("FREE_FEED_NODE_CAP", "250")))
+        except ValueError:
+            public_feed_limit = 250
+            feed_warnings.append("FREE_FEED_NODE_CAP задан неверно; использовано значение 250")
+        fresh, scrape_warnings = gather_new(texts, args.max_subs, public_feeds, public_feed_limit)
+        warnings = feed_warnings + scrape_warnings
+        print("Сообщений в окне: %d, новых нод: %d, публичных GitHub-фидов: %d"
+              % (len(texts), len(fresh), len(public_feeds)))
 
     merged = merge(master, fresh)
 
@@ -137,7 +196,17 @@ def main():
     candidate_total = len(merged)
     _not_dead, dead_map, live_stats, confirmed = liveness.filter_nodes(merged, prev_scan)
     live_stats["candidates"] = candidate_total
-    if live_stats.get("dropped"):
+    try:
+        publish_max = max(0, int(os.environ.get("PUBLISH_MAX", "0")))
+    except ValueError:
+        publish_max = 0
+        warnings.append("PUBLISH_MAX задан неверно; лимит публикации отключён")
+    if publish_max and len(confirmed) > publish_max:
+        live_stats["verified_before_cap"] = len(confirmed)
+        confirmed = confirmed[:publish_max]  # liveness sorts by measured RTT
+        live_stats["verified"] = len(confirmed)
+        live_stats["publish_cap"] = publish_max
+    if live_stats.get("dropped"): 
         warnings.append("liveness: подтверждённо мёртвых исключено: %d" % live_stats["dropped"])
     if live_stats.get("high_latency"):
         warnings.append("liveness: исключено по задержке выше эффективного лимита %d мс: %d"
@@ -155,6 +224,7 @@ def main():
 
     files, meta = aggregator.build(confirmed, source=source, warnings=warnings, oldest_id=oldest_id,
                                    scan_extra={"dead": dead_map})
+    meta["public_feeds"] = public_feeds
     meta["candidate_total"] = candidate_total
     meta["liveness"] = live_stats
 
