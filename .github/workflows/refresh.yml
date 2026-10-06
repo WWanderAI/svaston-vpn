@@ -1,0 +1,50 @@
+name: refresh-sub
+
+# Обновляем набор нод по расписанию + вручную.
+# Читает ПУБЛИЧНЫЙ канал через t.me/s/<имя> — не нужны api_id/api_hash/вход.
+# ВАЖНО: оставь только schedule + workflow_dispatch. НЕ добавляй `on: push`
+# (иначе пуш в тот же репо перезапустит сам себя).
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+    inputs:
+      lookback:
+        description: "Сколько последних сообщений сканировать"
+        required: false
+        default: "300"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Check channel secret
+        env:
+          HAS_CHANNEL: ${{ secrets.TG_CHANNEL != '' }}
+        run: |
+          [ "$HAS_CHANNEL" = "true" ] || { echo "Нет секрета TG_CHANNEL (укажи @username публичного канала)"; exit 1; }
+          echo "TG_CHANNEL на месте."
+
+      - name: Scrape channel + build + push to repo
+        env:
+          TG_CHANNEL: ${{ secrets.TG_CHANNEL }}
+          SUB_FETCH_MAX: "20"
+          GH_REPO: ${{ secrets.GH_REPO || github.repository }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          LOOKBACK="${{ github.event.inputs.lookback || '300' }}"
+          python main.py --push --lookback "$LOOKBACK"

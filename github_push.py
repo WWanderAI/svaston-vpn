@@ -90,15 +90,14 @@ class GitHubPusher:
         new_root, replaced = [], False
         for e in root:
             if e["path"] == "out":
-                new_root.append({"path": "out", "type": "tree", "sha": out_tree})
+                new_root.append({"path": "out", "type": "tree", "mode": "040000", "sha": out_tree})
                 replaced = True
             else:
                 item = {"path": e["path"], "type": e["type"], "sha": e["sha"]}
-                if e.get("type") == "blob" and e.get("mode"):
-                    item["mode"] = e["mode"]
+                item["mode"] = e.get("mode") or ("040000" if e.get("type") == "tree" else "100644")
                 new_root.append(item)
         if not replaced:
-            new_root.append({"path": "out", "type": "tree", "sha": out_tree})
+            new_root.append({"path": "out", "type": "tree", "mode": "040000", "sha": out_tree})
 
         new_tree = self._api("POST", self._r("/git/trees"), json={"tree": new_root})["sha"]
         parents = [commit["parents"][0]["sha"]] if commit.get("parents") else []
