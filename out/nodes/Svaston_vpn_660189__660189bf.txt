@@ -1,1 +1,0 @@
-trojan://UX82473651@54.180.236.195:443?security=tls&sni=evolving-ewe.rooster465.autos&fp=chrome&type=tcp#Svaston%20vpn%20%23660189

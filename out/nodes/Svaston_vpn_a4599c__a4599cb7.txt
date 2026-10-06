@@ -1,1 +1,0 @@
-trojan://UX82473651@concrete-aardvark.rooster465.autos:443?security=tls&sni=concrete-aardvark.rooster465.autos&type=tcp#Svaston%20vpn%20%23a4599c

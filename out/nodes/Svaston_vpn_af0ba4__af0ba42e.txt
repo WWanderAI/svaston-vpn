@@ -1,1 +1,0 @@
-hysteria2://eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ@nas.aizhzo.com:5010?security=tls&sni=127.0.0.1&alpn=h3&insecure=1&obfs=salamander&obfs-password=7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9#Svaston%20vpn%20%23af0ba4

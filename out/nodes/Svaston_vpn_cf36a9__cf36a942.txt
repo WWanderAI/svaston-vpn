@@ -1,1 +1,0 @@
-vless://f04cc810-aaf2-4a7b-8cad-356cdd30d394@tg1.cdnphotos.org:443?security=tls&sni=tg1.cdnphotos.org&alpn=h2&fp=firefox&type=xhttp&path=%2Fapi%2Fv1%2F&mode=auto&extra=%7B%22xmux%22%3A%20%7B%22maxConcurrency%22%3A%20%2216-32%22%7D%7D&encryption=none#Svaston%20vpn%20%23cf36a9

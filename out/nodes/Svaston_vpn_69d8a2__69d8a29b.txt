@@ -1,1 +1,0 @@
-hysteria2://d402d4c0b8354a90b70bb2566dce9a08@i.wareznet.ru:8443?security=tls&sni=i.wareznet.ru&alpn=h3&insecure=0#Svaston%20vpn%20%2369d8a2

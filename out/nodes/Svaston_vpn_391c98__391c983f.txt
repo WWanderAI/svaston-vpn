@@ -1,1 +1,0 @@
-hysteria2://4ffc5c57-3242-4422-88de-25fb0f7e97bc@mix.pantera-radio.ru:443?security=tls&sni=mix.pantera-radio.ru&alpn=h3&insecure=0#Svaston%20vpn%20%23391c98

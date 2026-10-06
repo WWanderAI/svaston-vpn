@@ -1,1 +1,0 @@
-vless://f4d71fd6-1c25-4748-836b-1dbda9268039@2.26.104.40:443?security=reality&sni=s5.mangateka.top&fp=firefox&pbk=GLb7RkOVWgSiZ7oZ6MfeByW284NpBy2FrOtgEPXbuic&sid=d343252c9207a130&flow=xtls-rprx-vision&type=tcp&encryption=none#Svaston%20vpn%20%23846b1b

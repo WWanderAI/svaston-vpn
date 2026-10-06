@@ -1,1 +1,0 @@
-vless://c5f4764c-e5ea-46f1-9ad0-74c6e309feb1@104.21.75.227:443?security=tls&sni=us.zenvia.ir&fp=chrome&type=xhttp&host=us.zenvia.ir&path=%2Fwss%3Fed%23Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET&mode=auto&extra=%7B%22mode%22%3A%22auto%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D&encryption=none#Svaston%20vpn%20%23bb85a3

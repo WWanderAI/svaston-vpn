@@ -1,1 +1,0 @@
-trojan://UX82473651@inviting-ferret.rooster465.autos:443?security=tls&sni=inviting-ferret.rooster465.autos&fp=chrome&type=tcp#Svaston%20vpn%20%23c3c8e8

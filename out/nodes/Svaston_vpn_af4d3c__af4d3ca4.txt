@@ -1,1 +1,0 @@
-vless://7610be85-9855-4010-8929-ce16d4993969@188.225.24.201:443?security=reality&sni=app11.betust.net&fp=chrome&pbk=XhzNlmMTdYr2pYTqiNNP6qWe7BkAgVHU-kZWXc9u9hY&sid=91c2269c&flow=xtls-rprx-vision&type=tcp&headerType=none&host=%2F%3FTelegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET&encryption=none#Svaston%20vpn%20%23af4d3c

@@ -1,1 +1,0 @@
-trojan://UX82473651@intense-sole.rooster465.autos:443?security=tls&sni=intense-sole.rooster465.autos&fp=chrome&type=tcp&path=%2F#Svaston%20vpn%20%23d92c93

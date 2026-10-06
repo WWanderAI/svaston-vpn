@@ -1,1 +1,0 @@
-vless://7610be85-9855-4010-8929-ce16d4993969@match.betust.net:443?security=reality&sni=apiv12nd.goonars.com&fp=firefox&pbk=OINuDFEDTdmtFR8QRxAZfQIMPA-wJxfGN1LjB3TFUHo&sid=535a3304&flow=xtls-rprx-vision&type=tcp&encryption=none#Svaston%20vpn%20%2320ed14

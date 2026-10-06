@@ -1,60 +1,86 @@
 {
-  "generated_at": "2026-10-06T14:24:59.342659+00:00",
+  "generated_at": "2026-10-06T14:44:03.366107+00:00",
   "source": "tg/s/halyava_vpnz (последние 24 ч)",
-  "total": 213,
+  "total": 24,
   "protocols": {
-    "vless": 127,
-    "trojan": 51,
-    "ss": 9,
-    "vmess": 5,
-    "hysteria2": 21
+    "vless": 11,
+    "trojan": 8,
+    "vmess": 2,
+    "hysteria2": 3
   },
   "scan": {
     "oldest_id": 1317,
     "dead": {
-      "('vless', 'example.invalid', '443', '00000000-0000-0000-0000-000000000000', 'tcp')": 2,
-      "('vless', 'xnodtwx.artemida.live', '443', '4c346148-ece9-487a-bffb-ba5a399b2d71', 'grpc')": 2,
-      "('vless', '127.0.0.1', '1', '00000000-0000-0000-0000-000000000000', 'tcp')": 2,
-      "('vless', '77.221.136.120', '443', 'a47f8110-de83-4c37-b6a7-16010535aef4', 'tcp')": 2,
-      "('vless', '185.229.9.174', '443', 'a5893c8b-28a2-4947-9a1c-708db25506c3', 'tcp')": 2,
-      "('hysteria2', 'trunk-nl.cvedcdigital.vip', '4443', '', 'trunk-nl.cvedcdigital.vip')": 1,
-      "('hysteria2', 'post-api-udp-uplink.cvedcdigital.vip', '9443', '', 'post-api-udp-uplink.cvedcdigital.vip')": 1,
-      "('vless', '150.241.64.105', '443', '9a1b2785-6baf-455c-9f75-80157ee7f7c5', 'tcp')": 1,
-      "('vless', '45.66.162.19', '443', 'a47f8110-de83-4c37-b6a7-16010535aef4', 'tcp')": 1,
-      "('hysteria2', 'media.pantera-radio.ru', '443', '', 'media.pantera-radio.ru')": 1,
-      "('vless', '188.225.35.40', '8081', 'fd260c22-c5a9-47fc-bb68-5b3e890ee7c4', 'tcp')": 1,
-      "('hysteria2', 'mix.pantera-radio.ru', '443', '', 'mix.pantera-radio.ru')": 1
+      "('vless', 'example.invalid', '443', '00000000-0000-0000-0000-000000000000', 'tcp')": 3,
+      "('vless', 'xnodtwx.artemida.live', '443', '4c346148-ece9-487a-bffb-ba5a399b2d71', 'grpc')": 3,
+      "('vless', '127.0.0.1', '1', '00000000-0000-0000-0000-000000000000', 'tcp')": 3,
+      "('vless', '77.221.136.120', '443', 'a47f8110-de83-4c37-b6a7-16010535aef4', 'tcp')": 3,
+      "('vless', '185.229.9.174', '443', 'a5893c8b-28a2-4947-9a1c-708db25506c3', 'tcp')": 3,
+      "('hysteria2', 'trunk-nl.cvedcdigital.vip', '4443', '', 'trunk-nl.cvedcdigital.vip')": 2,
+      "('hysteria2', 'post-api-udp-uplink.cvedcdigital.vip', '9443', '', 'post-api-udp-uplink.cvedcdigital.vip')": 2,
+      "('vless', '150.241.64.105', '443', '9a1b2785-6baf-455c-9f75-80157ee7f7c5', 'tcp')": 2,
+      "('vless', '45.66.162.19', '443', 'a47f8110-de83-4c37-b6a7-16010535aef4', 'tcp')": 2,
+      "('hysteria2', 'media.pantera-radio.ru', '443', '', 'media.pantera-radio.ru')": 2,
+      "('vless', '188.225.35.40', '8081', 'fd260c22-c5a9-47fc-bb68-5b3e890ee7c4', 'tcp')": 2,
+      "('hysteria2', 'mix.pantera-radio.ru', '443', '', 'mix.pantera-radio.ru')": 2,
+      "('vless', '153.80.241.133', '443', '635ac0f9-5e30-4f1d-a74b-604cbbfcf05c', 'tcp')": 1,
+      "('vless', '195.189.98.123', '443', '7610be85-9855-4010-8929-ce16d4993969', 'tcp')": 1,
+      "('ss', '84.247.155.196', '80', 'aes-256-gcm|3eOFeNssde7PYYMv', '')": 1,
+      "('vless', '90.156.218.163', '443', 'adc11f30-e4cb-4985-bf5e-f9ded69c019f', 'tcp')": 1,
+      "('vless', 'es-02.avroraservice.online', '8443', '0dca2cfe-98eb-4f9d-9a47-cf87510c558b', 'xhttp')": 1,
+      "('vless', '67.159.6.181', '443', '84c9ff14-75b9-420b-8a5c-dc25e19ec11a', 'tcp')": 1,
+      "('vless', '31.59.216.141', '443', 'c6cfcc53-9271-4ef7-88c5-5141621c8db1', 'tcp')": 1,
+      "('vless', '188.225.25.142', '443', '7610be85-9855-4010-8929-ce16d4993969', 'tcp')": 1,
+      "('vless', '188.225.25.195', '443', '7610be85-9855-4010-8929-ce16d4993969', 'tcp')": 1,
+      "('vless', '188.225.57.78', '443', '7610be85-9855-4010-8929-ce16d4993969', 'tcp')": 1,
+      "('vless', 'dismissaltree.net', '2053', '2c634977-584e-4e1f-b501-1b70c77a6743', 'xhttp')": 1,
+      "('vless', '176.108.253.120', '8443', '0dca2cfe-98eb-4f9d-9a47-cf87510c558b', 'xhttp')": 1,
+      "('vless', 'app26.betust.net', '443', '7610be85-9855-4010-8929-ce16d4993969', 'tcp')": 1,
+      "('vless', 'snow.betust.net', '443', '7610be85-9855-4010-8929-ce16d4993969', 'tcp')": 1,
+      "('vless', 'nl1.jetservaki.fit', '443', 'e90759b7-6454-4b3a-8453-279e6f496f3a', 'grpc')": 1,
+      "('vless', '94.156.170.235', '443', '27407f1d-fe61-469b-a5a9-0aef7ee7476d', 'tcp')": 1,
+      "('trojan', 'engaging-toucan.rooster465.autos', '443', 'UX82473651', 'tcp')": 1,
+      "('vmess', '31.77.8.97', '110', 'd2d8601b-c14b-42c6-b8ea-33889bce152a', 'tcp')": 1,
+      "('vless', 'ss-m-g1-e1299e2221bb.securecontentcenter.shop', '443', '0308add6-4cbd-43c8-b9a7-37d4f399c089', 'tcp')": 1,
+      "('vless', '131.123.13.93', '443', '55ccbeb5-0bf4-4e4d-afcb-23c038e73e00', 'tcp')": 1,
+      "('vless', 'ss-r-g1-0949ed663fa4.cloudaccesshub.pro', '443', '0308add6-4cbd-43c8-b9a7-37d4f399c089', 'tcp')": 1,
+      "('ss', '103.160.63.199', '31348', 'chacha20-ietf-poly1305|8C5valhOd8vfwaTXUSZ6Zyb0Ip34lRR5z7P8az', '')": 1,
+      "('vless', '151.101.213.164', '443', 'eb98ab60-f16d-4662-a740-c89307400939', 'xhttp')": 1,
+      "('trojan', 'evolving-ewe.rooster465.autos', '443', 'UX82473651', 'tcp')": 1
     }
   },
   "warnings": [
     "sub: no nodes at https://p.kfwl.lol/ua=happ/os=android/https://t--8g.atlanta-subs.ru/w559bykYbtfBpbeo",
     "sub: no nodes at https://mk-l4.github.io/ELITE.github.io/",
-    "liveness: исключено мёртвых нод: 5"
+    "liveness: подтверждённо мёртвых исключено: 12",
+    "liveness: в подписку включены только реально проверенные узлы: 24 из 218"
   ],
+  "candidate_total": 218,
   "liveness": {
-    "checked": 150,
-    "alive": 138,
+    "checked": 60,
+    "alive": 24,
     "unknown": 0,
-    "dropped": 5,
-    "newly_dead": 5,
+    "verified": 24,
+    "dropped": 12,
+    "newly_dead": 7,
     "suspect_protos": [],
-    "dead_tracked": 12,
+    "dead_tracked": 36,
     "probe_methods": {
-      "tcp": "connect",
-      "hysteria2": "official-client",
-      "other_udp": "response"
-    }
+      "xray_protocols": "full_https_through_socks",
+      "hysteria2": "full_https_through_official_client"
+    },
+    "candidates": 218
   },
   "validation": {
     "ok": true,
     "errors": [],
     "warnings": [],
     "counts": {
-      "nodes": 213,
-      "sub_uris": 213,
-      "node_files": 213,
-      "singbox_outbounds": 213,
-      "clash_proxies": 213
+      "nodes": 24,
+      "sub_uris": 24,
+      "node_files": 24,
+      "singbox_outbounds": 24,
+      "clash_proxies": 24
     }
   }
 }

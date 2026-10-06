@@ -1,1 +1,0 @@
-hysteria2://e795f042-4c9f-46d1-9d85-8816e0ff0cfb@fre.guren1.me:8443?security=tls&sni=python.org&alpn=h3&insecure=1#Svaston%20vpn%20%23fb9d7e

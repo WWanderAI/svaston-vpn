@@ -1,1 +1,0 @@
-vless://88281d02-b387-4fe3-918e-26ed331e6d08@93.183.87.85:24446?security=reality&sni=willow.cdn.cachefleet.com&fp=chrome&pbk=w9JCByLSU3NGciCv2iceOz4TRL4swv8jfIAYoaKSyEw&sid=a0938b702257f780&type=grpc&mode=gun&serviceName=telegram-bridge&encryption=none#Svaston%20vpn%20%23eab2bc

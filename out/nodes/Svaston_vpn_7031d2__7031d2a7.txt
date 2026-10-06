@@ -1,1 +1,0 @@
-vless://0308add6-4cbd-43c8-b9a7-37d4f399c089@ss-m-g1-e1299e2221bb.securecontentcenter.shop:443?security=reality&sni=ss-m-g1-e1299e2221bb.securecontentcenter.shop&fp=qq&pbk=kjcmyTdOiGMetq7jvzwfTIXxGds1H4C9Yc71uQ3YBnc&sid=99ace5288c825ce3&flow=xtls-rprx-vision&type=tcp&encryption=none#Svaston%20vpn%20%237031d2

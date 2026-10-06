@@ -1,1 +1,0 @@
-hysteria2://M2NbFywBXjS9Ova8SgqRrQkp@de-tg.fastlanehosting.ru:443?security=tls&sni=de-tg.fastlanehosting.ru&alpn=h3&insecure=1#Svaston%20vpn%20%23f80a47

@@ -1,1 +1,0 @@
-vless://7610be85-9855-4010-8929-ce16d4993969@game.betust.net:443?security=reality&sni=api14.betust.net&fp=chrome&pbk=7dxSNJKvSZNySuiKjuv6wwddd3hYJeJy6X55OcwOPDk&sid=16fbc56c&spx=%2F&flow=xtls-rprx-vision&type=tcp&headerType=none&encryption=none#Svaston%20vpn%20%23e9c542

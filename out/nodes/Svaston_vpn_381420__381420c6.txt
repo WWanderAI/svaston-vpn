@@ -1,1 +1,0 @@
-vless://7610be85-9855-4010-8929-ce16d4993969@50.7.95.171:443?security=reality&sni=panel.betust.net&fp=firefox&pbk=2e9dGid5D-e4demAVGqU71uEeusuBhviikchaJ96E3o&sid=8ece2039&flow=xtls-rprx-vision&type=tcp&encryption=none#Svaston%20vpn%20%23381420
