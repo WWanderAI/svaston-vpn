@@ -1,0 +1,1 @@
+vless://8d2341a3-13b8-4e5e-84e1-da1c4923149a@185.86.145.78:8443?encryption=none&mode=gun&pbk=Qf5kMbpi0sUGV4ZB_2wVGdi-iACSFv47quZT-z-ymEo&security=reality&sid=a1b2c3d4&sni=idlecore.me&type=grpc&fp=chrome#Svaston%20vpn%20%23d1d8fa

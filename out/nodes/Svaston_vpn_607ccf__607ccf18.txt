@@ -1,0 +1,1 @@
+vless://008cf583-6059-4325-b3da-cb1a9ddf6ff8@203.17.244.59:8443?type=tcp&headerType=none&security=reality&fp=firefox&sni=egg.mega-play.app&pbk=E1zH5CmJ_y-wNDOObxwLrZ1nE9GV0om-5eoJamn9iGQ&sid=7ceaf5d4e008556d#Svaston%20vpn%20%23607ccf

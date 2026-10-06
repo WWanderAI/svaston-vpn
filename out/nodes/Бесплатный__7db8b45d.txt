@@ -1,1 +1,0 @@
-vless://b3a11068-1a7e-4643-85de-7c82cce46943@147.45.39.84:443?encryption=none&fp=firefox&host=de-8d4c7a0695.shamanapp.online&path=/ShamanXHTTP2026&security=tls&sni=de-8d4c7a0695.shamanapp.online&type=xhttp#Бесплатный

@@ -1,0 +1,1 @@
+vless://8384341b-cd89-4a21-a022-cc4bd4e648ca@46.29.238.139:40443?security=reality&encryption=none&pbk=7i4Y7v80NVAIi_4_9roDkqcXmexIHli87dfZuFaQMUI&headerType=none&fp=firefox&type=tcp&sni=deepl.com&sid=68da#Svaston%20vpn%20%23d7dcfa

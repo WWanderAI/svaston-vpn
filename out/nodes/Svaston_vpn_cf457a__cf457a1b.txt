@@ -1,0 +1,1 @@
+vless://9aff0732-7ce4-4b34-ba20-e67c6df64fdd@94.183.157.246:443?security=reality&encryption=none&pbk=dkaIImQrQ1ZVQGNfyrNZbtkE-8hxp_u8AH99XDFgfHw&headerType=none&fp=firefox&type=tcp&flow=xtls-rprx-vision&sni=pol2.panel11.ru&sid=75c55b707d25ae8d#Svaston%20vpn%20%23cf457a

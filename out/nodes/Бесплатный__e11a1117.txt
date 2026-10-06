@@ -1,1 +1,0 @@
-vless://30e52776-55ac-3cb4-8d36-e2910f07e2c3@23.166.40.27:443?type=tcp&security=tls&flow=xtls-rprx-vision&fp=firefox&sni=u695098u07fcba7ds79.kukuss.top#Бесплатный

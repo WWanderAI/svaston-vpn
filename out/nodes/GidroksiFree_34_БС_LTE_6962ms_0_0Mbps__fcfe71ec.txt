@@ -1,1 +1,0 @@
-vless://2412bd96-925b-43f2-81d1-0ed4f0793699@185.221.222.96:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=firefox&pbk=opV_yJLawoZ5nZ8MtJw37mnKiDSaUlmrAUg_QuYVNkk&sid=16c9575cd3f66da7&sni=plugins.jetbrains.com#%F0%9F%87%B3%F0%9F%87%B1%20GidroksiFree%20%2334%20%7C%20%F0%9F%9B%A1%D0%91%D0%A1%20%7C%20%F0%9F%9F%A2LTE%20%7C%206962ms%20%7C%20%E2%86%930.0Mbps

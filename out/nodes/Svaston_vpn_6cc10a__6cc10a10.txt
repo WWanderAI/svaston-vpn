@@ -1,0 +1,1 @@
+vless://fd6fb48f-b324-4a82-9dcd-f8bdb1bd5301@meshbuzz.bond:443?path=%2Fws-vlees&security=tls&alpn=http%2F1.1&encryption=none&insecure=0&host=b8lou6i1.cendro.ir&fp=unsafe&type=ws&allowInsecure=0&sni=b8lou6i1.cendro.ir#Svaston%20vpn%20%236cc10a

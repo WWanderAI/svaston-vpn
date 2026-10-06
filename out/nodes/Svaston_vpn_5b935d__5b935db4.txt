@@ -1,0 +1,1 @@
+vless://49c86212-ae0b-430e-9abb-244e715b533f@paid.sshehi.ggff.net:443?path=%2F&security=tls&encryption=none&insecure=0&type=ws&allowInsecure=0#Svaston%20vpn%20%235b935d

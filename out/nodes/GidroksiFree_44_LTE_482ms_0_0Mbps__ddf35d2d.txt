@@ -1,1 +1,0 @@
-vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@201.24.115.189:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=nvidia.com&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&sid=db04ce8bdb8900f1&type=tcp&fp=edge#%F0%9F%87%B7%F0%9F%87%BA%20GidroksiFree%20%2344%20%7C%20%F0%9F%9F%A2LTE%20%7C%20482ms%20%7C%20%E2%86%930.0Mbps

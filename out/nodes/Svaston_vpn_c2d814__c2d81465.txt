@@ -1,0 +1,1 @@
+vless://03707fb7-0990-440f-88f6-b0e0f7242a38@104.16.80.73:443?path=%2F&security=tls&encryption=none&insecure=0&type=ws&allowInsecure=0&sni=de-new.ariyuz.org#Svaston%20vpn%20%23c2d814

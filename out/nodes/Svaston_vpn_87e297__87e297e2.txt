@@ -1,0 +1,1 @@
+vless://30e52776-55ac-3cb4-8d36-e2910f07e2c3@s880.gogocs.xyz:443?type=tcp&security=tls&flow=xtls-rprx-vision&fp=firefox&sni=u695098u07fcba7ds79.kukuss.top&host=07fcba7ds79.kukuss.top#Svaston%20vpn%20%2387e297

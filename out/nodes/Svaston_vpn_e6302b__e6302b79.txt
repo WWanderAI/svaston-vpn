@@ -1,0 +1,1 @@
+vless://f6190ff2-864c-46cf-ac16-93908c069b75@129.121.95.159:443?path=%2Fconnect&security=tls&encryption=none&insecure=0&fp=chrome&type=ws&allowInsecure=0#Svaston%20vpn%20%23e6302b

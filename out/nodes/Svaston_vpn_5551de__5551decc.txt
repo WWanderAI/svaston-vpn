@@ -1,0 +1,1 @@
+vless://7a200d36-ba32-4871-8b8a-dd6245dc736b@54.248.48.160:443?security=tls&encryption=none&insecure=0&fp=firefox&type=ws&allowInsecure=0&sni=shieldwave.uk#Svaston%20vpn%20%235551de

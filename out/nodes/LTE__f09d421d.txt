@@ -1,1 +1,0 @@
-vless://9e27f64b-7ae9-461b-b4c4-99696276633b@pl5.voronvpn.com:443?security=reality&encryption=none&pbk=UR-ELTbCCTAAvg_y8vIznWFkGkCKFFaEAVgTtPYNCCk&headerType=none&fp=firefox&type=tcp&flow=xtls-rprx-vision&sni=storage.yandexcloud.net&sid=54861d36#LTE

@@ -1,1 +1,0 @@
-vless://d666e16b-2b64-4499-bb32-896c26dc2e3d@217.60.33.57:33740?encryption=none&fp=firefox&host=pl-ade19411d2.shamanapp.online&path=/ShamanXHTTP2026&security=tls&sni=pl-ade19411d2.shamanapp.online&type=xhttp#Бесплатный

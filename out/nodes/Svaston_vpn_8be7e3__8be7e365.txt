@@ -1,0 +1,1 @@
+vless://cfd29139-5ef0-4bf1-8253-b5dc15d496d7@80.243.228.73:2085?encryption=none&security=none&type=grpc&serviceName=vless&mode=multi#Svaston%20vpn%20%238be7e3

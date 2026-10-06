@@ -1,0 +1,1 @@
+vless://386d4342-768d-4ed0-9478-4dba23220aed@79.174.95.96:443?encryption=none&fp=firefox&mode=gun&pbk=tVc65Jg20nTeP9qsSd9WIqRjLqU-PWKFYtBYHQbwtyw&security=reality&serviceName=grpc&sid=a1b2c3d4&sni=max.ru&type=grpc#Svaston%20vpn%20%239d2b65

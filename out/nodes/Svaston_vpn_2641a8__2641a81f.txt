@@ -1,0 +1,1 @@
+vless://593bf46b-8316-5050-9357-d8a41e4db78b@51.255.166.202:443?type=tcp&security=tls&flow=xtls-rprx-vision&fp=chrome&sni=e3k67dwms3-51255166202-direct.tavafog.com#Svaston%20vpn%20%232641a8

@@ -1,1 +1,0 @@
-vless://86c0996e-817e-409f-a732-ff9ef94917bd@s3.bamans.uk:443?mode=stream-up&path=%2F3a6b3b038ea34622bd1e13ec5798ab03&security=tls&alpn=h2&encryption=none&type=xhttp&sni=s3.bamans.uk#Бесплатный

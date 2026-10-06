@@ -1,0 +1,1 @@
+vless://6f13b633-1c06-4584-a3d3-6d54a16bbbb2@meshbuzz.bond:443?path=%2Fws-vlees&security=tls&alpn=http%2F1.1&encryption=none&insecure=0&host=holandlesy-q1fju1ye.brinexa.ir&fp=unsafe&type=ws&allowInsecure=0&sni=holandlesy-q1fju1ye.brinexa.ir#Svaston%20vpn%20%237612c1

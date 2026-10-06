@@ -1,0 +1,1 @@
+vless://11af1c47-865a-47c6-92ff-118013655d78@40.160.68.136:8080?path=%2F%3Fed&security=&encryption=none&type=ws#Svaston%20vpn%20%231a0b30

@@ -1,0 +1,1 @@
+vless://7ce54bb3-d612-4aa7-be08-089d3c461d53@18.154.132.116:443?path=%2F&security=tls&encryption=none&insecure=0&host=d1yxsk0zprgivr.cloudfront.net&fp=chrome&type=ws&allowInsecure=0&sni=d1yxsk0zprgivr.cloudfront.net#Svaston%20vpn%20%23365188

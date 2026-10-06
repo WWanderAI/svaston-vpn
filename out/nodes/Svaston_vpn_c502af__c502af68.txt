@@ -1,0 +1,1 @@
+vless://7f99eb58-5983-006e-9c02-d8cea49f7074@45.8.99.5:443?encryption=none&security=reality&sni=ozon.ru&fp=random&pbk=0omtLHQHyKnV7w05maiOqvL5PvxdCQKw_zDqqgR28X8&sid=8d0ff3d6ec629371&type=xhttp&path=%2Faqkk8j6ayx76aw67mb&mode=auto#Svaston%20vpn%20%23c502af

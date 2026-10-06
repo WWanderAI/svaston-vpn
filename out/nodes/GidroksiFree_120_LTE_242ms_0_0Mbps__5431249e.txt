@@ -1,1 +1,0 @@
-hysteria2://928e5fef-9f6b-4705-872a-4ef528a725f6@87.228.101.166:443?sni=univideo.svc-endpoint.com&fp=random&alpn=h3#%F0%9F%87%B7%F0%9F%87%BA%20GidroksiFree%20%23120%20%7C%20%F0%9F%9F%A2LTE%20%7C%20242ms%20%7C%20%E2%86%930.0Mbps

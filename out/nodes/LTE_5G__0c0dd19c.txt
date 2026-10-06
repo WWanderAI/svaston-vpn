@@ -1,1 +1,0 @@
-vless://12e9a09e-5423-430e-b4db-478079178cc9@81.94.148.55:9443?type=ws&headerType=none&security=tls&encryption=none&sni=fin.astra-luxe.top&fp=firefox&alpn=http%2F1.1&path=%2Ffin-ws#LTE/5G

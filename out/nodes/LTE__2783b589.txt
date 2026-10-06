@@ -1,1 +1,0 @@
-vless://579f0893-e6f9-4036-86a1-7c10aa2d24ea@msk2.skysafe.online:2027?security=reality&encryption=none&pbk=EApxy12MeXpqt-78odxizwcXT6hX9f8XeAcbMDVRAV0&headerType=&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=msk2.skysafe.online&sid=6ba7b8109dad11d1#LTE

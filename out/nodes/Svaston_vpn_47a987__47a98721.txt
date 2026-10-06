@@ -1,0 +1,1 @@
+vless://5ca83936-136d-4314-8453-4ba10a86cf60@195.123.209.50.fwqfw783rg2dad.website:443?path=%2Fwebsocket%3Fed%3D2560&security=tls&encryption=none&insecure=0&type=ws&allowInsecure=0&sni=195.123.209.50.fwqfw783rg2dad.website#Svaston%20vpn%20%2347a987

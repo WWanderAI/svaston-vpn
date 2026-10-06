@@ -1,0 +1,1 @@
+vless://00000000-0000-0000-0000-000000000000@0.0.0.0:1?type=tcp&encryption=none#Svaston%20vpn%20%239c74d3

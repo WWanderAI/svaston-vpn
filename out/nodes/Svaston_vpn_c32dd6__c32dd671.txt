@@ -1,0 +1,1 @@
+vless://9c104116-b231-4626-94cb-6d8fc4d2b000@50.7.87.122:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=qq&pbk=ygxQyBcJzlLgpSl3MCRDDiFET4TT-3wxa4GdG1obkCY&sid=ba4b2afa9e7193ea&sni=edge-fr.extazy.net#Svaston%20vpn%20%23c32dd6

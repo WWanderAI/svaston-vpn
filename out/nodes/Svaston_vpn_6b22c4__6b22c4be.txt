@@ -1,0 +1,1 @@
+vless://03707fb7-0990-440f-88f6-b0e0f7242a38@104.16.6.70:443?path=%2F%3FTELEGRAM-TOOTFFARANGI%3Fed&security=tls&encryption=none&insecure=0&type=ws&allowInsecure=0&sni=de-new.ariyuz.org#Svaston%20vpn%20%236b22c4

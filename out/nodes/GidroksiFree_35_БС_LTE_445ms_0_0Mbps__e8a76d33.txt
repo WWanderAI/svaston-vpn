@@ -1,1 +1,0 @@
-vless://a08b9c24-3252-4f7f-afa9-4a37040950fd@multirouterapp.com:443?type=grpc&security=reality&fp=random&pbk=C6nh6hqFTbtizgSH8vGmw2XUxsQAbAW3jPylpgGvfl4&sid=5d1e8b3f6c2a9d4e&sni=shop.lunarchaff.com&serviceName=moktana.net.v1.StreamService#%F0%9F%87%B8%F0%9F%87%AA%20GidroksiFree%20%2335%20%7C%20%F0%9F%9B%A1%D0%91%D0%A1%20%7C%20%F0%9F%9F%A2LTE%20%7C%20445ms%20%7C%20%E2%86%930.0Mbps

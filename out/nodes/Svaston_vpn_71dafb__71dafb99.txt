@@ -1,0 +1,1 @@
+vless://9f5b9ca7-d0bb-4e50-a3ca-acf5968027fc@fr-01-10.zetnik.site:443?type=tcp&security=reality&sni=fr-01-10.zetnik.site&pbk=ApNIxuQ3QcxgdpVLyK9N13yLxwQVKzI9YzzGwKbE1QE&sid=24ab1577feda1c0f&fp=firefox&encryption=none&flow=xtls-rprx-vision#Svaston%20vpn%20%2371dafb

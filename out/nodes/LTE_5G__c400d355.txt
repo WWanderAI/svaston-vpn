@@ -1,1 +1,0 @@
-vless://e85d674a-0ef2-4e7b-943c-6f5eb54af52a@begemotov.cc:443?type=ws&security=tls&sni=begemotov.cc&alpn=http%2F1.1&host=begemotov.cc&path=%2Fbgdews&fp=firefox#LTE/5G

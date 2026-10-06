@@ -1,0 +1,1 @@
+vless://c04bf2df-2b7f-44da-a893-3792d3910fd8@138.124.181.51:13868?security=reality&encryption=none&pbk=W24D31y_1ZaASX1bq3d85DQaQd_3NcJQCvg1wmCn-Uo&headerType=none&fp=firefox&type=tcp&flow=xtls-rprx-vision&sni=www.ea.com&sid=e852dc#Svaston%20vpn%20%23ce57b8

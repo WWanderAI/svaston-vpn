@@ -1,1 +1,0 @@
-vless://8f2d14ac-447d-4d58-bd37-5cac936d96ca@193.200.78.186:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=firefox&pbk=UR-ELTbCCTAAvg_y8vIznWFkGkCKFFaEAVgTtPYNCCk&sid=54861d36&sni=storage.yandexcloud.net#SNi

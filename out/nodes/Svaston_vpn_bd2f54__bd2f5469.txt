@@ -1,0 +1,1 @@
+vless://e3fb01b6-69b4-41d7-babf-696d992de194@hikvision-plus.com:2053?host=uwu.blueknightnet.qzz.io&path=%2F%40BlueKnight_net--%40BlueKnight_net--%40BlueKnight_net--%40BlueKnight_net--%40BlueKnight_net--%40BlueKnight_net&security=tls&sni=uwu.blueknightnet.qzz.io&type=ws#Svaston%20vpn%20%23bd2f54

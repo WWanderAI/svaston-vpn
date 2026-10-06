@@ -1,1 +1,0 @@
-hysteria2://0f8c0e93-1b91-456c-b0a0-58568ac0f690@31.177.111.70:6443?sni=api.unio.finance#%F0%9F%87%B7%F0%9F%87%BA%20GidroksiFree%20%23118%20%7C%20%F0%9F%9F%A2LTE%20%7C%20216ms%20%7C%20%E2%86%930.0Mbps

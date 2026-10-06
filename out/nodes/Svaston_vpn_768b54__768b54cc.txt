@@ -1,0 +1,1 @@
+vless://d23cb516-40db-4aa4-8142-6b45ff882f90@94.183.209.59:8443?security=reality&encryption=none&pbk=Wcbu-RQtOWYlsoZg3PIaxVqFMnEYLdkO9iRr6cHBBAQ&headerType=none&fp=firefox&spx=%2Ftyrl80hchwrzixp&type=tcp&sni=www.cloudflare.com&sid=4258#Svaston%20vpn%20%23768b54

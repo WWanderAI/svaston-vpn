@@ -1,1 +1,0 @@
-vless://8a180a9e-3218-4140-bfd3-56cf230d27f8@meadow.fdc.video-mvm.ru:443?encryption=none&type=xhttp&security=tls&sni=meadow.fdc.video-mvm.ru&fp=firefox&alpn=h2%2Chttp/1.1&mode=stream-up#Бесплатный

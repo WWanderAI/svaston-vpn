@@ -1,1 +1,0 @@
-vless://068c73f5-c2fc-4579-96be-6e37cfcf58ed@es-02.avroraservice.online:8443?type=xhttp&mode=stream-one&path=%2Fxhttp&security=reality&sni=cdn-es.cahmes.space&fp=chrome&pbk=dSH20qQm9nyDIN1gI1KyUjtVOilHh0wG8t-Xw1iz638&sid=01f0a0809d05552b&encryption=none#Бесплатный

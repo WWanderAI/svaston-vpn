@@ -1,0 +1,1 @@
+vless://423b1d79-08c4-403f-9d5e-c541f791b55f@31.76.5.26:443?security=reality&encryption=none&pbk=YQTixaXzPVImuRc4TUbrFAekjIiaYV-t5S-HTKlH0AU&headerType=none&fp=firefox&type=tcp&flow=xtls-rprx-vision&sni=nordic.cendora.ru&sid=2186a755ed67b034#Svaston%20vpn%20%23b53e5a
