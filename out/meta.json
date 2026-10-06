@@ -1,48 +1,60 @@
 {
-  "generated_at": "2026-10-06T13:59:38.136075+00:00",
+  "generated_at": "2026-10-06T14:24:59.342659+00:00",
   "source": "tg/s/halyava_vpnz (последние 24 ч)",
-  "total": 218,
+  "total": 213,
   "protocols": {
-    "hysteria2": 21,
-    "ss": 9,
+    "vless": 127,
     "trojan": 51,
-    "vless": 132,
-    "vmess": 5
+    "ss": 9,
+    "vmess": 5,
+    "hysteria2": 21
   },
   "scan": {
     "oldest_id": 1317,
     "dead": {
-      "('vless', 'example.invalid', '443', '00000000-0000-0000-0000-000000000000', 'tcp')": 1,
-      "('vless', 'xnodtwx.artemida.live', '443', '4c346148-ece9-487a-bffb-ba5a399b2d71', 'grpc')": 1,
-      "('vless', '127.0.0.1', '1', '00000000-0000-0000-0000-000000000000', 'tcp')": 1,
-      "('vless', '77.221.136.120', '443', 'a47f8110-de83-4c37-b6a7-16010535aef4', 'tcp')": 1,
-      "('vless', '185.229.9.174', '443', 'a5893c8b-28a2-4947-9a1c-708db25506c3', 'tcp')": 1
+      "('vless', 'example.invalid', '443', '00000000-0000-0000-0000-000000000000', 'tcp')": 2,
+      "('vless', 'xnodtwx.artemida.live', '443', '4c346148-ece9-487a-bffb-ba5a399b2d71', 'grpc')": 2,
+      "('vless', '127.0.0.1', '1', '00000000-0000-0000-0000-000000000000', 'tcp')": 2,
+      "('vless', '77.221.136.120', '443', 'a47f8110-de83-4c37-b6a7-16010535aef4', 'tcp')": 2,
+      "('vless', '185.229.9.174', '443', 'a5893c8b-28a2-4947-9a1c-708db25506c3', 'tcp')": 2,
+      "('hysteria2', 'trunk-nl.cvedcdigital.vip', '4443', '', 'trunk-nl.cvedcdigital.vip')": 1,
+      "('hysteria2', 'post-api-udp-uplink.cvedcdigital.vip', '9443', '', 'post-api-udp-uplink.cvedcdigital.vip')": 1,
+      "('vless', '150.241.64.105', '443', '9a1b2785-6baf-455c-9f75-80157ee7f7c5', 'tcp')": 1,
+      "('vless', '45.66.162.19', '443', 'a47f8110-de83-4c37-b6a7-16010535aef4', 'tcp')": 1,
+      "('hysteria2', 'media.pantera-radio.ru', '443', '', 'media.pantera-radio.ru')": 1,
+      "('vless', '188.225.35.40', '8081', 'fd260c22-c5a9-47fc-bb68-5b3e890ee7c4', 'tcp')": 1,
+      "('hysteria2', 'mix.pantera-radio.ru', '443', '', 'mix.pantera-radio.ru')": 1
     }
   },
   "warnings": [
     "sub: no nodes at https://p.kfwl.lol/ua=happ/os=android/https://t--8g.atlanta-subs.ru/w559bykYbtfBpbeo",
-    "sub: no nodes at https://mk-l4.github.io/ELITE.github.io/"
+    "sub: no nodes at https://mk-l4.github.io/ELITE.github.io/",
+    "liveness: исключено мёртвых нод: 5"
   ],
   "liveness": {
     "checked": 150,
-    "alive": 145,
-    "dropped": 0,
-    "newly_dead": 0,
-    "suspect_protos": [
-      "hysteria2"
-    ],
-    "dead_tracked": 5
+    "alive": 138,
+    "unknown": 0,
+    "dropped": 5,
+    "newly_dead": 5,
+    "suspect_protos": [],
+    "dead_tracked": 12,
+    "probe_methods": {
+      "tcp": "connect",
+      "hysteria2": "official-client",
+      "other_udp": "response"
+    }
   },
   "validation": {
     "ok": true,
     "errors": [],
     "warnings": [],
     "counts": {
-      "nodes": 218,
-      "sub_uris": 218,
-      "node_files": 218,
-      "singbox_outbounds": 218,
-      "clash_proxies": 218
+      "nodes": 213,
+      "sub_uris": 213,
+      "node_files": 213,
+      "singbox_outbounds": 213,
+      "clash_proxies": 213
     }
   }
 }

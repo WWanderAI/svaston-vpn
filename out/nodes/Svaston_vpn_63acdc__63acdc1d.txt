@@ -1,1 +1,0 @@
-vless://a5893c8b-28a2-4947-9a1c-708db25506c3@185.229.9.174:443?security=reality&encryption=none&pbk=atU8_P0qpuD7OofNobnwE56T95gb0jtpdauQdOSgViI&headerType=none&fp=firefox&type=tcp&flow=xtls-rprx-vision&sni=5post-gate.x5.ru&sid=c2b43f3b5a#Svaston%20vpn%20%2363acdc

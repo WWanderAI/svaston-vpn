@@ -1,1 +1,0 @@
-vless://00000000-0000-0000-0000-000000000000@example.invalid:443?security=reality&encryption=none&pbk=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&headerType=none&fp=chrome&type=tcp&sni=www.microsoft.com&sid=deadbeef#Svaston%20vpn%20%23259786
