@@ -71,37 +71,47 @@ class GitHubPusher:
         return cur != files.get(marker)
 
     def do_push(self, files, message):
-        head = self._api("GET", self._r("/git/ref/heads/%s" % self.branch))
-        head_sha = head["object"]["sha"]
-        commit = self._api("GET", self._r("/git/commits/%s" % head_sha))
-        root = self._api("GET", self._r("/git/trees/%s" % commit["tree"]["sha"]))["tree"]
-
+        # Блобы не зависят от head — создаём один раз.
         blobs = {}
         for p, c in files.items():
             blobs[p] = self._api("POST", self._r("/git/blobs"), json={"content": c, "encoding": "utf-8"})["sha"]
 
-        prefix = "out/"
         out_entries = []
         for p, c in files.items():
-            if p.startswith(prefix):
-                out_entries.append({"path": p[len(prefix):], "mode": "100644", "type": "blob", "sha": blobs[p]})
+            if p.startswith("out/"):
+                out_entries.append({"path": p[len("out/"):], "mode": "100644", "type": "blob", "sha": blobs[p]})
         out_tree = self._api("POST", self._r("/git/trees"), json={"tree": out_entries})["sha"]
 
-        new_root, replaced = [], False
-        for e in root:
-            if e["path"] == "out":
-                new_root.append({"path": "out", "type": "tree", "mode": "040000", "sha": out_tree})
-                replaced = True
-            else:
-                item = {"path": e["path"], "type": e["type"], "sha": e["sha"]}
-                item["mode"] = e.get("mode") or ("040000" if e.get("type") == "tree" else "100644")
-                new_root.append(item)
-        if not replaced:
-            new_root.append({"path": "out", "type": "tree", "mode": "040000", "sha": out_tree})
+        # Коммит строим поверх ТЕКУЩЕГО head (parents=[head]), а не его родителя.
+        # Повторяем при «not a fast forward»: перечитываем head и перестраиваем.
+        last_err = None
+        for _ in range(3):
+            head = self._api("GET", self._r("/git/ref/heads/%s" % self.branch))
+            head_sha = head["object"]["sha"]
+            commit = self._api("GET", self._r("/git/commits/%s" % head_sha))
+            root = self._api("GET", self._r("/git/trees/%s" % commit["tree"]["sha"]))["tree"]
 
-        new_tree = self._api("POST", self._r("/git/trees"), json={"tree": new_root})["sha"]
-        parents = [commit["parents"][0]["sha"]] if commit.get("parents") else []
-        new_commit = self._api("POST", self._r("/git/commits"),
-                               json={"message": message, "tree": new_tree, "parents": parents})["sha"]
-        self._api("PATCH", self._r("/git/refs/heads/%s" % self.branch), json={"sha": new_commit, "force": False})
-        return new_commit
+            new_root, replaced = [], False
+            for e in root:
+                if e["path"] == "out":
+                    new_root.append({"path": "out", "type": "tree", "mode": "040000", "sha": out_tree})
+                    replaced = True
+                else:
+                    item = {"path": e["path"], "type": e["type"], "sha": e["sha"]}
+                    item["mode"] = e.get("mode") or ("040000" if e.get("type") == "tree" else "100644")
+                    new_root.append(item)
+            if not replaced:
+                new_root.append({"path": "out", "type": "tree", "mode": "040000", "sha": out_tree})
+
+            new_tree = self._api("POST", self._r("/git/trees"), json={"tree": new_root})["sha"]
+            new_commit = self._api("POST", self._r("/git/commits"),
+                                   json={"message": message, "tree": new_tree, "parents": [head_sha]})["sha"]
+            try:
+                self._api("PATCH", self._r("/git/refs/heads/%s" % self.branch), json={"sha": new_commit, "force": False})
+                return new_commit
+            except RuntimeError as e:
+                if "not a fast forward" in str(e):
+                    last_err = e  # head сменился под нами — перечитываем и повторяем
+                    continue
+                raise
+        raise last_err if last_err else RuntimeError("do_push: исчерпаны повторы")
