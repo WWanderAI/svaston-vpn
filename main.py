@@ -76,33 +76,27 @@ def main():
     ap.add_argument("--channel", default=os.environ.get("TG_CHANNEL"),
                     help="@username / username публичного канала (или TG_CHANNEL)")
     ap.add_argument("--lookback", type=int, default=int(os.environ.get("TG_LOOKBACK", "300")))
+    ap.add_argument("--max-age", type=float, default=float(os.environ.get("TG_MAX_AGE_HOURS", "24")),
+                    help="только сообщения за последние N часов (0 = без отсечки; по умолчанию 24)")
     ap.add_argument("--max-subs", type=int, default=int(os.environ.get("SUB_FETCH_MAX", "20")))
     ap.add_argument("--nodes-file", default=None, help="офлайн: стартовый nodes.json вместо чтения TG")
     args = ap.parse_args()
 
     gp = None
-    master = []
-    stop_id = 0   # не читать глубже этого msg id (уже обработано)
+    master = []   # накопления старых нод нет: набор = окно за последние N часов
     oldest_id = 0
     prev_scan = {}
     if args.push:
         import github_push
         gp = github_push.make_pusher()
         gp.resolve()
-        existing = gp.read_file("out/nodes.json")
-        if existing:
-            try:
-                master = json.loads(existing)
-            except Exception:
-                master = []
+        # читаем только meta (для liveness dead-map), nodes.json в master не несём
         existing_meta = gp.read_file("out/meta.json")
         if existing_meta:
             try:
-                m = json.loads(existing_meta)
-                stop_id = m.get("scan", {}).get("oldest_id", 0) or 0
-                prev_scan = m.get("scan", {}) or {}
+                prev_scan = json.loads(existing_meta).get("scan", {}) or {}
             except Exception:
-                stop_id = 0
+                prev_scan = {}
 
     source = ""
     fresh = []
@@ -116,10 +110,11 @@ def main():
         channel = args.channel
         if not channel:
             raise SystemExit("Укажи канал: --channel @username или TG_CHANNEL в .env")
-        texts, oldest_id = tmscraper.collect(channel, lookback=args.lookback, stop_id=stop_id)
-        source = "tg/s/%s" % tmscraper._normalize(channel)
+        msgs, oldest_id = tmscraper.collect(channel, lookback=args.lookback, max_age_hours=args.max_age)
+        texts = [t for t, _ in msgs]
+        source = "tg/s/%s (последние %g ч)" % (tmscraper._normalize(channel), args.max_age)
         fresh, warnings = gather_new(texts, args.max_subs)
-        print("Сообщений прочитано: %d, новых нод: %d" % (len(texts), len(fresh)))
+        print("Сообщений в окне: %d, новых нод: %d" % (len(texts), len(fresh)))
 
     merged = merge(master, fresh)
 

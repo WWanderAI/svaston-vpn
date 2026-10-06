@@ -12,10 +12,12 @@ Telegram периодически убирает из веб-превью). На
 import html
 import re
 import time
+from datetime import datetime, timedelta, timezone
 
 _CHUNK_SPLIT = '<div class="tgme_widget_message_wrap'
 _ID_RE = re.compile(r'data-post="[^"]*/(\d+)"')
 _TEXT_RE = re.compile(r'class="tgme_widget_message_text[^"]*"[^>]*>([\s\S]*?)</div>')
+_TIME_RE = re.compile(r'<time datetime="([^"]+)"')
 _UA = {
     "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                    "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"),
@@ -27,6 +29,19 @@ def _clean(s):
     s = re.sub(r"<br\s*/?>", "\n", s, flags=re.I)
     s = re.sub(r"<[^>]+>", "", s)
     return html.unescape(s).strip()
+
+
+def _parse_time(s):
+    """'2026-10-06T13:00:00+00:00' / '...Z' -> aware datetime (UTC) или None."""
+    if not s:
+        return None
+    try:
+        dt = datetime.fromisoformat(s.strip().replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt
+    except Exception:
+        return None
 
 
 def _normalize(username):
@@ -47,7 +62,7 @@ def _fetch(url):
 
 
 def _page_messages(page_html):
-    """Возвращает [(msg_id, text), ...] в порядке от старых к новым на странице."""
+    """Возвращает [(msg_id, text, time_str), ...] от старых к новым на странице."""
     chunks = page_html.split(_CHUNK_SPLIT)
     out = []
     for chunk in chunks[1:]:
@@ -57,16 +72,18 @@ def _page_messages(page_html):
         txt = _TEXT_RE.search(chunk)
         if not txt:
             continue  # сообщение без текста (только фото/видео)
-        out.append((idm.group(1), _clean(txt.group(1))))
+        timem = _TIME_RE.search(chunk)
+        out.append((idm.group(1), _clean(txt.group(1)), timem.group(1) if timem else ""))
     out.sort(key=lambda x: int(x[0]))
     return out
 
 
-def collect(username, lookback=200, max_pages=60, delay=1.0, stop_id=0):
-    """Читает последние `lookback` сообщений публичного канала.
+def collect(username, lookback=300, max_age_hours=24, max_pages=60, delay=1.0):
+    """Читает сообщения публичного канала, уходя назад до отсечки по времени.
 
-    Возвращает (texts, oldest_id). `stop_id` — не читать глубже этого id
-    (уже обработано в прошлых запусках), чтобы экономить запросы к t.me/s/.
+    Возвращает (messages, oldest_id), где messages = [(text, time_str), ...]
+    от старых к новым — только за последние `max_age_hours` (0 = без отсечки).
+    `lookback` — страховочный предел количества сообщений.
     """
     import requests  # noqa: F401
     ch = _normalize(username)
@@ -74,7 +91,9 @@ def collect(username, lookback=200, max_pages=60, delay=1.0, stop_id=0):
         raise SystemExit("Укажи TG_CHANNEL — @username публичного канала")
     base = "https://t.me/s/%s" % ch
     url = base
-    seen = {}
+    cutoff = (datetime.now(timezone.utc) - timedelta(hours=max_age_hours)) \
+        if max_age_hours and max_age_hours > 0 else None
+    seen = {}  # mid -> (text, time_str)
     for _ in range(max_pages):
         page = _fetch(url)
         batch = _page_messages(page)
@@ -86,15 +105,26 @@ def collect(username, lookback=200, max_pages=60, delay=1.0, stop_id=0):
         if not batch:
             break
         added = 0
-        for mid, text in batch:
+        for mid, text, tstr in batch:
             if mid not in seen:
-                seen[mid] = text
+                seen[mid] = (text, tstr)
                 added += 1
-        min_id = min(int(m) for m, _ in batch)
-        if len(seen) >= lookback or added == 0 or min_id <= 1 or (stop_id and min_id <= stop_id):
+        min_id = min(int(m) for m, _, _ in batch)
+        reached_cutoff = False
+        if cutoff is not None:
+            oldest = min(batch, key=lambda x: int(x[0]))
+            odt = _parse_time(oldest[2])
+            if odt is not None and odt < cutoff:
+                reached_cutoff = True
+        if len(seen) >= lookback or added == 0 or min_id <= 1 or reached_cutoff:
             break
         url = "%s/%d" % (base, min_id)  # идём дальше вглубь
         time.sleep(delay)
-    texts = [seen[k] for k in sorted(seen, key=int)]
+    msgs = []
+    for mid in sorted(seen, key=int):
+        text, tstr = seen[mid]
+        dt = _parse_time(tstr)
+        if cutoff is None or dt is None or dt >= cutoff:
+            msgs.append((text, tstr))
     oldest_id = min((int(k) for k in seen), default=0)
-    return texts[:lookback], oldest_id
+    return msgs, oldest_id

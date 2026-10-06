@@ -6,11 +6,15 @@ name: refresh-sub
 # (иначе пуш в тот же репо перезапустит сам себя).
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "0 * * * *"   # каждый час
   workflow_dispatch:
     inputs:
+      max_age:
+        description: "Брать сообщения за последние N часов (0 = без отсечки)"
+        required: false
+        default: "24"
       lookback:
-        description: "Сколько последних сообщений сканировать"
+        description: "Предельное число сообщений при сканировании (страховка)"
         required: false
         default: "300"
 
@@ -46,5 +50,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
         run: |
+          MAX_AGE="${{ github.event.inputs.max_age || '24' }}"
           LOOKBACK="${{ github.event.inputs.lookback || '300' }}"
-          python main.py --push --lookback "$LOOKBACK"
+          python main.py --push --max-age "$MAX_AGE" --lookback "$LOOKBACK"
