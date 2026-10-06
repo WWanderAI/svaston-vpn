@@ -1,1 +1,0 @@
-trojan://UX82473651@fancy-javelin.rooster465.autos:443?security=tls&sni=fancy-javelin.rooster465.autos&fp=chrome&type=tcp&path=%2F#Svaston%20vpn%20%232d63a4

@@ -1,2 +1,1 @@
-trojan://UX82473651@34.220.15.24:443?security=tls&sni=guided-ferret.rooster465.autos&type=tcp#Svaston%20vpn%20%2353ced0
 trojan://UX82473651@44.255.123.205:443?security=tls&sni=happy-gibbon.rooster465.autos&type=tcp&path=%2F#Svaston%20vpn%20%23184a46
