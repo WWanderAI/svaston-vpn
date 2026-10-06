@@ -1,1 +1,0 @@
-trojan://Trojan@82164024@92.118.150.146:443?type=tcp&security=tls&fp=firefox&sni=pl.tronsg.com#Svaston%20vpn%20%2305b489

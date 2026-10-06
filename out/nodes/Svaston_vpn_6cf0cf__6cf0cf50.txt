@@ -1,1 +1,1 @@
-vless://e90759b7-6454-4b3a-8453-279e6f496f3a@84.32.71.124:443?type=grpc&security=reality&fp=firefox&pbk=wLANFlHX4PxKF73pKoFgd7gdd6myrYhPEn9FipTTFQQ&sid=f01acad2ba23e527&sni=us1.jetservaki.fit&mode=gun&serviceName=grpc#Svaston%20vpn%20%236cf0cf
+vless://e90759b7-6454-4b3a-8453-279e6f496f3a@84.32.71.124:443?security=reality&sni=us1.jetservaki.fit&fp=chrome&pbk=wLANFlHX4PxKF73pKoFgd7gdd6myrYhPEn9FipTTFQQ&sid=f01acad2ba23e527&type=grpc&mode=gun&serviceName=grpc&encryption=none#Svaston%20vpn%20%236cf0cf

@@ -1,0 +1,1 @@
+trojan://UX82473651@assuring-skink.rooster465.autos:443?security=tls&sni=assuring-skink.rooster465.autos&type=tcp&path=%2F#Svaston%20vpn%20%238e729c

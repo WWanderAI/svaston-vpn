@@ -1,1 +1,0 @@
-vless://39770645-fcd2-4f35-a670-877672fc2ef7@95.85.252.72:443?type=raw&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=u5gK34Vx2N4cN4dowhD81_ZPMvymSPYt4Fvv44dKHAY&sid=5cca2511acbc3ca9&sni=de1.lostpool.org#Svaston%20vpn%20%23d2e927

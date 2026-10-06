@@ -1,0 +1,1 @@
+vless://c20751de-06c3-4044-b6a4-eebc9b040d92@5.157.10.250:443?flow=xtls-rprx-vision&encryption=none&security=reality&sni=swebz.loozerp.wiki&fp=firefox&pbk=pgG2grngQEtOFJImLfz0AEm-O2IodM2jCY4aMCYQI1U&sid=6aa2d2e950441a9a&type=tcp&headerType=none#Svaston%20vpn%20%23cd38e2

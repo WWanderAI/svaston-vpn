@@ -1,1 +1,0 @@
-vless://8a180a9e-3218-4140-bfd3-56cf230d27f8@r4v8n3.fdc.video-mvm.ru:443?encryption=none&type=xhttp&security=tls&sni=cedar.fdc.video-mvm.ru&fp=chrome&alpn=h2%2Chttp/1.1&mode=stream-up#Svaston%20vpn%20%238ff6ed

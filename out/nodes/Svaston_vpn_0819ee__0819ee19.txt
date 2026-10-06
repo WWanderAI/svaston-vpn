@@ -1,1 +1,0 @@
-vless://361d17b2-cafc-4cd8-996c-347f34bc159f@nl.cdn.mynetcloud.online:443?encryption=none&fp=chrome&security=tls&sni=nl.cdn.mynetcloud.online&type=tcp#Svaston%20vpn%20%230819ee

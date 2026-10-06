@@ -1,0 +1,1 @@
+hysteria2://e4fa7b90-b8ee-45bb-b3be-cb3bfdc551e3@156.229.160.253:55000?security=tls&sni=www.bing.com&alpn=h3&insecure=1#Svaston%20vpn%20%23b9d42a

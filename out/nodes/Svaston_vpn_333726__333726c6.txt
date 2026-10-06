@@ -1,0 +1,1 @@
+trojan://UX82473651@balanced-stag.rooster465.autos:443?security=tls&sni=balanced-stag.rooster465.autos&type=tcp&path=%2F#Svaston%20vpn%20%23333726

@@ -1,0 +1,1 @@
+trojan://UX82473651@brief-glider.rooster465.autos:443?security=tls&sni=brief-glider.rooster465.autos&type=tcp&path=%2F#Svaston%20vpn%20%23a261fe

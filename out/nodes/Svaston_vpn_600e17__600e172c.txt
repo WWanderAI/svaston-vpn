@@ -1,0 +1,1 @@
+vless://7610be85-9855-4010-8929-ce16d4993969@188.225.77.241:443?security=reality&sni=api.betust.net&fp=firefox&pbk=YczbievYAOeZIypa58aRpil6XbfdyifK_0cFJWn8-yg&sid=d6c172d3&spx=%2F&flow=xtls-rprx-vision&type=raw&encryption=none#Svaston%20vpn%20%23600e17

@@ -1,1 +1,0 @@
-vless://5ca83936-136d-4314-8453-4ba10a86cf60@37.18.14.156:8443?path=%2Fwebsocket%3Fed&security=tls&encryption=none&insecure=0&type=ws&allowInsecure=0&sni=2.26.148.147.tyr-agentstvo.tech#Svaston%20vpn%20%230550bd

@@ -1,1 +1,0 @@
-vless://c08f0056-7a6d-4931-813b-aaa3cdd00aed@node-uk.connectsuite.org:8443?type=tcp&security=tls&fp=chrome#Svaston%20vpn%20%2309012b

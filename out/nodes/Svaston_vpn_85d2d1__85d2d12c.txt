@@ -1,0 +1,1 @@
+vless://ff0b6ba8-bed0-4c4d-bbc9-23af47582615@200.165.231.209:443?security=tls&sni=wstg.datasynctrue.online&insecure=0&allowInsecure=0&type=ws&host=wstg.datasynctrue.online&path=%2Fapi%2Fconnect&encryption=none#Svaston%20vpn%20%2385d2d1

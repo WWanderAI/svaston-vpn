@@ -1,0 +1,1 @@
+trojan://UX82473651@holy-lamb.rooster465.autos:443?security=tls&sni=holy-lamb.rooster465.autos&fp=chrome&type=tcp#Svaston%20vpn%20%23de26ac

@@ -1,1 +1,0 @@
-vless://30e52776-55ac-3cb4-8d36-e2910f07e2c3@s2318.okgg.top:443?security=tls&encryption=none&sni=u695098uf24555c7s2316.gogocs.xyz&host=f24555c7s2316.gogocs.xyz&alpn=h2%2Chttp/1.1&fp=firefox&flow=xtls-rprx-vision#Svaston%20vpn%20%23c2a761

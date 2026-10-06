@@ -1,0 +1,1 @@
+vless://2c634977-584e-4e1f-b501-1b70c77a6743@185.141.227.180:2053?security=tls&sni=dismissaltree.net&fp=random&type=xhttp&host=dismissaltree.net&path=%2Fapi%2Fv1%2Fupload&mode=auto&encryption=none#Svaston%20vpn%20%239af071

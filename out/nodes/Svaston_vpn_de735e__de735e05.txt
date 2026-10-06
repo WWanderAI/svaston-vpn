@@ -1,1 +1,0 @@
-vless://851ed0d8-a37b-452d-8ef2-5b6c2d28a060@217.19.122.94:2027?flow=xtls-rprx-vision&type=tcp&headerType=none&security=reality&fp=firefox&sni=storage.yandex.net&pbk=ISa-DZOI4LRRb9DHMFYm5oFqBXDjYzz0hVWUfWvzLmo&sid=8d3293f0066e129a#Svaston%20vpn%20%23de735e

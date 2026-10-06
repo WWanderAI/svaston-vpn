@@ -1,0 +1,1 @@
+hysteria2://d2c658d5-2502-441c-b750-d1452277ddb1@trunk-nl.cvedcdigital.vip:4443?security=tls&sni=trunk-nl.cvedcdigital.vip&alpn=h3&insecure=0#Svaston%20vpn%20%23234c96

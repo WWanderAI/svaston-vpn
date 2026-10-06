@@ -1,1 +1,0 @@
-vless://30e52776-55ac-3cb4-8d36-e2910f07e2c3@s554.csgfw.top:57233?security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=8fad5a44s552.gogocs.xyz&headerType=&fp=firefox&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=u695098u8fad5a44s552.gogocs.xyz#Svaston%20vpn%20%23b894ce

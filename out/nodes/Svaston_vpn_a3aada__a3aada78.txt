@@ -1,1 +1,0 @@
-vless://694fbac8-56da-4ecd-be68-59c57b700e93@95.163.250.241:8443?flow=xtls-rprx-vision&type=tcp&security=reality&fp=firefox&sni=eh.vk.com&pbk=rGeqvmEcctHYxt19USUHXgGzMkUx-Tna8bq5KRNw7EY&sid=b59d33a750d35e66#Svaston%20vpn%20%23a3aada

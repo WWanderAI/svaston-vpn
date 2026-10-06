@@ -1,0 +1,1 @@
+vless://c4edb87e-8544-4fa4-bd1c-b0cda9a34b46@162.159.192.125:443?security=tls&sni=a.cwvps.eu.org&type=ws&host=a.cwvps.eu.org&path=%2Fws&encryption=none#Svaston%20vpn%20%23325231

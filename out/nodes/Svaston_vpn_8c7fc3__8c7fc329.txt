@@ -1,0 +1,1 @@
+trojan://UX82473651@real-cardinal.rooster465.autos:443?security=tls&sni=real-cardinal.rooster465.autos&type=tcp#Svaston%20vpn%20%238c7fc3

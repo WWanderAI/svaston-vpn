@@ -1,1 +1,0 @@
-hysteria2://928e5fef-9f6b-4705-872a-4ef528a725f6@87.228.101.83:443?sni=univideo.svc-endpoint.com&fp=random&alpn=h3#Svaston%20vpn%20%23c766d4

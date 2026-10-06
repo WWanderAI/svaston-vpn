@@ -1,1 +1,0 @@
-vless://16e21090-a5fd-4028-a528-96e975b068a2@46.243.234.157:7443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=wBB_aSYGm86IhxUcO8jccIsaBJZdNGlo3hTQlJFftkE&security=reality&sid=f7d9e9a2e78e9a17&sni=s1.cdnguard.org&type=raw#Svaston%20vpn%20%232edb21

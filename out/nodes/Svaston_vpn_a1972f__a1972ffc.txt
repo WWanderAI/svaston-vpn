@@ -1,1 +1,0 @@
-vless://fd12bf77-bca4-4ccc-8bd0-76a2cfc5985a@wl-1.myfreedom.rest:443?flow=xtls-rprx-vision&type=tcp&headerType=none&security=reality&fp=firefox&sni=ads.vk.ru&pbk=sdnD0vxmj8kHBOoVM8TE9IyBCGwnKNB8hZVaHp_Zfjk&sid=c427#Svaston%20vpn%20%23a1972f

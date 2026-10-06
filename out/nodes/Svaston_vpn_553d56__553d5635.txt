@@ -1,1 +1,1 @@
-vless://86c0996e-817e-409f-a732-ff9ef94917bd@s3.bamans.uk:443?mode=stream-up&path=%2F3a6b3b038ea34622bd1e13ec5798ab03&security=tls&alpn=h2&encryption=none&type=xhttp&sni=s3.bamans.uk#Svaston%20vpn%20%23553d56
+vless://86c0996e-817e-409f-a732-ff9ef94917bd@s3.bamans.uk:443?security=tls&sni=s3.bamans.uk&alpn=h2&insecure=0&allowInsecure=0&type=xhttp&path=%2F3a6b3b038ea34622bd1e13ec5798ab03&mode=stream-up&extra=%7B%22mode%22%3A%22stream-up%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D&encryption=none#Svaston%20vpn%20%23553d56

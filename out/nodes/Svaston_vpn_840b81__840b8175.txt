@@ -1,0 +1,1 @@
+vless://a47f8110-de83-4c37-b6a7-16010535aef4@45.66.162.19:443?security=reality&sni=video.yump.online&fp=firefox&pbk=PAWRAe-0-jggLpRHVSL2ModH3fJq6LP1emUeopncJU4&sid=20a29d0e0817696b&flow=xtls-rprx-vision&type=tcp&encryption=none#Svaston%20vpn%20%23840b81

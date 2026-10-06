@@ -1,0 +1,1 @@
+hysteria2://8294f130408299df8cab08c80bf6f819@24.233.8.109:443?security=tls&sni=www.bing.com&alpn=h3&insecure=1&obfs=salamander&obfs-password=c8827ab99e316c5bd414e21afa915ddf#Svaston%20vpn%20%23df9d1f

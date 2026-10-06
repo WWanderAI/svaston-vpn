@@ -1,0 +1,1 @@
+vless://068c73f5-c2fc-4579-96be-6e37cfcf58ed@de-02.avroraservice.online:8443?security=reality&sni=cdn-de.cahmes.space&fp=chrome&pbk=LP7yXSC50lHfxW-BuRQ3OLDBNncF2KVnMgVJuX9XR2w&sid=35cd2022241da999&type=xhttp&path=%2Fxhttp&mode=stream-one&encryption=none#Svaston%20vpn%20%2398163e

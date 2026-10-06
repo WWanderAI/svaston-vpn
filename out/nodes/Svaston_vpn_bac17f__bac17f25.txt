@@ -1,1 +1,0 @@
-vless://853a3bff-2583-4908-9f16-934bb3077d24@23.165.200.168:49527?flow=xtls-rprx-vision&type=tcp&headerType=none&security=reality&fp=chrome&sni=apple.com&pbk=IbI4GjOoEE7mFvOyegC2bdADUgDjzpz24OIIhQhzdnc&sid=9c4b91b9#Svaston%20vpn%20%23bac17f

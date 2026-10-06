@@ -1,1 +1,0 @@
-vless://6a798544-d17a-4039-abde-a25dc939441a@slnd.tdvin.com:443?type=grpc&mode=gun&serviceName=mygrpc&security=tls&sni=slnd.tdvin.com&alpn=h2&fp=chrome&allowInsecure=0#Svaston%20vpn%20%23fb8781

@@ -1,0 +1,1 @@
+trojan://UX82473651@3.112.245.255:443?security=tls&sni=dynamic-imp.rooster465.autos&fp=chrome&type=tcp#Svaston%20vpn%20%237f86f9

@@ -1,1 +1,0 @@
-vless://be3960db-f339-479a-be7b-c1a130601141@37.49.224.14:443?security=reality&encryption=none&pbk=O3rHRttI1NLJhPj5tRc8IxrC0-psaGAdF7pIXL2iSyo&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=nimble-heron.cdn.cachefleet.com&sid=0c3c59e4f3527369#Svaston%20vpn%20%23efb385

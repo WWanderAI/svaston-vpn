@@ -1,1 +1,0 @@
-vless://579b72a5-785a-4fb6-ac64-1de2f8c49601@net1.trufflevpn.fun:443?type=grpc&headerType=none&security=reality&encryption=none&sni=samsung.com.com&fp=firefox&pbk=LAIeXhB_Q_APveaVNJDD4svH4esgDVx3qeo-MSfu1Wg&serviceName=vless-grpc#Svaston%20vpn%20%23a85001

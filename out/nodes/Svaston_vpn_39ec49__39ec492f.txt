@@ -1,1 +1,0 @@
-vless://068c73f5-c2fc-4579-96be-6e37cfcf58ed@159.194.242.200:8443?path=%2Fxhttp&security=reality&encryption=none&pbk=upBeYE6Fyy46znMKXx-jkC66hAgARHcwYIdjNB4yXl8&host=159.194.242.200&fp=firefox&type=xhttp&sni=cdn-pl.cahmes.space&sid=a7a3b3ffe0572fce#Svaston%20vpn%20%2339ec49

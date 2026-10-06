@@ -1,0 +1,1 @@
+trojan://UX82473651@pretty-rat.rooster465.autos:443?security=tls&sni=pretty-rat.rooster465.autos&type=tcp&path=%2F#Svaston%20vpn%20%2367b94d

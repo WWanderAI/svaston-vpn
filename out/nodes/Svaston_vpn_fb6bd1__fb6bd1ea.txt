@@ -1,0 +1,1 @@
+vless://5dea506b-4ce4-4772-9aa9-2447056053a1@195.123.208.180:443?flow=xtls-rprx-vision&encryption=none&security=reality&sni=goo.su&fp=firefox&pbk=1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs&sid=428ef87fd47a3a32&type=tcp&headerType=none#Svaston%20vpn%20%23fb6bd1

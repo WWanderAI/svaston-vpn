@@ -1,1 +1,0 @@
-vless://e0a8c12c-6fe9-42a3-990e-abe2ea6e5605@91.240.87.237:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=random&pbk=J0SK1ic3YJvP1gac5m3KSVaUuK_bxFtqz0fh0uEdEw4&sid=00000000&sni=fiae3.maxtelemost.com#Svaston%20vpn%20%23393359
