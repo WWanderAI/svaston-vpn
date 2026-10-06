@@ -1,0 +1,1 @@
+vless://12e9a09e-5423-430e-b4db-478079178cc9@37.18.14.6:8443?type=tcp&headerType=none&security=reality&encryption=none&sni=my.selectel.ru&fp=qq&pbk=-GzslqnFGVkpNJvcZt7uKnMGOn8R2v_z6sLOtmci6B0&sid=2fff0b51ab07386a&flow=xtls-rprx-vision#LTE/5G

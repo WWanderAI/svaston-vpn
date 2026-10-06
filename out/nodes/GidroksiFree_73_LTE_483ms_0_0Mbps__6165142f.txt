@@ -1,0 +1,1 @@
+vless://392df00c-0d98-4793-a3dd-1a2642280a1b@185.73.126.217:50000?encryption=none&flow=xtls-rprx-vision&security=reality&sni=creators.radeon.com&fp=random&pbk=dEvwASt7DRDtH_N5VcHkZo2VQxMVDdevaN-xFxmkIDw&sid=c8edc5&type=tcp#%F0%9F%87%B7%F0%9F%87%BA%20GidroksiFree%20%2373%20%7C%20%F0%9F%9F%A2LTE%20%7C%20483ms%20%7C%20%E2%86%930.0Mbps

@@ -1,0 +1,1 @@
+vless://7a200d36-ba32-4871-8b8a-dd6245dc736b@54.248.48.160:443?security=tls&encryption=none&insecure=0&fp=firefox&type=ws&allowInsecure=0&sni=shieldwave.uk#%E2%9C%A7%EF%BD%A5%EF%BE%9F%20%F0%9F%87%AF%F0%9F%87%B5%20%E2%9C%A7%20%D0%AF%D0%BF%D0%BE%D1%88%D0%B5%D1%87%D0%BA%D0%B0%20%E2%9C%A7%20*%3A%EF%BD%A5%EF%BE%9F%E2%9C%A7

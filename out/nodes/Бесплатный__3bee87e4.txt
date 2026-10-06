@@ -1,0 +1,1 @@
+vless://d666e16b-2b64-4499-bb32-896c26dc2e3d@de-d21e56c13c.shamanapp.online:443?encryption=none&type=xhttp&security=tls&sni=de-d21e56c13c.shamanapp.online&fp=firefox&alpn=h2&path=/ShamanXHTTP2026&host=de-d21e56c13c.shamanapp.online&mode=packet-up&extra=%7B%22noSSEHeader%22%3Atrue%2C%22uplinkHTTPMethod%22%3A%22POST%22%2C%22uplinkDataPlacement%22%3A%22body%22%7D#Бесплатный

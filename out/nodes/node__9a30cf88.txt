@@ -1,0 +1,1 @@
+vless://06d44c57-8e1a-41f4-b9c4-65d35869e078@147.45.50.7:13868?flow=xtls-rprx-vision&type=tcp&headerType=none&security=reality&fp=firefox&sni=booking.com&pbk=sgpya-5ohMKCjzyrDe4RWz7b8O9XegDzQ88oHCV45Gk&sid=e852dc#🇺🇸
