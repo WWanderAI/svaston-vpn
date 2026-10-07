@@ -1,1 +1,0 @@
-vless://ce148dac-7c43-456f-b1eb-e55885e58cf5@45.131.182.201:19771?security=reality&encryption=none&pbk=KR1BiF2E9rjtUF0LoV6A1BwijD3dLKbWe8wlkNMQ7Gk&headerType=&fp=chrome&spx=/de372256a1b9db7&type=tcp&flow=xtls-rprx-vision&sni=play.google.com&sid=60f03ba16a#Svaston%20vpn%20%239168e8
