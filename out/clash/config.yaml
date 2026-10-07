@@ -9,276 +9,126 @@ dns:
   - 8.8.8.8
   - 1.1.1.1
 proxies:
-- name: Svaston_vpn_41b5d9__41b5d9cd
-  server: 169.40.42.104
-  port: 443
+- name: Германия_100Mbit_Max__a1796377
+  server: de12.h1cloud.net
+  port: 25089
   type: vless
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  server-name: yahoo.com
-  skip-cert-verify: false
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-- name: Svaston_vpn_d94a8f__d94a8f60
-  server: 169.40.42.223
-  port: 443
-  type: vless
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  server-name: yahoo.com
-  skip-cert-verify: false
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-- name: Svaston_vpn_fa4d77__fa4d77a7
-  server: 169.40.42.75
-  port: 443
-  type: vless
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  server-name: yahoo.com
-  skip-cert-verify: false
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-- name: Svaston_vpn_524c98__524c9871
-  server: 172.64.150.28
-  port: 2082
-  type: vless
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  udp: true
-  flow: ''
-  network: ws
-  ws-opts:
-    path: /fp
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-- name: Svaston_vpn_fc4a8b__fc4a8b83
-  server: 23.95.225.10
-  port: 8443
-  type: vless
-  uuid: d342d11e-d224-4463-b982-532309285094
-  udp: true
-  flow: ''
-  network: ws
-  tls: true
-  server-name: ccc.010304.xyz
-  skip-cert-verify: false
-  ws-opts:
-    path: /fp=chrome
-    headers:
-      Host: ccc.010304.xyz
-- name: Svaston_vpn_45cb61__45cb61f3
-  server: 54.37.136.194
-  port: 2053
-  type: vless
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  uuid: 10c97f33-81f6-49eb-8345-cd282dfe7b00
   udp: true
   flow: ''
   tls: true
-  server-name: www.cloudflare.com
+  server-name: www.chip.de
   skip-cert-verify: false
   reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-- name: Svaston_vpn_e08822__e08822b0
-  server: 77.72.85.246
-  port: 8443
+    public-key: 3ZxTHjZ8XHP2aYzLEKUPI3xQ5jYQYrSrIEXlUlULUEA
+- name: Германия_100Mbit_Max__219e84ec
+  server: de12.h1cloud.net
+  port: 25095
   type: vless
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
-  udp: true
-  flow: ''
-  network: ws
-  tls: true
-  server-name: fdghyt.com
-  skip-cert-verify: false
-  ws-opts:
-    path: /vpn-wss/fluxor/59011/
-    headers:
-      Host: fdghyt.com
-- name: Svaston_vpn_fdca65__fdca65ac
-  server: 89.35.14.30
-  port: 443
-  type: vless
-  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
+  uuid: 10c97f33-81f6-49eb-8345-cd282dfe7b00
   udp: true
   flow: ''
   network: grpc
   tls: true
-  server-name: md1.univesalsrv.com
+  server-name: www.chip.de
   skip-cert-verify: false
   reality-opts:
-    public-key: xWejOQUn2koOUorUPSrHMLM-lyHlZ441KzxKc9bLmkY
+    public-key: pvXuNe35fkSbA-CVmh6_b3ADAXLY8tBONjnwE8HM8yY
   grpc-opts:
-    grpc-service-name: hub.v1.RelayService
-- name: Svaston_vpn_3c9304__3c9304c6
-  server: 89.35.14.33
-  port: 443
+    grpc-service-name: f3d967fe8981
+- name: Испания_250Mbit_max__e2f16bd7
+  server: es4.h1cloud.net
+  port: 25047
   type: vless
-  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
+  uuid: 10c97f33-81f6-49eb-8345-cd282dfe7b00
+  udp: true
+  flow: ''
+  tls: true
+  server-name: www.apple.com
+  skip-cert-verify: false
+  reality-opts:
+    public-key: opG0oNW-PMHi8V4E0101eEqOqPlZVKCuRkF6dcWeqBU
+- name: Испания_250Mbit_max__a1180478
+  server: es4.h1cloud.net
+  port: 25048
+  type: vless
+  uuid: 10c97f33-81f6-49eb-8345-cd282dfe7b00
   udp: true
   flow: ''
   network: grpc
   tls: true
-  server-name: md4.univesalsrv.com
+  server-name: www.apple.com
   skip-cert-verify: false
   reality-opts:
-    public-key: TZVMqglhHzteJ6t34mtku75LKzXNq0CB6glKYMAH6zg
+    public-key: oMZxRDxYbJO3HX2SoW1ThANMtl4_gdb-JLHIHEaKGEk
   grpc-opts:
-    grpc-service-name: hub.v1.ApiService
-- name: Svaston_vpn_efd707__efd70713
-  server: 8gm8kr.palka-cdn.win
-  port: 443
+    grpc-service-name: a26f88ee7dbb
+- name: Финляндия_Premium_100Mbit_Max__afabaec4
+  server: fi-p1.h1cloud.net
+  port: 25480
   type: vless
-  uuid: e75ad2eb-6c1f-45ce-8023-f5f10875df66
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  server-name: zses.eu-cdn294.com
-  skip-cert-verify: false
-  reality-opts:
-    public-key: ajzyADs9mOY6I3v7OWym5KgYh0afKmlCFaNw1pdQsWA
-- name: Svaston_vpn_49465e__49465e04
-  server: c5fl8w.api-gate.org
-  port: 443
-  type: vless
-  uuid: e75ad2eb-6c1f-45ce-8023-f5f10875df66
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  server-name: ca9.eu-cdn294.com
-  skip-cert-verify: false
-  reality-opts:
-    public-key: B1g2P-3yW3cQW0WZweSPKUP3lZSQ5pgr8doCYvA0cRg
-- name: Svaston_vpn_f5119c__f5119c6f
-  server: dey.lnmarketplace.net
-  port: 443
-  type: vless
-  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
+  uuid: 10c97f33-81f6-49eb-8345-cd282dfe7b00
   udp: true
   flow: ''
-  network: xhttp
   tls: true
-  server-name: dey.lnmarketplace.net
-  skip-cert-verify: false
-- name: Svaston_vpn_c5e770__c5e7706b
-  server: pa6r26.eu-cdn539.com
-  port: 443
-  type: vless
-  uuid: e75ad2eb-6c1f-45ce-8023-f5f10875df66
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  server-name: zsde.eu-cdn294.com
+  server-name: www.bing.com
   skip-cert-verify: false
   reality-opts:
-    public-key: f4EJP55daJRlJkcZbbGsY-gFGGFGiXPPdfVxtNWQPCE
-- name: Svaston_vpn_7cd098__7cd0985b
-  server: qqa7um.orbita.dpdns.org
-  port: 443
+    public-key: -PhMV0hj5jGNoV1RIdGzLeoAob2_QwV-UyetSy9EVCg
+- name: Финляндия_Premium_100Mbit_Max__dbf7c25d
+  server: fi-p1.h1cloud.net
+  port: 25481
   type: vless
-  uuid: e75ad2eb-6c1f-45ce-8023-f5f10875df66
+  uuid: 10c97f33-81f6-49eb-8345-cd282dfe7b00
   udp: true
-  flow: xtls-rprx-vision
+  flow: ''
+  network: grpc
   tls: true
-  server-name: zsit.eu-cdn294.com
+  server-name: www.bing.com
   skip-cert-verify: false
   reality-opts:
-    public-key: IG6lxrx_xkGOoBuo3DC8sgQoIFmqVgznIr0qOuNO0w4
-- name: Svaston_vpn_851e5c__851e5c9d
-  server: 172.67.139.14
-  port: 443
-  type: trojan
-  password: humanity
-  udp: true
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.volumeroot.com
-- name: Svaston_vpn_13114a__13114a09
-  server: 193.108.117.54
-  port: 443
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  tls: true
-  server-name: aidrivercat.org
-  skip-cert-verify: false
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: aidrivercat.org
-- name: Svaston_vpn_9c10a9__9c10a993
-  server: 57.129.132.223
-  port: 80
-  type: vmess
-  uuid: a25cbf11-2908-4a1b-a3a8-9a571777dca3
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: /vmess/
-    headers:
-      Host: google.com
-- name: Svaston_vpn_047970__047970cd
-  server: 155.94.134.183
-  port: 11592
+    public-key: mhIAHuZIEr2NpdGGSeOxar7VRSgEfVoNwb_G8Y0073E
+  grpc-opts:
+    grpc-service-name: 8cb5baa18cd7
+- name: Германия_100Mbit_Max__9c1d5654
+  server: de12.h1cloud.net
+  port: 25096
   type: hysteria2
   password: ''
-  server-name: srv-3fc7c9.21freedom.net
-  skip-cert-verify: false
+  server-name: www.chip.de
+  skip-cert-verify: true
+- name: Финляндия_Premium_100Mbit_Max__87a35f50
+  server: fi-p1.h1cloud.net
+  port: 25482
+  type: hysteria2
+  password: ''
+  server-name: www.bing.com
+  skip-cert-verify: true
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - Svaston_vpn_41b5d9__41b5d9cd
-  - Svaston_vpn_d94a8f__d94a8f60
-  - Svaston_vpn_fa4d77__fa4d77a7
-  - Svaston_vpn_524c98__524c9871
-  - Svaston_vpn_fc4a8b__fc4a8b83
-  - Svaston_vpn_45cb61__45cb61f3
-  - Svaston_vpn_e08822__e08822b0
-  - Svaston_vpn_fdca65__fdca65ac
-  - Svaston_vpn_3c9304__3c9304c6
-  - Svaston_vpn_efd707__efd70713
-  - Svaston_vpn_49465e__49465e04
-  - Svaston_vpn_f5119c__f5119c6f
-  - Svaston_vpn_c5e770__c5e7706b
-  - Svaston_vpn_7cd098__7cd0985b
-  - Svaston_vpn_851e5c__851e5c9d
-  - Svaston_vpn_13114a__13114a09
-  - Svaston_vpn_9c10a9__9c10a993
-  - Svaston_vpn_047970__047970cd
+  - Германия_100Mbit_Max__a1796377
+  - Германия_100Mbit_Max__219e84ec
+  - Испания_250Mbit_max__e2f16bd7
+  - Испания_250Mbit_max__a1180478
+  - Финляндия_Premium_100Mbit_Max__afabaec4
+  - Финляндия_Premium_100Mbit_Max__dbf7c25d
+  - Германия_100Mbit_Max__9c1d5654
+  - Финляндия_Premium_100Mbit_Max__87a35f50
   - DIRECT
 - name: AUTO
   type: url-test
   proxies:
-  - Svaston_vpn_41b5d9__41b5d9cd
-  - Svaston_vpn_d94a8f__d94a8f60
-  - Svaston_vpn_fa4d77__fa4d77a7
-  - Svaston_vpn_524c98__524c9871
-  - Svaston_vpn_fc4a8b__fc4a8b83
-  - Svaston_vpn_45cb61__45cb61f3
-  - Svaston_vpn_e08822__e08822b0
-  - Svaston_vpn_fdca65__fdca65ac
-  - Svaston_vpn_3c9304__3c9304c6
-  - Svaston_vpn_efd707__efd70713
-  - Svaston_vpn_49465e__49465e04
-  - Svaston_vpn_f5119c__f5119c6f
-  - Svaston_vpn_c5e770__c5e7706b
-  - Svaston_vpn_7cd098__7cd0985b
-  - Svaston_vpn_851e5c__851e5c9d
-  - Svaston_vpn_13114a__13114a09
-  - Svaston_vpn_9c10a9__9c10a993
-  - Svaston_vpn_047970__047970cd
+  - Германия_100Mbit_Max__a1796377
+  - Германия_100Mbit_Max__219e84ec
+  - Испания_250Mbit_max__e2f16bd7
+  - Испания_250Mbit_max__a1180478
+  - Финляндия_Premium_100Mbit_Max__afabaec4
+  - Финляндия_Premium_100Mbit_Max__dbf7c25d
+  - Германия_100Mbit_Max__9c1d5654
+  - Финляндия_Premium_100Mbit_Max__87a35f50
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
