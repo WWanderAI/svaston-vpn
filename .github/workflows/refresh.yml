@@ -1,22 +1,13 @@
 name: refresh-sub
 
-# Обновляем набор нод по расписанию + вручную.
-# Читает t.me/s/<имя> и публичные raw-фиды GitHub; не нужны api_id/api_hash/вход.
+# Публикуем только фиксированный список manual_nodes.txt.
+# Telegram и сторонние GitHub-фиды в этом workflow не читаются.
 # ВАЖНО: оставь только schedule + workflow_dispatch. НЕ добавляй `on: push`
-# (иначе пуш в тот же репо перезапустит сам себя).
+# (иначе пуш в тот же репо перезапустит workflow сам себя).
 on:
   schedule:
-    - cron: "0 * * * *"   # каждый час
+    - cron: "0 * * * *"   # проверяем список каждый час
   workflow_dispatch:
-    inputs:
-      max_age:
-        description: "Брать сообщения за последние N часов (0 = без отсечки)"
-        required: false
-        default: "24"
-      lookback:
-        description: "Предельное число сообщений при сканировании (страховка)"
-        required: false
-        default: "300"
 
 permissions:
   contents: write
@@ -61,31 +52,15 @@ jobs:
           chmod +x "$RUNNER_TEMP/xray"
           echo "XRAY_BIN=$RUNNER_TEMP/xray" >> "$GITHUB_ENV"
 
-      - name: Resolve channel
+      - name: Build fixed subscription + push to repo
         env:
-          CHANNEL: ${{ secrets.TG_CHANNEL || 'halyava_vpnz' }}
-        run: |
-          [ -n "$CHANNEL" ] || { echo "Канал не задан (секрет TG_CHANNEL или дефолт в workflow)"; exit 1; }
-          echo "TG_CHANNEL=$CHANNEL"
-
-      - name: Scrape channel + build + push to repo
-        env:
-          TG_CHANNEL: ${{ secrets.TG_CHANNEL || 'halyava_vpnz' }}
-          SUB_FETCH_MAX: "20"
-          FREE_FEEDS: |
-            https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/super-sub.txt
-            https://raw.githubusercontent.com/barry-far/V2ray-Config/main/All_Configs_base64_Sub.txt
-          FREE_FEED_NODE_CAP: "250"
-          LIVENESS_MAX: "200"
-          PUBLISH_MAX: "20"
+          MANUAL_NODES_FILE: "manual_nodes.txt"
+          LIVENESS_MAX: "8"
           LIVENESS_TIMEOUT: "8"
           HY2_CHECK_TIMEOUT: "10"
-          LIVENESS_WORKERS: "20"
+          LIVENESS_WORKERS: "8"
           PING_MAX_MS: "800"
           PING_MARGIN_MS: "600"
           GH_REPO: ${{ secrets.GH_REPO || github.repository }}
           GITHUB_TOKEN: ${{ github.token }}
-        run: |
-          MAX_AGE="${{ github.event.inputs.max_age || '24' }}"
-          LOOKBACK="${{ github.event.inputs.lookback || '300' }}"
-          python main.py --push --max-age "$MAX_AGE" --lookback "$LOOKBACK"
+        run: python main.py --push

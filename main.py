@@ -1,14 +1,16 @@
 """
-main.py — точка входа.
+main.py — сборка подписки с туннельной проверкой.
 
-По умолчанию читает ПУБЛИЧНЫЙ канал через t.me/s/<имя> (без api_id/api_hash/входа).
+Почасовой workflow использует фиксированный список MANUAL_NODES_FILE.
+Сбор Telegram/GitHub-фидов оставлен как необязательный fallback, но в этой
+публикации отключён.
 
-  python main.py                          # локально, без пуша, пишет в ./out
-  python main.py --lookback 300           # читать 300 последних сообщений
-  python main.py --push                   # пушить в GitHub (в Actions)
-  python main.py --nodes-file X.json      # офлайн: из готового nodes.json (без сети)
+  python main.py --manual-nodes-file manual_nodes.txt
+  python main.py --push                    # push output in GitHub Actions
+  python main.py --nodes-file X.json       # offline: стартовый nodes.json
 """
 import argparse
+import html
 import json
 import os
 import sys
@@ -25,6 +27,13 @@ def load_env():
         load_dotenv()
     except Exception:
         pass
+
+
+def load_manual_nodes(path):
+    """Reads a fixed URI list, also accepting HTML-escaped &amp; separators."""
+    with open(path, encoding="utf-8") as f:
+        text = html.unescape(f.read())
+    return [nodeparser.parse_uri(u) for u in nodeparser.extract_uris(text)]
 
 
 def public_feed_urls(value=None):
@@ -119,7 +128,7 @@ def write_local(files):
 
 def main():
     load_env()
-    ap = argparse.ArgumentParser(description="VPN subscription aggregator (public t.me/s)")
+    ap = argparse.ArgumentParser(description="VPN subscription builder (fixed list + optional public feeds)")
     ap.add_argument("--push", action="store_true", help="пушить результат в GitHub")
     ap.add_argument("--channel", default=os.environ.get("TG_CHANNEL"),
                     help="@username / username публичного канала (или TG_CHANNEL)")
@@ -128,6 +137,8 @@ def main():
                     help="только сообщения за последние N часов (0 = без отсечки; по умолчанию 24)")
     ap.add_argument("--max-subs", type=int, default=int(os.environ.get("SUB_FETCH_MAX", "20")))
     ap.add_argument("--nodes-file", default=None, help="офлайн: стартовый nodes.json вместо чтения TG")
+    ap.add_argument("--manual-nodes-file", default=os.environ.get("MANUAL_NODES_FILE"),
+                    help="фиксированный список URI; не читать Telegram/GitHub-фиды")
     args = ap.parse_args()
 
     gp = None
@@ -150,10 +161,18 @@ def main():
     fresh = []
     warnings = []
     public_feeds = []
+    manual_mode = False
     if args.nodes_file:
         with open(args.nodes_file, encoding="utf-8") as f:
             master = json.load(f)
         source = "offline:%s" % os.path.basename(args.nodes_file)
+    elif args.manual_nodes_file:
+        fresh = load_manual_nodes(args.manual_nodes_file)
+        if not fresh:
+            raise SystemExit("В MANUAL_NODES_FILE не найдено ни одного URI")
+        manual_mode = True
+        source = "manual:%s (%d supplied configs)" % (os.path.basename(args.manual_nodes_file), len(fresh))
+        print("Фиксированный список: %d URI; Telegram/GitHub-фиды отключены." % len(fresh))
     else:
         import tmscraper
         channel = args.channel
@@ -201,29 +220,42 @@ def main():
     except ValueError:
         publish_max = 0
         warnings.append("PUBLISH_MAX задан неверно; лимит публикации отключён")
-    if publish_max and len(confirmed) > publish_max:
+    if not manual_mode and publish_max and len(confirmed) > publish_max:
         live_stats["verified_before_cap"] = len(confirmed)
         confirmed = confirmed[:publish_max]  # liveness sorts by measured RTT
         live_stats["verified"] = len(confirmed)
         live_stats["publish_cap"] = publish_max
-    if live_stats.get("dropped"): 
-        warnings.append("liveness: подтверждённо мёртвых исключено: %d" % live_stats["dropped"])
-    if live_stats.get("high_latency"):
-        warnings.append("liveness: исключено по задержке выше эффективного лимита %d мс: %d"
-                        % (live_stats["effective_latency_limit_ms"], live_stats["high_latency"]))
+
+    if manual_mode:
+        # User explicitly selected a fixed list. Keep its entries as supplied;
+        # liveness is diagnostic and does not silently alter that list.
+        publish_nodes = merged
+        live_stats["manual_published"] = len(publish_nodes)
+        live_stats["manual_tunnel_passed"] = len(confirmed)
+        if len(confirmed) < len(publish_nodes):
+            warnings.append("manual list published as supplied; tunnel probe passed %d/%d from the runner"
+                            % (len(confirmed), len(publish_nodes)))
+    else:
+        publish_nodes = confirmed
+        if live_stats.get("dropped"):
+            warnings.append("liveness: подтверждённо мёртвых исключено: %d" % live_stats["dropped"])
+        if live_stats.get("high_latency"):
+            warnings.append("liveness: исключено по задержке выше эффективного лимита %d мс: %d"
+                            % (live_stats["effective_latency_limit_ms"], live_stats["high_latency"]))
+        if len(publish_nodes) < candidate_total:
+            warnings.append("liveness: в подписку включены только реально проверенные узлы: %d из %d"
+                            % (len(publish_nodes), candidate_total))
+
     print("Liveness: кандидатов=%d, проверено=%d, туннель OK=%d, <=%dмс=%d, >лимита=%d, без ответа=%d, unknown=%d"
           % (candidate_total, live_stats["checked"], live_stats["alive"],
              live_stats["effective_latency_limit_ms"], live_stats["verified"],
              live_stats["high_latency"], live_stats["no_response"], live_stats["unknown"]))
-    if not confirmed:
-        print("❌ Ни одна нода не прошла настоящий тест через туннель — пуш отменён; прежняя подписка сохранена.")
+    if not publish_nodes:
+        print("❌ Нет пригодных нод — пуш отменён; прежняя подписка сохранена.")
         return 2
-    if len(confirmed) < candidate_total:
-        warnings.append("liveness: в подписку включены только реально проверенные узлы: %d из %d"
-                        % (len(confirmed), candidate_total))
 
-    files, meta = aggregator.build(confirmed, source=source, warnings=warnings, oldest_id=oldest_id,
-                                   scan_extra={"dead": dead_map})
+    files, meta = aggregator.build(publish_nodes, source=source, warnings=warnings, oldest_id=oldest_id,
+                                   scan_extra={"dead": dead_map}, retitle=not manual_mode)
     meta["public_feeds"] = public_feeds
     meta["candidate_total"] = candidate_total
     meta["liveness"] = live_stats

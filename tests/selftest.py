@@ -12,6 +12,7 @@ import json
 import os
 import shutil
 import sys
+import tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
@@ -80,8 +81,22 @@ def main():
     sub_uris = subfetch.parse_subscription(sub_b64_bytes)
     print("URI из подписки:", sub_uris)
     assert len(sub_uris) == 3, "ожидалось 3 URI из подписки, получено %d" % len(sub_uris)
+    hy2_slash = nodeparser.parse_uri("hysteria2://user:pass@hy2.example:25482/?sni=hy2.example&insecure=1#Hy2")
+    assert hy2_slash["port"] == 25482, "Hysteria2 URI с конечным слэшем должна разбирать порт"
+    from main import load_manual_nodes
+    with tempfile.NamedTemporaryFile("w", encoding="utf-8", delete=False) as tmp:
+        tmp.write("vless://u@v.example:443?security=reality&amp;type=tcp#ManualVless" + chr(10))
+        tmp.write("hysteria2://pass@hy.example:8443/?sni=hy.example&amp;insecure=1#ManualHy2" + chr(10))
+        manual_path = tmp.name
+    try:
+        manual_nodes = load_manual_nodes(manual_path)
+    finally:
+        os.unlink(manual_path)
+    assert len(manual_nodes) == 2 and {n["port"] for n in manual_nodes} == {443, 8443}
+    manual_files, _ = aggregator.build(manual_nodes, source="manual", retitle=False)
+    assert "ManualVless" in manual_files["out/sub/combined.txt"] and "&amp;" not in manual_files["out/sub/combined.txt"]
 
-    print("\n=== 3a) публичные фиды: allowlist, лимит и параллельная загрузка ===")
+    print(chr(10) + "=== 3a) публичные фиды: allowlist, лимит и параллельная загрузка ===")
     from main import public_feed_urls, _spread_limit, gather_new
     feed_url = "https://raw.githubusercontent.com/example/repo/main/feed.txt"
     parsed_feeds, feed_warnings = public_feed_urls(feed_url + ", https://example.org/private.txt")

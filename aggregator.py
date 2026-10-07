@@ -60,7 +60,7 @@ def _retitle_node(n):
     return nn
 
 
-def build(nodes, source="", warnings=None, oldest_id=0, scan_extra=None):
+def build(nodes, source="", warnings=None, oldest_id=0, scan_extra=None, retitle=True):
     warnings = list(warnings or [])
     nodes = sorted(
         nodes,
@@ -70,8 +70,8 @@ def build(nodes, source="", warnings=None, oldest_id=0, scan_extra=None):
             str(n.get("host", "")), str(n.get("port", "")), n.get("name", ""),
         ),
     )
-    # переименовываем все узлы под бренд (в raw-URI + в полях) до генерации артефактов
-    nodes = [_retitle_node(n) for n in nodes]
+    # Keep explicit manual labels; dynamic public feeds get the Svaston brand.
+    nodes = [_retitle_node(n) for n in nodes] if retitle else [dict(n) for n in nodes]
     files = {}
 
     files["out/nodes.json"] = json.dumps(nodes, ensure_ascii=False, indent=2)

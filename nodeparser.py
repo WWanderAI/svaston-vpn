@@ -229,6 +229,9 @@ def parse_hysteria(uri, proto):
         name = up.unquote(name)
     cred, rest = (body.rsplit("@", 1) if "@" in body else ("", body))
     hostport, params = _split_query(rest)
+    # Hysteria2 links often include a default trailing slash before the query.
+    # It is not part of the host/port, so strip it before splitting.
+    hostport = hostport.rstrip("/")
     host, port = split_hostport(hostport)
     user, _, pw = cred.partition(":")
     return make_node(
