@@ -62,4 +62,4 @@ jobs:
           PING_MARGIN_MS: "600"
           GH_REPO: ${{ secrets.GH_REPO || github.repository }}
           GITHUB_TOKEN: ${{ github.token }}
-        run: python main.py --push
+        run: python main.py --nodes-file out/nodes.json --push
