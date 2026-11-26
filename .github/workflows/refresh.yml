@@ -54,6 +54,7 @@ jobs:
 
       - name: Build free subscription + push to repo
         env:
+          PUBLIC_SUB_FEEDS: "https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/Sub1.txt"
           LIVENESS_MAX: "40"
           LIVENESS_TIMEOUT: "8"
           HY2_CHECK_TIMEOUT: "10"
