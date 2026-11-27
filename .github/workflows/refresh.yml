@@ -64,5 +64,5 @@ jobs:
           GH_REPO: ${{ secrets.GH_REPO || github.repository }}
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          curl -fsSL "https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/Sub1.txt" | head -n 40 > fresh_nodes.txt
+          curl -fsSL "https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_443.txt" | head -n 40 > fresh_nodes.txt
           python main.py --manual-nodes-file fresh_nodes.txt --push
