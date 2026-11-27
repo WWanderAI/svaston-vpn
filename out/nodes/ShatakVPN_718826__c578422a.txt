@@ -1,0 +1,1 @@
+vless://f1a04d4c-56b3-4f93-a4ec-91a5039a48bd@205.186.112.19:443?security=reality&flow=xtls-rprx-vision&pbk=cwao9PnlNhUTd19WxIKAOdAjkaqVJihY0d2WOR8I2WY&sid=cce23a6bce3bc925&fp=chrome&sni=www.amazon.com&type=tcp&headerType=none&host=www.amazon.com&path=/#%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20718826
