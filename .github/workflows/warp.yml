@@ -1,0 +1,53 @@
+name: generate-warp
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  warp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install wireguard-tools
+        run: sudo apt-get update && sudo apt-get install -y wireguard-tools jq
+
+      - name: Register free Cloudflare WARP & save out/warp.conf
+        run: |
+          PRIV_KEY=$(wg genkey)
+          PUB_KEY=$(echo "$PRIV_KEY" | wg pubkey)
+          TOS=$(date -u +"%Y-%m-%dT%H:%M:%S.000Z")
+
+          RESP=$(curl -sS -X POST "https://api.cloudflareclient.com/v0a2158/reg" \
+            -H "Content-Type: application/json" \
+            -H "User-Agent: okhttp/3.12.1" \
+            -d "{\"key\":\"$PUB_KEY\",\"install_id\":\"\",\"fcm_token\":\"\",\"tos\":\"$TOS\",\"type\":\"Android\",\"locale\":\"en_US\"}")
+
+          PEER_PUB=$(echo "$RESP" | jq -r '.config.peers[0].public_key')
+          V4=$(echo "$RESP" | jq -r '.config.interface.addresses.v4')
+          V6=$(echo "$RESP" | jq -r '.config.interface.addresses.v6')
+
+          mkdir -p out
+          cat > out/warp.conf <<EOF
+          [Interface]
+          PrivateKey = $PRIV_KEY
+          Address = $V4/32, $V6/128
+          DNS = 1.1.1.1, 1.0.0.1
+          MTU = 1280
+
+          [Peer]
+          PublicKey = $PEER_PUB
+          AllowedIPs = 0.0.0.0/0, ::/0
+          Endpoint = 162.159.192.1:2408
+          EOF
+
+      - name: Commit and push out/warp.conf
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add out/warp.conf
+          git diff --cached --quiet || git commit -m "chore: generate free Cloudflare WARP config (out/warp.conf)"
+          git push
