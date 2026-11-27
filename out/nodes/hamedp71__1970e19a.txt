@@ -1,1 +1,0 @@
-vless://26843758-24de-4f76-b5d0-624038e353c4@153.52.85.198:443?encryption=none&fp=&pbk=xv6OUZcyzEHXFMTfumuJH-1Rd4NQ0cdmWikek4mm0m4&security=reality&sid=c71118d9399fb8c2&sni=15d7fft.nl11.h1clayd.click&type=tcp#hamedp71%3A%3A%F0%9F%87%B3%F0%9F%87%B1

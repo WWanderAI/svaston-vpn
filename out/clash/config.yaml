@@ -9,298 +9,406 @@ dns:
   - 8.8.8.8
   - 1.1.1.1
 proxies:
-- name: leviconfigs_-29__9b488563
-  server: 104.16.79.73
+- name: Tarkshodeh__7d4e2385
+  server: 103.139.51.51
   port: 443
   type: vless
-  uuid: 83afd88f-200f-4d89-bfc7-66eff160c1d8
+  uuid: 71b91642-93ed-4923-8cab-877e19bfc2d6
   udp: true
-  flow: ''
-  network: ws
+  flow: xtls-rprx-vision
   tls: true
-  server-name: josni.hoyes.cloudns.ch
-  skip-cert-verify: false
-  ws-opts:
-    path: /?TELEGRAM-leviconfigs?ed
-    headers:
-      Host: josni.hoyes.cloudns.ch
-- name: XX_VLESS_proxie_1_fast__26b384e4
-  server: 104.21.62.144
-  port: 443
-  type: vless
-  uuid: f98e06c6-6b36-47f1-a0e3-77d7937c3ec7
-  udp: true
-  flow: ''
-  network: xhttp
-  tls: true
-  server-name: sauron.melkore.ir
-  skip-cert-verify: true
-- name: ShatakVPN_271246__7898eaf9
-  server: 149.202.58.99
-  port: 443
-  type: vless
-  uuid: b585dc5e-55bf-4a8b-913a-27c9ccac05c3
-  udp: true
-  flow: ''
-  network: ws
-  tls: true
-  server-name: bab-6.site
-  skip-cert-verify: true
-  ws-opts:
-    path: /vws/
-    headers:
-      Host: 149.202.58.99
-- name: ShatakVPN_471131__fbc1f0e2
-  server: 151.101.56.7
-  port: 443
-  type: vless
-  uuid: d2299018-601d-488e-afd6-8f55b3f7439f
-  udp: true
-  flow: ''
-  network: ws
-  tls: true
-  server-name: ssl.fastly.com
-  skip-cert-verify: false
-  ws-opts:
-    path: /TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER?ed=2053
-    headers:
-      Host: pan1.global.ssl.fastly.net
-- name: hamedp71__1970e19a
-  server: 153.52.85.198
-  port: 443
-  type: vless
-  uuid: 26843758-24de-4f76-b5d0-624038e353c4
-  udp: true
-  flow: ''
-  tls: true
-  server-name: 15d7fft.nl11.h1clayd.click
+  server-name: cloud.figmafound.org
   skip-cert-verify: false
   reality-opts:
-    public-key: xv6OUZcyzEHXFMTfumuJH-1Rd4NQ0cdmWikek4mm0m4
-- name: ShatakVPN_925650__04f2a314
-  server: 178.248.236.229
+    public-key: H5CXI4RvEWW0TFPvFrnF1iX-05Y57ZYMMngjmkMfv24
+- name: hex_proxy__f96f714e
+  server: 104.17.145.145
   port: 443
   type: vless
-  uuid: a71d6c6d-c95e-4ec1-a892-22e21733bf09
+  uuid: 58e22afd-bf74-4736-984d-63a8ca03d7f0
+  udp: true
+  flow: ''
+  network: ws
+  tls: true
+  server-name: accessfooter.cleanfoodshop.org
+  skip-cert-verify: false
+  ws-opts:
+    path: /media/ws/
+    headers:
+      Host: accessfooter.cleanfoodshop.org
+- name: vless_104_21_236_63_443__44417986
+  server: 104.21.236.63
+  port: 443
+  type: vless
+  uuid: 44eae030-290b-4083-8102-6f8bab05701b
+  udp: true
+  flow: ''
+  tls: true
+  server-name: 104.21.236.63
+  skip-cert-verify: false
+- name: appsooner__ad967e1e
+  server: 146.75.59.186
+  port: 443
+  type: vless
+  uuid: 780aa2f6-1a02-4fa2-bcd0-fa7d469bdff7
+  udp: true
+  flow: ''
+  network: ws
+  tls: true
+  server-name: firefox.com
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: copy_az_channel_NUFiLTER_6i.global.ssl.fastly.net.
+- name: ICV2RAY__3b6ec2c3
+  server: 147.45.221.225
+  port: 443
+  type: vless
+  uuid: 58e22afd-bf74-4736-984d-63a8ca03d7f0
+  udp: true
+  flow: ''
+  network: ws
+  tls: true
+  server-name: nl.lucheeebezlimitnoekino.stream
+  skip-cert-verify: false
+  ws-opts:
+    path: /media/ws/
+    headers:
+      Host: 147.45.221.225
+- name: v2ray313__462a6549
+  server: 153.56.229.207
+  port: 443
+  type: vless
+  uuid: 4201786b-d99b-4147-a5f0-20d47acddb81
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  server-name: 4935e4t.de25.h1clayd.click
+  skip-cert-verify: false
+  reality-opts:
+    public-key: MzgB17ZFbKqs8pbC3EscTzHid_ENc-k_Cp6nXl-2knw
+- name: 5397__c4c6f82e
+  server: 157.22.184.213
+  port: 443
+  type: vless
+  uuid: 9df9ee1a-0671-4c6c-93c7-65598fb946f7
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  server-name: ruiot747.gangtype.com
+  skip-cert-verify: false
+  reality-opts:
+    public-key: tlAfLrhaFWvls1KhUZ9T4lj-8C2XyrGNx-ib5UYDPnc
+- name: hamedp71__f3c37dcf
+  server: 169.40.42.168
+  port: 443
+  type: vless
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  server-name: yahoo.com
+  skip-cert-verify: false
+  reality-opts:
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+- name: US__058b93f3
+  server: 169.40.42.90
+  port: 443
+  type: vless
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  server-name: yahoo.com
+  skip-cert-verify: false
+  reality-opts:
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+- name: 139901__5bff6c07
+  server: 172.67.143.24
+  port: 443
+  type: vless
+  uuid: 69818a96-0c2b-42fb-b978-27ff5faab87c
+  udp: true
+  flow: ''
+  network: ws
+  tls: true
+  server-name: wislore2.kdns.fr
+  skip-cert-verify: false
+  ws-opts:
+    path: /vless
+    headers:
+      Host: wislore2.kdns.fr
+- name: node__1440d4bc
+  server: 185.227.137.69
+  port: 443
+  type: vless
+  uuid: 450b6c85-bd42-45da-abcd-f76e1376e6a4
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  server-name: www.digiturunc.com
+  skip-cert-verify: false
+  reality-opts:
+    public-key: D0XU_vaxhJewIPzWLbXIVHfoq68Jcu48HUp9I4r30xU
+- name: ShatakVPN_885518__f96cb55a
+  server: 188.114.97.6
+  port: 443
+  type: vless
+  uuid: c4edb87e-8544-4fa4-bd1c-b0cda9a34b46
+  udp: true
+  flow: ''
+  network: ws
+  tls: true
+  server-name: a.cwvps.eu.org
+  skip-cert-verify: false
+  ws-opts:
+    path: /ws
+    headers:
+      Host: a.cwvps.eu.org
+- name: q_048__ea7cffb1
+  server: 196.196.148.177
+  port: 443
+  type: vless
+  uuid: 4201786b-d99b-4147-a5f0-20d47acddb81
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  server-name: 4935e4t.de25.h1clayd.click
+  skip-cert-verify: false
+  reality-opts:
+    public-key: MzgB17ZFbKqs8pbC3EscTzHid_ENc-k_Cp6nXl-2knw
+- name: v2ray313__df4246ef
+  server: 199.232.78.120
+  port: 443
+  type: vless
+  uuid: 8d2cbffd-43d0-458d-906b-7c54b7b51f38
+  udp: true
+  flow: ''
+  network: ws
+  tls: true
+  server-name: cdn.akamai.steamstatic.com
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: finalnsdger.global.ssl.fastly.net.
+- name: YFZ__1af43ee8
+  server: 31.76.3.51
+  port: 443
+  type: vless
+  uuid: 58e22afd-bf74-4736-984d-63a8ca03d7f0
+  udp: true
+  flow: ''
+  network: ws
+  tls: true
+  server-name: accessfooter.cleanfoodshop.org
+  skip-cert-verify: false
+  ws-opts:
+    path: /media/ws/
+    headers:
+      Host: 31.76.3.51
+- name: hamedp71__dc2f96e6
+  server: 45.129.242.56
+  port: 443
+  type: vless
+  uuid: ebdfaf99-41d8-4e48-8196-d54510ffb556
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  server-name: www.cloudflare.com
+  skip-cert-verify: false
+  reality-opts:
+    public-key: YURKlEQ3rap4KOXXGsVFZyYev2oDU2gCEbNTXPdKWRY
+- name: ShatakVPN_609928__acb93c8b
+  server: 45.90.59.15
+  port: 443
+  type: vless
+  uuid: 3950b45e-740d-4dca-ac95-505ec8534592
   udp: true
   flow: xtls-rprx-vision
   network: raw
   tls: true
-  server-name: 144.hexdey.com
+  server-name: www.cloudflare.com
   skip-cert-verify: false
   reality-opts:
-    public-key: _3mkK8SY6YVqws73SUVPKL77tzxDVNUt4ag9J9ec-D0
-- name: Channel__3cbf1e09
-  server: 188.114.97.6
+    public-key: P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY
+- name: hamedp71__a4b1f469
+  server: 46.28.67.55
   port: 443
   type: vless
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  udp: true
-  flow: ''
-  network: ws
-  tls: true
-  server-name: lucasjow.us.ci
-  skip-cert-verify: false
-  ws-opts:
-    path: /cart/docs/www/proxyip
-    headers:
-      Host: lucasjow.us.ci
-- name: Tel_V2rayng_Fast__53fc716e
-  server: 188.114.98.0
-  port: 443
-  type: vless
-  uuid: 53bbdad4-2f4e-45db-8df4-fa491a6a7227
-  udp: true
-  flow: ''
-  network: ws
-  tls: true
-  server-name: freeceshi6.frii.site
-  skip-cert-verify: false
-  ws-opts:
-    path: /?TELEGRAM---MARAMBASHI---MARAMBASHI---MARAMBASHI---MARAMBASHI
-    headers:
-      Host: freeceshi6.frii.site
-- name: node__cf4db9d1
-  server: 192.142.12.198
-  port: 443
-  type: vless
-  uuid: bc93a03d-13b5-0004-8ee7-d50c11459dab
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  server-name: diffoscope.com
-  skip-cert-verify: false
-  reality-opts:
-    public-key: 6VMgXXhZdJCiOG05EyK_zTHh00kpFGrZJeZIEPgqhjY
-- name: US__ff0b9e86
-  server: 195.123.240.65
-  port: 443
-  type: vless
-  uuid: ce18d0eb-5c71-41f9-96e5-1632e22456e4
+  uuid: d1a6a033-fdbd-46a6-a177-3370ba042b9f
   udp: true
   flow: xtls-rprx-vision
   tls: true
   server-name: www.cloudflare.com
   skip-cert-verify: false
   reality-opts:
-    public-key: StPbcmBuzpuYUfa4oZ5SI3Bq1OSF_-oU1vp2AcyvQVE
-- name: leviconfigs_-5__8555a695
-  server: 199.232.78.159
+    public-key: i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU
+- name: 13515_proxy_online_net__92d53248
+  server: 46.28.69.173
   port: 443
   type: vless
-  uuid: e0454af2-6fe9-4983-a55d-05e1da202602
-  udp: true
-  flow: ''
-  network: ws
-  tls: true
-  server-name: ssl.fastly.com
-  skip-cert-verify: false
-  ws-opts:
-    path: /
-    headers:
-      Host: lsjaoijji.global.ssl.fastly.neT.
-- name: ShatakVPN_718826__c578422a
-  server: 205.186.112.19
-  port: 443
-  type: vless
-  uuid: f1a04d4c-56b3-4f93-a4ec-91a5039a48bd
+  uuid: f8cb3c89-32af-4255-bebc-d90aad175069
   udp: true
   flow: xtls-rprx-vision
   tls: true
-  server-name: www.amazon.com
+  server-name: dec.899themes.pro
   skip-cert-verify: false
   reality-opts:
-    public-key: cwao9PnlNhUTd19WxIKAOdAjkaqVJihY0d2WOR8I2WY
-- name: US__6c85463e
-  server: 207.244.243.12
+    public-key: pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ
+- name: NOFILTERING2__f42f38e4
+  server: 47.253.226.114
   port: 443
   type: vless
-  uuid: a33f9fb8-51bb-46d0-8d3a-6b54fdc15943
+  uuid: 055a1ce8-2a16-4a0d-a2c2-22826c9b2413
   udp: true
   flow: xtls-rprx-vision
   tls: true
   server-name: www.cloudflare.com
   skip-cert-verify: false
   reality-opts:
-    public-key: 7pnL_m6XftDfRH5Lue-2zI1a0XWg-xcQd5F8m5lqChg
-- name: US__7841f2bd
-  server: 47.251.25.74
+    public-key: Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc
+- name: برای__b6a90595
+  server: 48.103.231.2
   port: 443
   type: vless
-  uuid: 18805ff3-b420-45de-af18-93be14024ae8
+  uuid: a346c521-7a7f-452b-9356-a4893feb5982
   udp: true
   flow: xtls-rprx-vision
   tls: true
-  server-name: www.amazon.com
+  server-name: ee1-r.bankai.party
   skip-cert-verify: false
   reality-opts:
-    public-key: H56cOJhw0xw76lDEpt7IuJJmVGemK6_CK34KtHwDMX8
-- name: All__9daa1e40
-  server: 69.46.46.71
+    public-key: FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0
+- name: 07__65a938d0
+  server: 59.125.69.22
   port: 443
   type: vless
-  uuid: 8cc47055a5f8ec5c715198d4d1c64686
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
   udp: true
   flow: ''
   network: ws
   tls: true
-  server-name: web-f1f020-4cf484-production.up.railway.app
+  server-name: tse1.mm.bing.net
   skip-cert-verify: false
   ws-opts:
-    path: /ws/8cc47055a5f8ec5c715198d4d1c64686
+    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
     headers:
-      Host: web-f1f020-4cf484-production.up.railway.app
-- name: ᴛᴇʟᴇɢʀᴀᴍ__598a507b
-  server: hiccuped-tacos.sports-streams.org
+      Host: tse1.mm.bing.net
+- name: Telegram_v2rayng3__7fc602a9
+  server: 80.66.78.227
   port: 443
   type: vless
-  uuid: dc1ae017-2aba-41bb-9395-fd0cce5bbfe6
+  uuid: 76f6b7fe-5de8-4637-87a0-6ddd33d67b3e
   udp: true
   flow: xtls-rprx-vision
   tls: true
-  server-name: www.gr-cdn.com
+  server-name: cdn-se.alohaapp.uk
   skip-cert-verify: false
   reality-opts:
-    public-key: 6dc3iKXilOQpA_JFrKlk5-CsFjSmOm_5p0kSQcO9qi4
-- name: FR__225b2a39
-  server: in.smrtai.top
+    public-key: kRwY2AAdT6SH4FKFQb-UhnJbyddqbdluKy1xaYPatD8
+- name: VConfing__a2f53ea4
+  server: 93.123.101.198
   port: 443
   type: vless
-  uuid: 6bdc8320-7eae-46fc-be08-f5f54e65dfc8
+  uuid: a346c521-7a7f-452b-9356-a4893feb5982
   udp: true
-  flow: ''
+  flow: xtls-rprx-vision
   tls: true
-  server-name: www.cloudflare.com
+  server-name: de14-r.bankai.party
   skip-cert-verify: false
   reality-opts:
-    public-key: 3LbVuwKpQv55GngyRhvGl9KyAHIDAgvJx_VRM5mUD2Q
-- name: FI__5688bbc5
-  server: mail1.besttotaldns.com
+    public-key: FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0
+- name: RU__8a353f14
+  server: bookend.filnex.baby
   port: 443
   type: vless
-  uuid: da14e323-6af7-406f-a5c2-1eb7975ada8b
-  udp: true
-  flow: xtls-rprx-vision-udp443
-  tls: true
-  server-name: mail1.besttotaldns.com
-  skip-cert-verify: false
-- name: CA__53b64f36
-  server: saas.sin.fan
-  port: 443
-  type: vless
-  uuid: 5d7b401c-78fa-4254-872e-6d42bf7e75ec
+  uuid: 749b1c56-e658-4bf5-94bd-5c3286a4aed1
   udp: true
   flow: ''
   network: ws
   tls: true
-  server-name: vp18.1145678.xyz
+  server-name: ferncrest.gerqix.online
   skip-cert-verify: false
   ws-opts:
-    path: /img/video/TkZDG0RVE1kPREsSEQ8YEEBHSEpZUwhIFF4WRBIIFUkVRQQQRhNYEFASC0FbR1ZETQ9cXUZAQ1laV0cXFBJEXFBRBl0PDF1XAUpYElFeVhQDWV0SQwEWQlpGWRoNC1wYSw==
+    path: /api/de1/stream
     headers:
-      Host: vp18.1145678.xyz
-- name: US-167_88_61_52-0120__89944a57
-  server: 167.88.61.52
+      Host: bookend.filnex.baby
+- name: q_102__d4239d55
+  server: bookend.filnex.baby
   port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  type: vless
+  uuid: 25ac78e7-6d1d-4c9a-a450-c01a4871769f
   udp: true
-- name: RELAY-188_114_97_6-5016__6a3b2953
-  server: 188.114.97.6
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  udp: true
-- name: V2ray_confiig__c24e82cd
-  server: 199.232.78.160
-  port: 443
-  type: trojan
-  password: mitivpn
-  udp: true
+  flow: ''
+  network: ws
+  tls: true
+  server-name: hollowreed.gerqix.online
+  skip-cert-verify: false
   ws-opts:
-    path: /
+    path: /api/de1/stream
     headers:
-      Host: mitivpn-mitivpn—mitivpn.global.ssl.fastly.net
-- name: i10VPN⁴__892da000
-  server: 216.152.147.152
+      Host: bookend.filnex.baby
+- name: NL__b137282f
+  server: fr-free.fastestrelay.com
   port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  type: vless
+  uuid: 364D2D52-E61E-4E52-80EC-2BC6BDF15349
   udp: true
-- name: ConfigV2RayNG__2f8f7200
-  server: 216.152.156.81
+  flow: ''
+  network: ws
+  tls: true
+  server-name: fr-free.fastestrelay.com
+  skip-cert-verify: false
+  ws-opts:
+    path: /700gvl
+    headers:
+      Host: fr-free.fastestrelay.com
+- name: chillguy_vpn__324470da
+  server: h-pl.ok-habits.xyz
   port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  type: vless
+  uuid: 259ec8bc-5a6b-4b33-8a71-c40e8d150c24
   udp: true
-- name: 04__cb1997bb
-  server: 43.156.36.253
+  flow: ''
+  tls: true
+  server-name: 1.4.8.8
+  skip-cert-verify: false
+  reality-opts:
+    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
+- name: Tarkshodeh__0837a06d
+  server: rs3.univesalsrv.com
   port: 443
-  type: trojan
-  password: WvH8ooM9hom4KOOJHFJz1x5umE0aV4R0
+  type: vless
+  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
   udp: true
-- name: US-64_186_231_175-0751__4ed00c86
-  server: 64.186.231.175
+  flow: ''
+  network: grpc
+  tls: true
+  server-name: rs3.univesalsrv.com
+  skip-cert-verify: false
+  reality-opts:
+    public-key: gHDoSWGWMVZKWNKONWHw-Cpl0-bdI6GaKusgJIQ-vWQ
+  grpc-opts:
+    grpc-service-name: edge.v2.FeedService
+- name: hamedp71__9273a973
+  server: xray-dmr3b3hy-calm-maple-7.cloady.io
+  port: 443
+  type: vless
+  uuid: 06a5afa1-2bbc-a5d1-1770-becd1089c636
+  udp: true
+  flow: ''
+  network: ws
+  tls: true
+  server-name: xray-dmr3b3hy-calm-maple-7.cloady.io
+  skip-cert-verify: false
+  ws-opts:
+    path: /0175469f14317d82
+    headers:
+      Host: xray-dmr3b3hy-calm-maple-7.cloady.io
+- name: KR-103_133_240_115-0927__c3bcf117
+  server: 103.133.240.115
   port: 443
   type: trojan
   password: eeb6823c-b926-4ea2-866a-5542edd26e59
@@ -308,204 +416,102 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: 64.186.231.175
-- name: fastkanfig__cd898aa7
-  server: 66.163.112.121
+      Host: 103.133.240.115
+- name: RELAY-104_18_12_149-0961__cc717882
+  server: 104.18.12.149
   port: 443
   type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  password: humanity
   udp: true
-- name: hamedp71__148eadc2
-  server: 66.163.118.115
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: 104.18.12.149
+- name: JP-172_104_86_229-0782__8b380d8f
+  server: 172.104.86.229
   port: 443
   type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  password: eeb6823c-b926-4ea2-866a-5542edd26e59
   udp: true
-- name: i10VPN⁷__af9dea0c
-  server: 66.163.122.113
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-- name: OutlineReleasedKey__d0d8e623
-  server: xvxn1hkzf.mateflora.com
-  port: 443
-  type: trojan
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  udp: true
-- name: ES__44015323
-  server: 108.181.121.170
-  port: 443
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: qItG8SueYQcP
-- name: JP__31ea8dfb
-  server: 149.22.87.241
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: vpnsal__43e60b9a
-  server: 8.209.72.224
-  port: 443
-  type: ss
-  cipher: 2022-blake3-chacha20-poly1305
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-- name: V2raySaman__604f8193
-  server: 82.38.31.165
-  port: 443
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: RELAY-104_19_7_84-1526__bb910e96
-  server: 104.19.7.84
-  port: 443
-  type: vmess
-  uuid: 4cdb016f-f14e-30b3-97d6-453c741a5c80
-  alterId: 1
-  cipher: auto
-  udp: true
-  network: ws
-  tls: true
-  server-name: free.frli.xyz
-  skip-cert-verify: false
   ws-opts:
-    path: /y475
+    path: /
     headers:
-      Host: free.frli.xyz
-- name: RELAY-190_93_246_195-2638__f2096351
-  server: 190.93.246.195
-  port: 443
-  type: vmess
-  uuid: 4612618c-24cd-4379-9924-cfdf3d61fa5a
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  tls: true
-  server-name: 190.93.246.195
-  skip-cert-verify: false
-  ws-opts:
-    path: /IYKLD53M
-    headers:
-      Host: 190.93.246.195
-- name: DE-57_129_28_64-1170__9344cab2
-  server: 57.129.28.64
-  port: 443
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  tls: true
-  server-name: serkat.org
-  skip-cert-verify: false
-  ws-opts:
-    path: linkvws
-    headers:
-      Host: serkat.org
-- name: US-162_0_232_36-4957__a01ce2c7
-  server: hohm.microsoft.com
-  port: 443
-  type: vmess
-  uuid: 2b214122-1906-428a-bbb7-a039cbb7cd5c
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  tls: true
-  server-name: fr1.trump2023.org
-  skip-cert-verify: false
-  ws-opts:
-    path: /9JZFDTKE
-    headers:
-      Host: fr1.trump2023.org
+      Host: 172.104.86.229
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - leviconfigs_-29__9b488563
-  - XX_VLESS_proxie_1_fast__26b384e4
-  - ShatakVPN_271246__7898eaf9
-  - ShatakVPN_471131__fbc1f0e2
-  - hamedp71__1970e19a
-  - ShatakVPN_925650__04f2a314
-  - Channel__3cbf1e09
-  - Tel_V2rayng_Fast__53fc716e
-  - node__cf4db9d1
-  - US__ff0b9e86
-  - leviconfigs_-5__8555a695
-  - ShatakVPN_718826__c578422a
-  - US__6c85463e
-  - US__7841f2bd
-  - All__9daa1e40
-  - ᴛᴇʟᴇɢʀᴀᴍ__598a507b
-  - FR__225b2a39
-  - FI__5688bbc5
-  - CA__53b64f36
-  - US-167_88_61_52-0120__89944a57
-  - RELAY-188_114_97_6-5016__6a3b2953
-  - V2ray_confiig__c24e82cd
-  - i10VPN⁴__892da000
-  - ConfigV2RayNG__2f8f7200
-  - 04__cb1997bb
-  - US-64_186_231_175-0751__4ed00c86
-  - fastkanfig__cd898aa7
-  - hamedp71__148eadc2
-  - i10VPN⁷__af9dea0c
-  - OutlineReleasedKey__d0d8e623
-  - ES__44015323
-  - JP__31ea8dfb
-  - vpnsal__43e60b9a
-  - V2raySaman__604f8193
-  - RELAY-104_19_7_84-1526__bb910e96
-  - RELAY-190_93_246_195-2638__f2096351
-  - DE-57_129_28_64-1170__9344cab2
-  - US-162_0_232_36-4957__a01ce2c7
+  - Tarkshodeh__7d4e2385
+  - hex_proxy__f96f714e
+  - vless_104_21_236_63_443__44417986
+  - appsooner__ad967e1e
+  - ICV2RAY__3b6ec2c3
+  - v2ray313__462a6549
+  - 5397__c4c6f82e
+  - hamedp71__f3c37dcf
+  - US__058b93f3
+  - 139901__5bff6c07
+  - node__1440d4bc
+  - ShatakVPN_885518__f96cb55a
+  - q_048__ea7cffb1
+  - v2ray313__df4246ef
+  - YFZ__1af43ee8
+  - hamedp71__dc2f96e6
+  - ShatakVPN_609928__acb93c8b
+  - hamedp71__a4b1f469
+  - 13515_proxy_online_net__92d53248
+  - NOFILTERING2__f42f38e4
+  - برای__b6a90595
+  - 07__65a938d0
+  - Telegram_v2rayng3__7fc602a9
+  - VConfing__a2f53ea4
+  - RU__8a353f14
+  - q_102__d4239d55
+  - NL__b137282f
+  - chillguy_vpn__324470da
+  - Tarkshodeh__0837a06d
+  - hamedp71__9273a973
+  - KR-103_133_240_115-0927__c3bcf117
+  - RELAY-104_18_12_149-0961__cc717882
+  - JP-172_104_86_229-0782__8b380d8f
   - DIRECT
 - name: AUTO
   type: url-test
   proxies:
-  - leviconfigs_-29__9b488563
-  - XX_VLESS_proxie_1_fast__26b384e4
-  - ShatakVPN_271246__7898eaf9
-  - ShatakVPN_471131__fbc1f0e2
-  - hamedp71__1970e19a
-  - ShatakVPN_925650__04f2a314
-  - Channel__3cbf1e09
-  - Tel_V2rayng_Fast__53fc716e
-  - node__cf4db9d1
-  - US__ff0b9e86
-  - leviconfigs_-5__8555a695
-  - ShatakVPN_718826__c578422a
-  - US__6c85463e
-  - US__7841f2bd
-  - All__9daa1e40
-  - ᴛᴇʟᴇɢʀᴀᴍ__598a507b
-  - FR__225b2a39
-  - FI__5688bbc5
-  - CA__53b64f36
-  - US-167_88_61_52-0120__89944a57
-  - RELAY-188_114_97_6-5016__6a3b2953
-  - V2ray_confiig__c24e82cd
-  - i10VPN⁴__892da000
-  - ConfigV2RayNG__2f8f7200
-  - 04__cb1997bb
-  - US-64_186_231_175-0751__4ed00c86
-  - fastkanfig__cd898aa7
-  - hamedp71__148eadc2
-  - i10VPN⁷__af9dea0c
-  - OutlineReleasedKey__d0d8e623
-  - ES__44015323
-  - JP__31ea8dfb
-  - vpnsal__43e60b9a
-  - V2raySaman__604f8193
-  - RELAY-104_19_7_84-1526__bb910e96
-  - RELAY-190_93_246_195-2638__f2096351
-  - DE-57_129_28_64-1170__9344cab2
-  - US-162_0_232_36-4957__a01ce2c7
+  - Tarkshodeh__7d4e2385
+  - hex_proxy__f96f714e
+  - vless_104_21_236_63_443__44417986
+  - appsooner__ad967e1e
+  - ICV2RAY__3b6ec2c3
+  - v2ray313__462a6549
+  - 5397__c4c6f82e
+  - hamedp71__f3c37dcf
+  - US__058b93f3
+  - 139901__5bff6c07
+  - node__1440d4bc
+  - ShatakVPN_885518__f96cb55a
+  - q_048__ea7cffb1
+  - v2ray313__df4246ef
+  - YFZ__1af43ee8
+  - hamedp71__dc2f96e6
+  - ShatakVPN_609928__acb93c8b
+  - hamedp71__a4b1f469
+  - 13515_proxy_online_net__92d53248
+  - NOFILTERING2__f42f38e4
+  - برای__b6a90595
+  - 07__65a938d0
+  - Telegram_v2rayng3__7fc602a9
+  - VConfing__a2f53ea4
+  - RU__8a353f14
+  - q_102__d4239d55
+  - NL__b137282f
+  - chillguy_vpn__324470da
+  - Tarkshodeh__0837a06d
+  - hamedp71__9273a973
+  - KR-103_133_240_115-0927__c3bcf117
+  - RELAY-104_18_12_149-0961__cc717882
+  - JP-172_104_86_229-0782__8b380d8f
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
