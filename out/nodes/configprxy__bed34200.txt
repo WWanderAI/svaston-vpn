@@ -1,0 +1,1 @@
+vless://0dea82cd-a030-4c11-bccd-f3c0be845297@201.24.114.60:443?security=reality&encryption=none&pbk=RRawEiil652RhrCcf0Oq94mBii7I21eN3YyOo34NrTY&headerType=none&fp=chrome&spx=/&type=tcp&flow=xtls-rprx-vision&sni=app.prostocalc.com&sid=47e4cb670b4e547d#@configprxy

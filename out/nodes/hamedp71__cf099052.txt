@@ -1,0 +1,1 @@
+vless://db906786-8c49-4b17-9182-cea680ef954d@krd.80782636.xyz:443?&security=tls&fp=chrome&sni=krd.80782636.xyz&type=ws&headerType=none&host=krd.80782636.xyz&path=/kw7x2mq9#hamedp71%3A%3A%F0%9F%87%B0%F0%9F%87%B7

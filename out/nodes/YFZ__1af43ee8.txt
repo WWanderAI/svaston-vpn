@@ -1,1 +1,0 @@
-vless://58e22afd-bf74-4736-984d-63a8ca03d7f0@31.76.3.51:443?path=/media/ws/&security=tls&encryption=none&insecure=0&fp=chrome&type=ws&allowInsecure=0&sni=accessfooter.cleanfoodshop.org#YFZ
