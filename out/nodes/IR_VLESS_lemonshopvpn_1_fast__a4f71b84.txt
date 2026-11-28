@@ -1,0 +1,1 @@
+vless://2b5e2b86-55b6-4571-abc1-c1dec8605725@www.zula.ir:443?path=/vless&security=tls&encryption=none&host=tr1-vless.sshmax.xyz&type=ws&sni=tr1-vless.sshmax.xyz#%F0%9F%87%AE%F0%9F%87%B7%20IR%20%7C%20VLESS%20%7C%20%40lemonshopvpn%20%231%20%5Bfast%5D

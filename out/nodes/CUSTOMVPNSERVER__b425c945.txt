@@ -1,0 +1,1 @@
+vless://ecd01b9c-8172-41a4-be72-6167fd7d932d@104.19.140.106:443?path=/194.127.193.124=24467&security=tls&encryption=none&insecure=1&host=afrcloud1.c01.kr&type=ws&allowInsecure=1&sni=afrcloud1.c01.kr#@CUSTOMVPNSERVER

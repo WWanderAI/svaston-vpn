@@ -1,0 +1,1 @@
+vless://4a047ad6-e36c-4053-a5d5-1958d39d4089@187.52.45.236:443?security=reality&encryption=none&pbk=FjY0N4j06c6zkK2Rrk3fIs3L5W48CwsYaSoiGnts-jI&fp=chrome&type=grpc&serviceName=grpc&sni=povar.tallreed.com#🇵🇱232715

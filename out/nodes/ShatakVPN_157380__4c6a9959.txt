@@ -1,0 +1,1 @@
+vless://f4b08bf1-d9bd-4755-aa88-ba922282c608@77.239.109.24:443?encryption=none&flow=xtls-rprx-vision&type=tcp&headerType=none&security=reality&fp=firefox&sni=nehor730.gangtype.com&pbk=HSJUGn3x8tOGS-8PsKu8xgmakV988XKhDGXolBmbj1M&sid=858614add772c0d8&spx=/#%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20157380

@@ -1,0 +1,1 @@
+vless://8f371e61-885d-4461-a0a9-3460aa1f8e6d@dl1-de1.penguin-easyconnet.ir:443?path=/games/fortnite&security=tls&encryption=none&insecure=0&host=dl1-de1.penguin-easyconnet.ir&fp=chrome&type=ws&allowInsecure=0&sni=dl1-de1.penguin-easyconnet.ir#🇮🇷232923

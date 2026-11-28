@@ -26,28 +26,12 @@
   "outbounds": [
     {
       "type": "ws",
-      "tag": "leviconfigs_-11__6a63ab91",
-      "server": "104.18.37.228",
-      "server_port": 443,
-      "uuid": "83afd88f-200f-4d89-bfc7-66eff160c1d8",
-      "encryption": "none",
-      "path": "/?TELEGRAM-leviconfigs?ed=2560",
-      "headers": {
-        "Host": "josni.hoyes.cloudns.ch"
-      },
-      "tls": {
-        "server_name": "josni.hoyes.cloudns.ch",
-        "insecure": false
-      }
-    },
-    {
-      "type": "ws",
-      "tag": "Arshiavpn12__ba06e594",
-      "server": "104.19.141.129",
+      "tag": "CUSTOMVPNSERVER__b425c945",
+      "server": "104.19.140.106",
       "server_port": 443,
       "uuid": "ecd01b9c-8172-41a4-be72-6167fd7d932d",
       "encryption": "none",
-      "path": "/139.99.124.165=443",
+      "path": "/194.127.193.124=24467",
       "headers": {
         "Host": "afrcloud1.c01.kr"
       },
@@ -58,94 +42,62 @@
     },
     {
       "type": "vless",
-      "tag": "hamedp71__164e78ad",
-      "server": "130.12.242.106",
+      "tag": "NOFILTERING2__69df27d7",
+      "server": "109.176.202.177",
       "server_port": 443,
-      "uuid": "bc058e69-0444-4c7b-98da-bd67f0b143da",
+      "uuid": "b92fa8ab-5a4b-4202-8e2d-af8e8b332193",
+      "encryption": "none",
+      "reality": {
+        "server_name": "delivery.mp.microsoft.com",
+        "public_key": "4YuPm6_B_Aa9Um70LtKFnVfA_F8uiwwmXChE_pyXjX8",
+        "fingerprint": "chrome"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "hamedp71__0f7da50a",
+      "server": "132.243.163.125",
+      "server_port": 443,
+      "uuid": "4201786b-d99b-4147-a5f0-20d47acddb81",
       "flow": "xtls-rprx-vision",
       "encryption": "none",
       "reality": {
-        "server_name": "deepl.com",
-        "public_key": "vnjp7zIK2H3CGdjSis_79KXqS6IG-opmpbETPUD-EC8",
+        "server_name": "4935e4t.de25.h1clayd.click",
+        "public_key": "MzgB17ZFbKqs8pbC3EscTzHid_ENc-k_Cp6nXl-2knw",
         "fingerprint": "chrome"
       }
     },
     {
-      "type": "ws",
-      "tag": "node__77599f5a",
-      "server": "146.75.59.186",
-      "server_port": 443,
-      "uuid": "64ce5faf-427b-4dd1-926c-6b7ced6b8c38",
-      "encryption": "none",
-      "path": "/",
-      "headers": {
-        "Host": "copy_az_channel_NUFiLTER_6i.global.ssl.fastly.net."
-      },
-      "tls": {
-        "server_name": "cdn.akamai.steamstatic.com",
-        "insecure": false
-      }
-    },
-    {
       "type": "vless",
-      "tag": "TR__3365d994",
-      "server": "147.45.66.200",
+      "tag": "vmesskhodam__260b1378",
+      "server": "163.245.42.56",
       "server_port": 443,
-      "uuid": "7c768ae5-33eb-4460-b901-cffa40948c5f",
+      "uuid": "b9bfa54d-bc44-4592-a6d6-89a9665d286f",
       "flow": "xtls-rprx-vision",
       "encryption": "none",
       "reality": {
-        "server_name": "tr.luna-nodes.com",
-        "public_key": "Zulcb28Wi9kHAih8E9JVfLTdyhvWvUYQorNCiNZK5ic",
+        "server_name": "mother-earth.fyi",
+        "public_key": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc",
         "fingerprint": "chrome"
       }
     },
     {
-      "type": "ws",
-      "tag": "US-_VPNine1__3bfba73e",
-      "server": "151.101.110.219",
-      "server_port": 443,
-      "uuid": "4da72a60-61b9-4571-a054-1bba24bf6728",
-      "encryption": "none",
-      "path": "/",
-      "headers": {
-        "Host": "nesfeshzksab.global.ssl.fastly.neT."
-      },
-      "tls": {
-        "server_name": "speedtest.net",
-        "insecure": true
-      }
-    },
-    {
       "type": "vless",
-      "tag": "04__aa2db339",
-      "server": "152.70.58.201",
+      "tag": "ShatakVPN_824922__aeadaf7c",
+      "server": "167.17.69.171",
       "server_port": 443,
-      "uuid": "8892e34a-339b-4526-b88d-cf68c516231c",
+      "uuid": "00144519-7e0d-476b-8d28-435576af9262",
       "flow": "xtls-rprx-vision",
       "encryption": "none",
       "reality": {
-        "server_name": "www.nvidia.com",
-        "public_key": "Hg_ivwbClYmR-SEHdoGgq4yEk6ltbjS5c4yiQRa4_28",
+        "server_name": "www.cloudflare.com",
+        "public_key": "ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk",
         "fingerprint": "chrome"
       }
     },
     {
       "type": "vless",
-      "tag": "TR__b15ec813",
-      "server": "153.56.229.218",
-      "server_port": 443,
-      "uuid": "ba0dbd83-3569-46dc-bc3d-ef6e58ffc97b",
-      "encryption": "none",
-      "reality": {
-        "server_name": "71b840t.de7.h1clayd.click",
-        "public_key": "3wFF83gtIA0sXj-6GGCAa--oQbSr0MVUj0FBc-0QmiE",
-        "fingerprint": "chrome"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "B2Hub__3418a816",
+      "tag": "vmesskhodam__3418a816",
       "server": "168.113.254.217",
       "server_port": 443,
       "uuid": "ef5a57c7-84d5-4f86-b99c-875a16da485f",
@@ -159,8 +111,8 @@
     },
     {
       "type": "vless",
-      "tag": "US__f3c37dcf",
-      "server": "169.40.42.168",
+      "tag": "q_074__f0243577",
+      "server": "169.40.42.231",
       "server_port": 443,
       "uuid": "d65cc14c-f53f-4fe2-b262-97856601319c",
       "flow": "xtls-rprx-vision",
@@ -168,41 +120,102 @@
       "reality": {
         "server_name": "yahoo.com",
         "public_key": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+        "fingerprint": "random"
+      }
+    },
+    {
+      "type": "ws",
+      "tag": "leviconfigs_-4__a76f543d",
+      "server": "172.66.44.97",
+      "server_port": 443,
+      "uuid": "83afd88f-200f-4d89-bfc7-66eff160c1d8",
+      "encryption": "none",
+      "path": "/?TELEGRAM-leviconfigs?ed=512",
+      "headers": {
+        "Host": "josni.hoyes.cloudns.ch"
+      },
+      "tls": {
+        "server_name": "josni.hoyes.cloudns.ch",
+        "insecure": false
+      }
+    },
+    {
+      "type": "ws",
+      "tag": "prrofile_purple__6348f307",
+      "server": "172.67.182.80",
+      "server_port": 443,
+      "uuid": "0050dd81-65fb-439c-abf6-c4c609205c44",
+      "encryption": "none",
+      "path": "/vl/e0BN8sjMhlKHJo6UNGRwuI3kOb1I?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET?ed",
+      "headers": {
+        "Host": "f2au50vwmige9oftda.netizo14.workers.dev"
+      },
+      "tls": {
+        "server_name": "F2aU50vwmIGE9oFtda.netIZO14.WOrkErs.Dev",
+        "insecure": false
+      }
+    },
+    {
+      "type": "ws",
+      "tag": "XX_VLESS_nepo_v2ray_2_fast__9b63e132",
+      "server": "172.67.183.230",
+      "server_port": 443,
+      "uuid": "b9ad895b-12ac-40fc-a5ac-a5b2a1285001",
+      "encryption": "none",
+      "path": "path/TELEGRAM-PROXY_MTM?ed=2048",
+      "headers": {
+        "Host": "3k.pureboy.eu.org"
+      },
+      "tls": {
+        "server_name": "3k.pureboy.eu.org",
+        "insecure": false
+      }
+    },
+    {
+      "type": "grpc",
+      "tag": "232715__bb5a3564",
+      "server": "187.52.45.236",
+      "server_port": 443,
+      "uuid": "4a047ad6-e36c-4053-a5d5-1958d39d4089",
+      "encryption": "none",
+      "service_name": "grpc",
+      "reality": {
+        "server_name": "povar.tallreed.com",
+        "public_key": "FjY0N4j06c6zkK2Rrk3fIs3L5W48CwsYaSoiGnts-jI",
         "fingerprint": "chrome"
       }
     },
     {
       "type": "vless",
-      "tag": "node__6e864554",
-      "server": "169.40.42.74",
+      "tag": "232716__0a3d9185",
+      "server": "200.96.109.239",
       "server_port": 443,
-      "uuid": "d65cc14c-f53f-4fe2-b262-97856601319c",
+      "uuid": "7af8c5d0-ede6-40ab-9b9e-d7924f79d109",
+      "encryption": "none",
+      "reality": {
+        "server_name": "vimnalismkin.ru",
+        "public_key": "LF3XXc2ZlnR8HRE3GpdFpqLSMPE5uMCmMOECDWlN4WI",
+        "fingerprint": "chrome"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "JP__cf500bd1",
+      "server": "31.76.91.98",
+      "server_port": 443,
+      "uuid": "7072eeba-94fd-4fb3-92f2-a4506dd84cd8",
       "flow": "xtls-rprx-vision",
       "encryption": "none",
       "reality": {
-        "server_name": "yahoo.com",
-        "public_key": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+        "server_name": "fuji.etherhub.cc",
+        "public_key": "ejx56dFtS4LK_Th6HSLFFdm7v7zqRpv8KfjrWAw4Sjg",
         "fingerprint": "chrome"
       }
     },
     {
       "type": "vless",
-      "tag": "node__058b93f3",
-      "server": "169.40.42.90",
-      "server_port": 443,
-      "uuid": "d65cc14c-f53f-4fe2-b262-97856601319c",
-      "flow": "xtls-rprx-vision",
-      "encryption": "none",
-      "reality": {
-        "server_name": "yahoo.com",
-        "public_key": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
-        "fingerprint": "chrome"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "FarazV2ray__bbad0aca",
-      "server": "170.168.32.125",
+      "tag": "PL_VLESS_red2ray_1_fast__14b5cd74",
+      "server": "45.142.212.191",
       "server_port": 443,
       "uuid": "148917bd-0b37-42b8-98f4-aa94ca73e75a",
       "flow": "xtls-rprx-vision",
@@ -214,9 +227,168 @@
       }
     },
     {
+      "type": "vless",
+      "tag": "Channel__311f7669",
+      "server": "45.154.96.24",
+      "server_port": 443,
+      "uuid": "b92fa8ab-5a4b-4202-8e2d-af8e8b332193",
+      "encryption": "none",
+      "reality": {
+        "server_name": "firmwaresign.partners.nvidia.com",
+        "public_key": "o2KcQK-yk3JFACI2IuGoYLa23sClJ2_Az_mKzIj2PhY",
+        "fingerprint": "chrome"
+      }
+    },
+    {
+      "type": "grpc",
+      "tag": "DE-_VPNine1__8c56c7bf",
+      "server": "45.86.158.235",
+      "server_port": 443,
+      "uuid": "cda0862a-0f87-4be9-8ed8-1d0c9e382839",
+      "encryption": "none",
+      "service_name": "204adda7e3da",
+      "reality": {
+        "server_name": "717252g.nl8.h1clayd.click",
+        "public_key": "PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU",
+        "fingerprint": "chrome"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "mehrosaboran__32f335fe",
+      "server": "45.86.61.133",
+      "server_port": 443,
+      "uuid": "e2f3ddd0-10f1-421f-b684-4c943986da65",
+      "flow": "xtls-rprx-vision",
+      "encryption": "none",
+      "reality": {
+        "server_name": "deepl.com",
+        "public_key": "GwjzHvbNB5Wn6Jj7E3WSc5pc32bjeJCvv9yf0ibDnRs",
+        "fingerprint": "chrome"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "𝗝𝗼𝗶𝗻__f42f38e4",
+      "server": "47.253.226.114",
+      "server_port": 443,
+      "uuid": "055a1ce8-2a16-4a0d-a2c2-22826c9b2413",
+      "flow": "xtls-rprx-vision",
+      "encryption": "none",
+      "reality": {
+        "server_name": "www.cloudflare.com",
+        "public_key": "Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc",
+        "fingerprint": "chrome"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ShatakVPN_415503__9c8ae9df",
+      "server": "5.180.27.134",
+      "server_port": 443,
+      "uuid": "fa906181-5d9b-4ff6-8a81-e6148ce4ece7",
+      "flow": "xtls-rprx-vision",
+      "encryption": "none",
+      "reality": {
+        "server_name": "kz.koteika3528.dev",
+        "public_key": "qljbddkyGqBkkOnPdvgw4s6HX_iyEUB2qesNM1qiFg0",
+        "fingerprint": "chrome"
+      }
+    },
+    {
       "type": "ws",
-      "tag": "kurdconfig__1b1e79bd",
-      "server": "172.67.139.189",
+      "tag": "All__b95ea762",
+      "server": "69.46.46.143",
+      "server_port": 443,
+      "uuid": "10c3b62f-59da-55cb-b24f-2072ecb4348c",
+      "encryption": "none",
+      "path": "/ws/Default",
+      "headers": {
+        "Host": "cloud-yt65782-6412hd-6ace69-production.up.railway.app"
+      },
+      "tls": {
+        "server_name": "cloud-yt65782-6412hd-6ace69-production.up.railway.app",
+        "insecure": false
+      }
+    },
+    {
+      "type": "ws",
+      "tag": "All__fee6c011",
+      "server": "69.46.46.71",
+      "server_port": 443,
+      "uuid": "e057056cc05afe044bcc27218de976ae",
+      "encryption": "none",
+      "path": "/ws/e057056cc05afe044bcc27218de976ae",
+      "headers": {
+        "Host": "app-ec2116-a56b8b-production.up.railway.app"
+      },
+      "tls": {
+        "server_name": "app-ec2116-a56b8b-production.up.railway.app",
+        "insecure": false
+      }
+    },
+    {
+      "type": "grpc",
+      "tag": "232867__faf58f78",
+      "server": "717252g.nl8.h1clayd.click",
+      "server_port": 443,
+      "uuid": "cda0862a-0f87-4be9-8ed8-1d0c9e382839",
+      "encryption": "none",
+      "service_name": "204adda7e3da",
+      "reality": {
+        "server_name": "717252g.nl8.h1clayd.click",
+        "public_key": "PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU",
+        "fingerprint": "chrome"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ShatakVPN_157380__4c6a9959",
+      "server": "77.239.109.24",
+      "server_port": 443,
+      "uuid": "f4b08bf1-d9bd-4755-aa88-ba922282c608",
+      "flow": "xtls-rprx-vision",
+      "encryption": "none",
+      "reality": {
+        "server_name": "nehor730.gangtype.com",
+        "public_key": "HSJUGn3x8tOGS-8PsKu8xgmakV988XKhDGXolBmbj1M",
+        "fingerprint": "firefox"
+      }
+    },
+    {
+      "type": "grpc",
+      "tag": "v2rayng3__f41d8a79",
+      "server": "88.216.220.88",
+      "server_port": 443,
+      "uuid": "a8e3155b-ceb1-4fcb-bc0c-2e77ec005401",
+      "encryption": "none",
+      "service_name": "api.v1.StreamService",
+      "reality": {
+        "server_name": "files.noneok.com",
+        "public_key": "q3kOYHdjmqWLLYj8oikvna1bTjofk45ktegGaJE611g",
+        "fingerprint": "chrome"
+      }
+    },
+    {
+      "type": "ws",
+      "tag": "232923__f8c49b01",
+      "server": "dl1-de1.penguin-easyconnet.ir",
+      "server_port": 443,
+      "uuid": "8f371e61-885d-4461-a0a9-3460aa1f8e6d",
+      "encryption": "none",
+      "path": "/games/fortnite",
+      "headers": {
+        "Host": "dl1-de1.penguin-easyconnet.ir"
+      },
+      "tls": {
+        "server_name": "dl1-de1.penguin-easyconnet.ir",
+        "insecure": false
+      }
+    },
+    {
+      "type": "ws",
+      "tag": "V2ray_confiig__b137282f",
+      "server": "fr-free.fastestrelay.com",
       "server_port": 443,
       "uuid": "364D2D52-E61E-4E52-80EC-2BC6BDF15349",
       "encryption": "none",
@@ -231,243 +403,37 @@
     },
     {
       "type": "ws",
-      "tag": "ShatakVPN_627078__cfac826e",
-      "server": "172.67.217.240",
+      "tag": "ID-_VPNine1__2b2614d5",
+      "server": "id1vpn.jagoanip.my.id",
       "server_port": 443,
-      "uuid": "9b18ccef-b9e0-41d1-8990-9d970569e142",
+      "uuid": "c3d91e48-6d7c-406d-aea3-b99c575dcd80",
       "encryption": "none",
-      "path": "/proxyip=bpb.yousef.isegaro.com",
+      "path": "/vless",
       "headers": {
-        "Host": "web-socket.tgdaosheng.ggff.net"
+        "Host": "id1vpn.jagoanip.my.id"
       },
       "tls": {
-        "server_name": "web-socket.tgdaosheng.ggff.net",
+        "server_name": "id1vpn.jagoanip.my.id",
         "insecure": false
       }
     },
     {
       "type": "vless",
-      "tag": "t_me_v2ray_configs_pools__5382abd1",
-      "server": "185.248.141.233",
+      "tag": "hamedp71__225b2a39",
+      "server": "in.smrtai.top",
       "server_port": 443,
-      "uuid": "c3abfda2-9261-4173-a8dc-afe269a15491",
+      "uuid": "6bdc8320-7eae-46fc-be08-f5f54e65dfc8",
       "encryption": "none",
       "reality": {
-        "server_name": "img.tg-english.ru",
-        "public_key": "PKzmCLsjYi2KGjojE0QLaT0r_PWoDd2VVHEobRtf62Q",
-        "fingerprint": "chrome"
-      }
-    },
-    {
-      "type": "ws",
-      "tag": "232535__3cbf1e09",
-      "server": "188.114.97.6",
-      "server_port": 443,
-      "uuid": "e6df2095-a73c-4043-8693-8d5a03686870",
-      "encryption": "none",
-      "path": "/cart/docs/www/proxyip",
-      "headers": {
-        "Host": "lucasjow.us.ci"
-      },
-      "tls": {
-        "server_name": "lucasjow.us.ci",
-        "insecure": false
-      }
-    },
-    {
-      "type": "ws",
-      "tag": "prrofile_purple__88157604",
-      "server": "188.114.98.0",
-      "server_port": 443,
-      "uuid": "e6df2095-a73c-4043-8693-8d5a03686870",
-      "encryption": "none",
-      "path": "/?Telegram---bored_vpn",
-      "headers": {
-        "Host": "lucasjow.us.ci"
-      },
-      "tls": {
-        "server_name": "lucasjow.us.ci",
-        "insecure": false
-      }
-    },
-    {
-      "type": "ws",
-      "tag": "hamedp71__53fc716e",
-      "server": "188.114.98.0",
-      "server_port": 443,
-      "uuid": "53bbdad4-2f4e-45db-8df4-fa491a6a7227",
-      "encryption": "none",
-      "path": "/proxyip",
-      "headers": {
-        "Host": "freeceshi6.frii.site"
-      },
-      "tls": {
-        "server_name": "freeceshi6.frii.site",
-        "insecure": false
-      }
-    },
-    {
-      "type": "ws",
-      "tag": "vasl_bashim__928ff5ad",
-      "server": "193.233.219.98",
-      "server_port": 443,
-      "uuid": "265ecca2-4733-49de-b2c9-ed7f0e999655",
-      "encryption": "none",
-      "path": "/api/vless",
-      "headers": {
-        "Host": "vpn-rating.space"
-      },
-      "tls": {
-        "server_name": "daily-author.ru",
-        "insecure": false
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "69_oneclickvpnkeys__76665300",
-      "server": "195.206.235.139",
-      "server_port": 443,
-      "uuid": "cda0862a-0f87-4be9-8ed8-1d0c9e382839",
-      "encryption": "none",
-      "reality": {
-        "server_name": "717252g.nl8.h1clayd.click",
-        "public_key": "PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU",
+        "server_name": "www.cloudflare.com",
+        "public_key": "3LbVuwKpQv55GngyRhvGl9KyAHIDAgvJx_VRM5mUD2Q",
         "fingerprint": "chrome"
       }
     },
     {
       "type": "vless",
-      "tag": "Telegram__291f82e6",
-      "server": "201.58.178.197",
-      "server_port": 443,
-      "uuid": "e894c08a-fecc-46f5-bf03-c95d0274c79d",
-      "flow": "xtls-rprx-vision",
-      "encryption": "none",
-      "reality": {
-        "server_name": "lesson4.schoolpizorbz.xyz",
-        "public_key": "EUuZAVtneL8O7MgjETmHvOyInaxqJu2RD6hiFQdDPwk",
-        "fingerprint": "chrome"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "i10VPN¹__07563eae",
-      "server": "23.155.44.105",
-      "server_port": 443,
-      "uuid": "128ce9ab-63bc-48dc-92ca-1b5426a9eb46",
-      "flow": "xtls-rprx-vision",
-      "encryption": "none",
-      "reality": {
-        "server_name": "app.flyprotect.ca",
-        "public_key": "HE1CGzI0QBqhMRUsHqq_9v4Mj3M5dkluFmfyMBH_7kM",
-        "fingerprint": "chrome"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "MigMigVPNSHOP__c85a70f1",
-      "server": "31.77.158.172",
-      "server_port": 443,
-      "uuid": "7d63243c-983e-44db-a1b8-13dc3fd6f7a2",
-      "flow": "xtls-rprx-vision",
-      "encryption": "none",
-      "reality": {
-        "server_name": "cdnjs.com",
-        "public_key": "mg2MoLpb8B51aZiko_nW2SBRoaudv-O6HLHx8VYP7Do",
-        "fingerprint": "chrome"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "Tarkshodeh__ebabed83",
-      "server": "84.32.186.112",
-      "server_port": 443,
-      "uuid": "01a21e01-6098-4c3b-a6fd-1a04d64d0c7f",
-      "flow": "xtls-rprx-vision",
-      "encryption": "none",
-      "reality": {
-        "server_name": "api37.betust.net",
-        "public_key": "naFxXMoZGp3dHSEMiupvt7FsYtnxONkSN90c2JLWl38",
-        "fingerprint": "chrome"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "hamedp71__4034a280",
-      "server": "9.247.23.209",
-      "server_port": 443,
-      "uuid": "b9bfa54d-bc44-4592-a6d6-89a9665d286f",
-      "flow": "xtls-rprx-vision",
-      "encryption": "none",
-      "reality": {
-        "server_name": "mother-earth.fyi",
-        "public_key": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc",
-        "fingerprint": "chrome"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "232622__b1389582",
-      "server": "94.183.234.245",
-      "server_port": 443,
-      "uuid": "5de0c218-0138-45d8-94d2-c2c3f37a1a6d",
-      "flow": "xtls-rprx-vision",
-      "encryption": "none",
-      "reality": {
-        "server_name": "www.bing.com",
-        "public_key": "tfFzmbVByvoZxxIEUiHMv22_k0-nQz00L0XjU0bd_Fc",
-        "fingerprint": "chrome"
-      }
-    },
-    {
-      "type": "ws",
-      "tag": "US_VLESS_iranvipnet_5_fast__73cbeddf",
-      "server": "fishlab.ucdavis.edu",
-      "server_port": 443,
-      "uuid": "Channel-VPNCUSTOMIZE",
-      "encryption": "none",
-      "path": "/@VPNCUSTOMIZE-----@VPNCUSTOMIZE-----@VPNCUSTOMIZE---@VPNCUSTOMIZE---@VPNCUSTOMIZE---@VPNCUSTOMIZE---@VPNCUSTOMIZE?ed=2560",
-      "headers": {
-        "Host": "JoinBedeeeeee--VPNCUSTOMIZE.ir."
-      },
-      "tls": {
-        "server_name": "fishlab.ucdavis.edu",
-        "insecure": false
-      }
-    },
-    {
-      "type": "ws",
-      "tag": "VPsave__4ede684b",
-      "server": "goltaa.com",
-      "server_port": 443,
-      "uuid": "50414e45-4c5f-5a45-5553-acb244465ac1",
-      "encryption": "none",
-      "path": "/stream/PANEL_ZEUS/acb244465ac1/loc-0",
-      "headers": {
-        "Host": "1vz2hle8uh1s.y09920213769.workers.dev"
-      },
-      "tls": {
-        "server_name": "1vz2hle8uh1s.y09920213769.workers.dev",
-        "insecure": false
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "13545_proxy_online_net__324470da",
-      "server": "h-pl.ok-habits.xyz",
-      "server_port": 443,
-      "uuid": "259ec8bc-5a6b-4b33-8a71-c40e8d150c24",
-      "encryption": "none",
-      "reality": {
-        "server_name": "1.4.8.8",
-        "public_key": "fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI",
-        "fingerprint": "chrome"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "hamedp71__5802bcb0",
-      "server": "leviko-de5717.shopingggg.ir",
+      "tag": "meliproxyy__029bed7d",
+      "server": "leviko-de9982.shopingggg.ir",
       "server_port": 443,
       "uuid": "a346c521-7a7f-452b-9356-a4893feb5982",
       "flow": "xtls-rprx-vision",
@@ -480,12 +446,12 @@
     },
     {
       "type": "ws",
-      "tag": "کانال__2e48c4bf",
+      "tag": "کانال__3fd97659",
       "server": "multipanel-production-f5dd.up.railway.app",
       "server_port": 443,
-      "uuid": "644ef1dd-6fa5-678a-f92e-b749ede69529",
+      "uuid": "24ea8ecb-83ee-d74c-60f0-6ba19b174bd9",
       "encryption": "none",
-      "path": "/ws/644ef1dd-6fa5-678a-f92e-b749ede69529",
+      "path": "/ws/24ea8ecb-83ee-d74c-60f0-6ba19b174bd9",
       "headers": {
         "Host": "multipanel-production-f5dd.up.railway.app"
       },
@@ -496,7 +462,7 @@
     },
     {
       "type": "ws",
-      "tag": "Net2ray__6fe27ee9",
+      "tag": "V2ray_confiig__6fe27ee9",
       "server": "o685y.save-node.com",
       "server_port": 443,
       "uuid": "88e79aa6-f431-4453-8dcc-652a0c747198",
@@ -511,53 +477,68 @@
       }
     },
     {
-      "type": "grpc",
-      "tag": "Tarkshodeh__c116c37a",
-      "server": "rs4.univesalsrv.com",
+      "type": "ws",
+      "tag": "Join__ae4e43fa",
+      "server": "perplexity.ai",
       "server_port": 443,
-      "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be",
-      "encryption": "none",
-      "service_name": "media.v1.StreamService",
-      "reality": {
-        "server_name": "rs4.univesalsrv.com",
-        "public_key": "sXsJ4ET-50TYqlhKZf03nPQr2JIy1F0D4m6lOsI0cAs",
-        "fingerprint": "chrome"
+      "uuid": "cce61038-6099-4c50-a149-e5263a218f12",
+      "flow": "xtls-rprx-vision",
+      "encryption": "mlkem768x25519plus.native.0rtt.3aEl4THf4qftWfkycK9gYGyYtXHeJtW814YR4P7E-mE",
+      "path": "/t.me-SubGift",
+      "headers": {
+        "Host": "rock.davidbowie.cyou"
+      },
+      "tls": {
+        "server_name": "rock.davidbowie.cyou",
+        "insecure": false
       }
     },
     {
       "type": "vless",
-      "tag": "RU-_VPNine1__feb99234",
-      "server": "wl.tw.bridge.daugava-analytics.com",
+      "tag": "VEGAAS_VPN__0a04fa0c",
+      "server": "swe1.baterium.space",
       "server_port": 443,
-      "uuid": "34899740-16ab-4f8a-bc13-051cf6f62a86",
+      "uuid": "7d63243c-983e-44db-a1b8-13dc3fd6f7a2",
       "flow": "xtls-rprx-vision",
       "encryption": "none",
       "reality": {
-        "server_name": "wl.tw.daugava-analytics.com",
-        "public_key": "YZtDA-Mz6GSlPnrhnQkSpzj8TSaGDcMjukrGI_xFg1Y",
+        "server_name": "cdnjs.com",
+        "public_key": "mg2MoLpb8B51aZiko_nW2SBRoaudv-O6HLHx8VYP7Do",
         "fingerprint": "chrome"
       }
     },
     {
       "type": "ws",
-      "tag": "SG-159_223_41_212-1061__9e9c4212",
-      "server": "159.223.41.212",
+      "tag": "IR_VLESS_lemonshopvpn_1_fast__a4f71b84",
+      "server": "www.zula.ir",
       "server_port": 443,
-      "password": "eeb6823c-b926-4ea2-866a-5542edd26e59",
-      "path": "/",
+      "uuid": "2b5e2b86-55b6-4571-abc1-c1dec8605725",
+      "encryption": "none",
+      "path": "/vless",
       "headers": {
-        "Host": "tjsp.hhxaf.cc.cd"
+        "Host": "tr1-vless.sshmax.xyz"
+      },
+      "tls": {
+        "server_name": "tr1-vless.sshmax.xyz",
+        "insecure": false
       }
     },
     {
-      "type": "ws",
-      "tag": "SG-161_118_213_45-1031__f344af16",
-      "server": "161.118.213.45",
+      "type": "trojan",
+      "tag": "trojan_188_114_97_6_443__c2ef099a",
+      "server": "188.114.97.6",
       "server_port": 443,
-      "password": "eeb6823c-b926-4ea2-866a-5542edd26e59",
-      "path": "/",
+      "password": "humanity"
+    },
+    {
+      "type": "ws",
+      "tag": "AU-103_224_212_210-7708__e105ff97",
+      "server": "cnamemk.ciscocdn1.live",
+      "server_port": 443,
+      "password": "4d706727-996f-4427-930d-60f3bd414cf9",
+      "path": "/rDCYQta83d0oPABKBhcIX",
       "headers": {
-        "Host": "hhcm.hhxaf.cc.cd"
+        "Host": "c2mk.ciscocdn1.live"
       }
     },
     {

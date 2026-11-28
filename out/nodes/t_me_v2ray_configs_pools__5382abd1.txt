@@ -1,1 +1,0 @@
-vless://c3abfda2-9261-4173-a8dc-afe269a15491@185.248.141.233:443?mode=stream-one&path=/img/cache/v8/Fr4kNt/seg&security=reality&encryption=none&pbk=PKzmCLsjYi2KGjojE0QLaT0r_PWoDd2VVHEobRtf62Q&fp=chrome&type=xhttp&sni=img.tg-english.ru&sid=1c9b760681e407d8#[🇩🇪]t.me/v2ray_configs_pools

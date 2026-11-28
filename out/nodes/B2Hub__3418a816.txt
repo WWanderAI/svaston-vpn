@@ -1,1 +1,0 @@
-vless://ef5a57c7-84d5-4f86-b99c-875a16da485f@168.113.254.217:443?security=reality&encryption=none&pbk=Lcqz3jkke-A5WHJv5yxGSUFV4qbT6FEbCASxAswYnFk&headerType=none&fp=chrome&spx=/?TELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM&type=tcp&flow=xtls-rprx-vision&sni=sbmicro690.alexdjane.am&sid=787145828dc7896c#@B2Hub
