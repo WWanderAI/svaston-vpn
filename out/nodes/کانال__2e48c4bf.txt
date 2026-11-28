@@ -1,0 +1,1 @@
+vless://644ef1dd-6fa5-678a-f92e-b749ede69529@multipanel-production-f5dd.up.railway.app:443?encryption=none&security=tls&sni=multipanel-production-f5dd.up.railway.app&fp=chrome&alpn=http/1.1&type=ws&path=/ws/644ef1dd-6fa5-678a-f92e-b749ede69529&host=multipanel-production-f5dd.up.railway.app#کانال

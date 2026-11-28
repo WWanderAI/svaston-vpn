@@ -1,1 +1,0 @@
-vless://68d5ac08-6010-4808-ac19-cb93b592d22b@ipfast.kingmna.com:443?security=tls&host=radeki415.global.ssl.fastly.net.&path=/&insecure=0&sni=cdn.akamai.steamstatic.com&pcs=CD6E838B9BFE31CAB8B3D5C858B0D6223FE84ECE236C1FDB281BE93C302E1E6E&encryption=none&allowInsecure=0&type=ws#%F0%9F%87%BA%F0%9F%87%B8%20US%20%7C%20VLESS%20%7C%20%40Proxymelimon%20%233%20%5Bfast%5D

@@ -1,0 +1,1 @@
+vless://50414e45-4c5f-5a45-5553-acb244465ac1@goltaa.com:443?path=/stream/PANEL_ZEUS/acb244465ac1/loc-0&security=tls&encryption=none&insecure=0&host=1vz2hle8uh1s.y09920213769.workers.dev&fp=unsafe&type=ws&allowInsecure=0&sni=1vz2hle8uh1s.y09920213769.workers.dev#@VPsave

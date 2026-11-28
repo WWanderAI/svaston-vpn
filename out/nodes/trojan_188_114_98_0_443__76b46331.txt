@@ -1,1 +1,0 @@
-trojan://883e3cc8-9613-4f2d-8c42-0dd3d429db55@188.114.98.0:443?path=/order/ads/&security=tls&alpn=http/1.1&fm={

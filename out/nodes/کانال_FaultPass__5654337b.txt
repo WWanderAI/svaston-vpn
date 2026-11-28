@@ -1,1 +1,0 @@
-vless://992bff49-5354-0b5c-7138-a47b045a1477@multipanel-production-f5dd.up.railway.app:443?encryption=none&security=tls&sni=multipanel-production-f5dd.up.railway.app&fp=chrome&alpn=http/1.1&type=ws&path=/ws/992bff49-5354-0b5c-7138-a47b045a1477&host=multipanel-production-f5dd.up.railway.app#کانال@FaultPass
